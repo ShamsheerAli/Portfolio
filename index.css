@@ -506,29 +506,23 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Clients ----- */
+/* ----- Projects ----- */
 /* --------------------------------------- */
 
-.client__logos {
+.project__boxes {
     display: flex;
-    flex-direction: column; /* Stack logos vertically */
-    align-items: center; /* Center logos horizontally */
-    filter: invert(100%) grayscale(100%) opacity(.8);
+    flex-direction: column; /* Stack projects vertically */
+    gap: var(--gutter-medium, 2rem); /* Space between project boxes */
+    padding: var(--gutter-normal, 1rem); /* Padding around the container */
 }
 
-.client__logo {
-    height: 6.5rem;
-    max-width: 18rem;
-    margin-bottom: var(--gutter-medium); /* Space between logos vertically */
+.project__box {
+    max-width: 100%; /* Full width for each project box */
 }
 
-.client__logo:last-of-type {
-    margin-bottom: 0; /* Remove bottom margin from the last logo */
-}
-
-@media(max-width: 1240px) {
-    .client__logos {
-        padding: var(--gutter-normal);
+@media (max-width: 1240px) {
+    .project__boxes {
+        padding: var(--gutter-normal, 1rem); /* Consistent padding on smaller screens */
     }
 }
 
