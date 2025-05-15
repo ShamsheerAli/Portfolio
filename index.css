@@ -525,7 +525,53 @@ body:not(.user-is-tabbing) a:focus {
         padding: var(--gutter-normal, 1rem); /* Consistent padding on smaller screens */
     }
 }
+/* --------------------------------------- */
+/* ----- Education ----- */
+/* --------------------------------------- */
+.education__boxes {
+    display: flex;
+    flex-direction: row; /* Display education entries side by side */
+    justify-content: space-between; /* Space entries evenly */
+    gap: var(--gutter-normal, 1rem); /* Space between entries */
+    padding: var(--gutter-normal, 1rem); /* Padding around the container */
+}
 
+.education__box {
+    flex: 1; /* Each box takes equal width */
+    max-width: 45%; /* Limit width to avoid crowding */
+    text-align: center; /* Center text for clean presentation */
+}
+
+.education__box .work__text {
+    margin: 0; /* Remove default margins for compact layout */
+}
+
+.education__box h3 {
+    font-size: 1.5rem; /* Slightly smaller heading for balance */
+    margin-bottom: 0.5rem;
+}
+
+.education__box p {
+    font-size: 1rem; /* Consistent font size for details */
+    margin: 0.25rem 0; /* Tight spacing between lines */
+}
+
+@media (max-width: 768px) {
+    .education__boxes {
+        flex-direction: column; /* Stack vertically on small screens */
+        gap: var(--gutter-normal, 1rem);
+        padding: var(--gutter-normal, 1rem);
+    }
+
+    .education__box {
+        max-width: 100%; /* Full width on small screens */
+        margin-bottom: 1rem; /* Space between stacked entries */
+    }
+
+    .education__box:last-child {
+        margin-bottom: 0; /* Remove bottom margin from last entry */
+    }
+}
 /* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
