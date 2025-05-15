@@ -633,12 +633,12 @@ body:not(.user-is-tabbing) a:focus {
 
 .certifications__box h3 {
     font-size: 3rem; /* Reduced from 4rem for smaller, balanced heading */
-    margin-bottom: 0.2rem; /* Reduced from 1rem to match smaller text */
+    margin-bottom: 0.75rem; /* Reduced from 1rem to match smaller text */
 }
 
 .certifications__box p {
     font-size: 1.5rem; /* Reduced from 2.5rem to match --font-size-small */
-    margin: 0.2rem 0; /* Reduced from 0.75rem for tighter spacing */
+    margin: 0.5rem 0; /* Reduced from 0.75rem for tighter spacing */
 }
 
 @media (max-width: 768px) {
