@@ -106,8 +106,14 @@ body {
 }
 
 section {
-    padding: var(--gutter-huge) 0;
+    padding: var(--gutter-normal) 0 var(--gutter-medium) 0; /* Reduced top padding to 3rem, bottom to 6rem */
     border-bottom: var(--border-light);
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: var(--gutter-small) 0 var(--gutter-normal) 0; /* Further reduce to 2rem top, 3rem bottom on small screens */
+    }
 }
 
 img {
