@@ -632,12 +632,12 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .certifications__box h3 {
-    font-size: 4rem; /* Match Education section for large heading */
+    font-size: 2rem; /* Match Education section for large heading */
     margin-bottom: 1rem; /* Space below heading */
 }
 
 .certifications__box p {
-    font-size: 2.5rem; /* Match Education section for large text */
+    font-size: 0.5rem; /* Match Education section for large text */
     margin: 0.75rem 0; /* Line spacing for readability */
 }
 
