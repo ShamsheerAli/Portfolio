@@ -547,13 +547,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .education__box h3 {
-    font-size: 5rem; /* Slightly smaller heading for balance */
-    margin-bottom: 0.5rem;
+    font-size: 2rem; /* Larger heading for better readability */
+    margin-bottom: 0.75rem; /* Slightly more space below heading */
 }
 
 .education__box p {
-    font-size: 4rem; /* Consistent font size for details */
-    margin: 0.25rem 0; /* Tight spacing between lines */
+    font-size: 1.25rem; /* Larger text for details */
+    margin: 0.5rem 0; /* Adjusted spacing between lines for larger text */
 }
 
 @media (max-width: 768px) {
@@ -565,7 +565,7 @@ body:not(.user-is-tabbing) a:focus {
 
     .education__box {
         max-width: 100%; /* Full width on small screens */
-        margin-bottom: 1rem; /* Space between stacked entries */
+        margin-bottom: 1.5rem; /* More space between stacked entries for larger text */
     }
 
     .education__box:last-child {
