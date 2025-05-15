@@ -547,12 +547,12 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .education__box h3 {
-    font-size: 1.5rem; /* Slightly smaller heading for balance */
+    font-size: 3rem; /* Slightly smaller heading for balance */
     margin-bottom: 0.5rem;
 }
 
 .education__box p {
-    font-size: 1rem; /* Consistent font size for details */
+    font-size: 2rem; /* Consistent font size for details */
     margin: 0.25rem 0; /* Tight spacing between lines */
 }
 
