@@ -397,7 +397,7 @@ insights that contributed to a 15% improvement in healthcare decision-making eff
               I’m Shamsheer Ali Shaik, a Master’s student in Computer and Information Sciences at Oklahoma State University, with a strong foundation in software development and AI innovation. My portfolio highlights impactful projects like Snap & Translate, a real-time image recognition and translation app built with Unity and Google APIs, FinWiseAI, an AI-driven financial advisor leveraging FastAPI and market sentiment analysis, and GenInsight, a generative AI web app for news trend analysis using Python and LangChain. With professional experience as a Video Game Development & Database Mentor, Web Developer, and Machine Learning Intern, I’ve optimized web performance by 30%, enhanced ML model accuracy by 15%, and streamlined project management, saving over 20 hours per semester. Proficient in Python, JavaScript, C#, SQL, AWS, and frameworks like TensorFlow and Streamlit, I build scalable, user-focused solutions. Explore my work to see my blend of technical expertise, creativity, and problem-solving in action!
             </p>
             <!-- Provide a link to your resume -->
-            <a href="#" class="btn">My Resume</a>
+            <button id="resumeBtn" class="btn">My Resume</button>
           </div>
 
           <div class="about__photo-container">
@@ -407,6 +407,49 @@ insights that contributed to a 15% improvement in healthcare decision-making eff
         </div>
       </div>
     </section>
+    <!-- Modal for Resumes -->
+<div id="resumeModal" class="modal">
+  <div class="modal__content">
+    <span id="closeModal" class="modal__close">×</span>
+    <h3 class="modal__title">My Resumes</h3>
+    <div class="modal__buttons">
+      <a href="https://example.com/ai-resume.pdf" target="_blank" class="modal__btn modal__btn--ai">AI Resume</a>
+      <a href="https://example.com/software-dev-resume.pdf" target="_blank" class="modal__btn modal__btn--dev">Software Development Resume</a>
+    </div>
+  </div>
+</div>
+<script>
+// Modal Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const resumeBtn = document.getElementById('resumeBtn');
+    const modal = document.getElementById('resumeModal');
+    const closeModal = document.getElementById('closeModal');
+
+    // Open modal when "My Resume" button is clicked
+    resumeBtn.addEventListener('click', function () {
+        modal.style.display = 'flex';
+    });
+
+    // Close modal when close button is clicked
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Close modal on ESC key press
+    window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>
   </main>
 <!-- New Certifications Section -->
 <section class="certifications" id="certifications">
