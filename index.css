@@ -615,7 +615,8 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 .certifications__boxes {
     display: flex;
-    flex-direction: row; /* Display certifications side by side */
+    flex-direction: row; /* Align certifications side by side */
+    flex-wrap: wrap; /* Allow wrapping into rows */
     justify-content: space-between; /* Space entries evenly */
     gap: var(--gutter-normal, 3rem); /* Space between entries */
     padding: var(--gutter-normal, 3rem); /* Padding around the container */
@@ -623,7 +624,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .certifications__box {
     flex: 1; /* Each box takes equal width */
-    max-width: 45%; /* Limit width to avoid crowding */
+    max-width: 45%; /* Fit 2 certifications per row (2 × 45% + gap) */
     text-align: center; /* Center text for clean presentation */
 }
 
@@ -632,13 +633,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .certifications__box h3 {
-    font-size: 3rem; /* Reduced from 4rem for smaller, balanced heading */
-    margin-bottom: 0.75rem; /* Reduced from 1rem to match smaller text */
+    font-size: 3rem; /* Consistent with previous artifact */
+    margin-bottom: 0.75rem;
 }
 
 .certifications__box p {
-    font-size: 1.5rem; /* Reduced from 2.5rem to match --font-size-small */
-    margin: 0.5rem 0; /* Reduced from 0.75rem for tighter spacing */
+    font-size: 1.8rem; /* Consistent with previous artifact */
+    margin: 0.5rem 0;
 }
 
 @media (max-width: 768px) {
@@ -650,7 +651,7 @@ body:not(.user-is-tabbing) a:focus {
 
     .certifications__box {
         max-width: 100%; /* Full width on small screens */
-        margin-bottom: 1.5rem; /* Reduced from 2rem for smaller text */
+        margin-bottom: 1.5rem; /* Space between stacked entries */
     }
 
     .certifications__box:last-child {
