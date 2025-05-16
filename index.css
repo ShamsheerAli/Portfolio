@@ -739,7 +739,25 @@ body:not(.user-is-tabbing) a:focus {
         margin-bottom: 0; /* Remove bottom margin from last entry */
     }
 }
+/* --------------------------------------- */
+/* ----- Leadership ----- */
+/* --------------------------------------- */
+.leadership__boxes {
+    display: flex;
+    flex-direction: column; /* Stack entries vertically */
+    gap: var(--gutter-medium, 6rem); /* Space between entries, matching Projects */
+    padding: var(--gutter-normal, 3rem); /* Padding around the container */
+}
 
+.leadership__box {
+    max-width: 100%; /* Full width for each entry */
+}
+
+@media (max-width: 1240px) {
+    .leadership__boxes {
+        padding: var(--gutter-normal, 3rem); /* Consistent padding on smaller screens */
+    }
+}
 /* --------------------------------------- */
 /* ----- Footer ----- */
 /* --------------------------------------- */
