@@ -665,7 +665,7 @@ body:not(.user-is-tabbing) a:focus {
     display: inline-block;
     padding: 1rem 2rem;
     text-decoration: none;
-    color: var(--white);
+    color: var(--pink);
     border: 1px solid var(--pink);
     background-color: var(--pink);
     transition: all 0.2s;
