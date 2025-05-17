@@ -337,6 +337,7 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Navigation ----- */
 /* --------------------------------------- */
 
+/* Navigation */
 .nav {
     display: flex;
     justify-content: flex-end;
@@ -352,15 +353,26 @@ body:not(.user-is-tabbing) a:focus {
     margin-right: var(--gutter-medium);
 }
 
-@media(max-width: 500px) {
+@media(max-width: 768px) {
     .nav {
         justify-content: center;
+        padding: var(--gutter-small) 0;
+    }
+
+    .nav__items {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .nav__item:not(:last-child) {
+        margin-right: 0; /* Remove horizontal margin */
+        margin-bottom: var(--gutter-small); /* Add vertical spacing between items */
     }
 }
 
 @media(max-width: 400px) {
     .nav__item:not(:last-child) {
-        margin-right: var(--gutter-normal);
+        margin-bottom: var(--gutter-small-1); /* Slightly smaller vertical spacing */
     }
 }
 
