@@ -79,31 +79,27 @@ body {
 .row {
     max-width: var(--container-max-width);
     margin: 0 auto;
+    padding: 0 var(--gutter-small); /* Reduced padding to 2rem per side */
 }
 
-@media(max-width: 1340px) {
+@media(max-width: 1440px) { /* Adjusted from 1340px to account for new max-width */
     .row {
-        max-width: 1100px;
+        max-width: 1300px; /* Slightly smaller than 1400px */
     }
 }
 
 @media(max-width: 1240px) {
     .row {
-        padding: 0 var(--gutter-medium);
+        padding: 0 var(--gutter-normal); /* 3rem per side, reduced from 6rem */
     }
 }
 
 @media(max-width: 600px) {
     .row {
-        padding: 0 var(--gutter-normal);
+        padding: 0 var(--gutter-small); /* 2rem per side */
     }
 }
 
-@media(max-width: 600px) {
-    .row {
-        padding: 0 var(--gutter-small);
-    }
-}
 
 section {
     padding: var(--gutter-normal) 0 var(--gutter-medium) 0; /* Reduced top padding to 3rem, bottom to 6rem */
