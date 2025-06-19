@@ -420,12 +420,16 @@ body:not(.user-is-tabbing) a:focus {
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
+    position: relative; /* Ensure header acts as a container */
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .header__text-box {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    position: relative; /* Relative positioning for child elements */
 }
 
 .header__text {
@@ -434,6 +438,11 @@ body:not(.user-is-tabbing) a:focus {
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
+    padding: 0 var(--gutter-small); /* Add padding to prevent edge clipping */
+}
+
+.header__text h1 {
+    margin-bottom: var(--gutter-small); /* Space between title and subtitle */
 }
 
 .header__text p {
@@ -441,6 +450,7 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-medium-width);
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
+    text-align: center; /* Ensure subtitle is centered */
 }
 
 @media(max-width: 768px) {
@@ -449,6 +459,7 @@ body:not(.user-is-tabbing) a:focus {
         top: 0;
         transform: none;
         padding-top: var(--gutter-medium);
+        padding-bottom: var(--gutter-medium); /* Add bottom padding to prevent overlap with next section */
     }
     .nav {
         padding-top: var(--gutter-normal);
@@ -458,12 +469,32 @@ body:not(.user-is-tabbing) a:focus {
     }
     .header__text p {
         transform: scale(.8);
+        text-align: center; /* Reinforce centering on mobile */
+    }
+    .header {
+        height: auto; /* Adjust height to content on mobile */
+        min-height: 80vh; /* Minimum height to ensure visibility */
     }
 }
 
 @media(max-width: 500px) {
     .header {
         text-align: center;
+    }
+    .header__text p {
+        max-width: var(--container-small-width);
+    }
+}
+
+/* Ensure subsequent sections start with proper spacing */
+section {
+    padding: var(--gutter-medium) 0 var(--gutter-medium) 0; /* Increased top padding to avoid overlap */
+    border-bottom: var(--border-light);
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: var(--gutter-normal) 0 var(--gutter-normal) 0;
     }
 }
 
