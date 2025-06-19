@@ -38,7 +38,7 @@
 
     --black: #000;
     --pink: #ff3258;
-    --white: #ffffff;
+    --white: #f0e9f2; /* Reverted to old color for consistency */
     --white-1: #e5e5e6da;
 
     --container-max-width: 1400px;
@@ -102,13 +102,13 @@ body {
 }
 
 section {
-    padding: var(--gutter-medium) 0 var(--gutter-medium) 0;
+    padding: var(--gutter-normal) 0 var(--gutter-medium) 0;
     border-bottom: var(--border-light);
 }
 
 @media (max-width: 600px) {
     section {
-        padding: var(--gutter-normal) 0 var(--gutter-normal) 0;
+        padding: var(--gutter-small) 0 var(--gutter-normal) 0;
     }
 }
 
@@ -336,20 +336,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
     display: flex;
-    justify-content: center; /* Center navbar items */
-    padding: var(--gutter-small) 0; /* Reduced padding */
-    position: absolute; /* Position navbar within header */
-    top: 0;
-    left: 0; /* Ensure it starts from the left */
-    width: 100%; /* Full width */
-    z-index: 10; /* Ensure it stays above background */
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    justify-content: flex-end;
+    padding: var(--gutter-normal) 0;
 }
 
 .nav__items {
     display: flex;
     list-style: none;
-    padding: var(--gutter-small); /* Padding around nav items */
 }
 
 .nav__item:not(:last-child) {
@@ -358,16 +351,13 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(max-width: 768px) {
     .nav {
-        position: relative; /* Reset to relative for mobile */
-        padding: var(--gutter-small) 0;
         justify-content: center;
+        padding: var(--gutter-small) 0;
     }
 
     .nav__items {
         flex-direction: column;
         align-items: center;
-        padding: 0; /* Remove padding on mobile */
-        background: none; /* Remove background on mobile */
     }
 
     .nav__item:not(:last-child) {
@@ -425,36 +415,32 @@ body:not(.user-is-tabbing) a:focus {
 
 .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), url('./images/header.jpg');
-    min-height: 100vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
     position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: calc(var(--gutter-normal) + 2rem); /* Adjust padding to accommodate navbar height */
 }
 
 .header__text-box {
+    position: relative;
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 0 var(--gutter-small);
 }
 
 .header__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
     width: 100%;
 }
 
 .header__text h1 {
     margin-bottom: var(--gutter-small);
-    font-size: var(--font-size-huge);
 }
 
 .header__text p {
@@ -471,30 +457,28 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(max-width: 768px) {
     .header {
-        min-height: 80vh;
-        display: block;
-        padding-top: 0; /* Remove padding on mobile */
+        height: auto;
+        min-height: 80vh; /* Ensure minimum height on mobile */
+        text-align: center;
     }
     .header__text-box {
         height: auto;
-        padding: var(--gutter-small) 0;
+        padding: var(--gutter-small) 0 var(--gutter-medium) 0; /* Add bottom padding to prevent overlap */
     }
     .header__text {
         position: relative;
         top: 0;
         transform: none;
         padding-top: var(--gutter-small);
-        padding-bottom: var(--gutter-medium);
+    }
+    .header__text p {
+        transform: scale(.8);
     }
     .nav {
         padding-top: var(--gutter-small);
     }
     .nav__items {
-        margin-top: 0;
-    }
-    .header__text p {
-        transform: scale(.8);
-        text-align: center;
+        margin-top: var(--gutter-small);
     }
 }
 
