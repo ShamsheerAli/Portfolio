@@ -415,7 +415,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), url('./images/header.jpg');
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to allow content to determine height */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -430,10 +430,11 @@ body:not(.user-is-tabbing) a:focus {
 .header__text-box {
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    flex-direction: column; /* Stack title, subtitle, and button vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     text-align: center; /* Center all text content */
+    padding: var(--gutter-normal) 0; /* Reduce top padding to minimize gap */
 }
 
 .header__text {
@@ -443,7 +444,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text h1 {
     margin-bottom: var(--gutter-small); /* Space between title and subtitle */
-    font-size: var(--font-size-huge); /* Ensure title size is consistent */
+    font-size: var(--font-size-huge);
 }
 
 .header__text p {
@@ -451,31 +452,42 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-medium-width);
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
-    text-align: center; /* Center the subtitle */
+    text-align: center;
+}
+
+.header .btn--pink {
+    margin-top: var(--gutter-small); /* Space above the button */
+}
+
+/* Navigation adjustment to reduce gap */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--gutter-small) 0; /* Reduced padding to minimize gap */
 }
 
 @media(max-width: 768px) {
     .header {
-        height: auto;
-        min-height: 80vh;
+        min-height: 80vh; /* Adjusted for mobile */
         display: block; /* Reset to block for mobile layout */
     }
     .header__text-box {
         height: auto;
-        padding: var(--gutter-medium) 0; /* Add vertical padding for mobile */
+        padding: var(--gutter-small) 0; /* Further reduce padding on mobile */
     }
     .header__text {
         position: relative;
         top: 0;
         transform: none;
-        padding-top: var(--gutter-medium);
-        padding-bottom: var(--gutter-medium);
+        padding-top: var(--gutter-small); /* Reduced top padding */
+        padding-bottom: var(--gutter-medium); /* Ensure space below content */
     }
     .nav {
-        padding-top: var(--gutter-normal);
+        padding-top: var(--gutter-small); /* Reduced top padding for nav */
+        justify-content: center;
     }
     .nav__items {
-        margin-top: var(--gutter-small);
+        margin-top: 0; /* Remove extra margin to reduce gap */
     }
     .header__text p {
         transform: scale(.8);
@@ -489,6 +501,18 @@ body:not(.user-is-tabbing) a:focus {
     }
     .header__text p {
         max-width: var(--container-small-width);
+    }
+}
+
+/* Ensure subsequent sections start with proper spacing */
+section {
+    padding: var(--gutter-medium) 0 var(--gutter-medium) 0;
+    border-bottom: var(--border-light);
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: var(--gutter-normal) 0 var(--gutter-normal) 0;
     }
 }
 
