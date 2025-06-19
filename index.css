@@ -340,15 +340,16 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-small) 0; /* Reduced padding */
     position: absolute; /* Position navbar within header */
     top: 0;
-    width: 100%;
+    left: 0; /* Ensure it starts from the left */
+    width: 100%; /* Full width */
     z-index: 10; /* Ensure it stays above background */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
 }
 
 .nav__items {
     display: flex;
     list-style: none;
-    background: rgba(0, 0, 0, 0.7); /* Optional: Add background for readability */
-    padding: var(--gutter-small); /* Add padding around nav items */
+    padding: var(--gutter-small); /* Padding around nav items */
 }
 
 .nav__item:not(:last-child) {
@@ -434,7 +435,7 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: var(--gutter-normal); /* Add padding to accommodate navbar */
+    padding-top: calc(var(--gutter-normal) + 2rem); /* Adjust padding to accommodate navbar height */
 }
 
 .header__text-box {
@@ -503,18 +504,6 @@ body:not(.user-is-tabbing) a:focus {
     }
     .header__text p {
         max-width: var(--container-small-width);
-    }
-}
-
-/* Ensure subsequent sections start with proper spacing */
-section {
-    padding: var(--gutter-medium) 0 var(--gutter-medium) 0;
-    border-bottom: var(--border-light);
-}
-
-@media (max-width: 600px) {
-    section {
-        padding: var(--gutter-normal) 0 var(--gutter-normal) 0;
     }
 }
 
