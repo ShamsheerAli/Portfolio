@@ -421,6 +421,7 @@ body:not(.user-is-tabbing) a:focus {
     background-attachment: fixed;
     font-size: var(--font-size-normal);
     position: relative;
+    padding-top: var(--gutter-small); /* Reduced top padding to minimize gap */
 }
 
 .header__text-box {
@@ -433,23 +434,23 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text {
     position: absolute;
-    top: 50%;
+    top: 40%; /* Adjusted to bring content closer to navbar */
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
-    display: flex; /* Use flexbox to group title, subtitle, and button */
-    flex-direction: column; /* Stack them vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center the group vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0 var(--gutter-small);
 }
 
 .header__text h1 {
-    margin-bottom: var(--gutter-small-1); /* Reduced space for tighter alignment */
+    margin-bottom: var(--gutter-small-1);
 }
 
 .header__text p {
-    margin: 1rem 0 2rem; /* Adjusted margins for better vertical balance */
+    margin: 1rem 0 2rem;
     max-width: var(--container-medium-width);
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
@@ -457,7 +458,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header .btn--pink {
-    margin-top: var(--gutter-small-1); /* Reduced space above button */
+    margin-top: var(--gutter-small-1);
 }
 
 @media(max-width: 768px) {
@@ -465,6 +466,7 @@ body:not(.user-is-tabbing) a:focus {
         height: auto;
         min-height: 80vh;
         text-align: center;
+        padding-top: 0; /* Reset padding on mobile */
     }
     .header__text-box {
         height: auto;
@@ -475,7 +477,7 @@ body:not(.user-is-tabbing) a:focus {
         top: 0;
         transform: none;
         padding-top: var(--gutter-small);
-        display: block; /* Reset to block for mobile to maintain flow */
+        display: block;
     }
     .header__text h1 {
         margin-bottom: var(--gutter-small);
