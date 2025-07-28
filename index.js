@@ -1,3 +1,4 @@
+// Have focus outline only for keyboard users
 const handleFirstTab = (e) => {
   if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing');
@@ -19,7 +20,7 @@ let isBackToTopRendered = false;
 
 let alterStyles = (isBackToTopRendered) => {
   backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
-  backToTopButton.style Pat: 1 : 0;
+  backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
   backToTopButton.style.transform = isBackToTopRendered ? "scale(1)" : "scale(0)";
 };
 
@@ -57,17 +58,5 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.key === 'Escape' && modal.style.display === 'flex') {
       modal.style.display = 'none';
     }
-  });
-});
-
-// Project Hover Effect
-document.querySelectorAll('.project__box').forEach(box => {
-  box.addEventListener('mouseenter', () => {
-    box.style.transform = 'scale(1.02)';
-    box.style.boxShadow = '0 0 15px var(--neon-blue)';
-  });
-  box.addEventListener('mouseleave', () => {
-    box.style.transform = 'scale(1)';
-    box.style.boxShadow = 'none';
   });
 });
