@@ -2,22 +2,6 @@
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
 
-@font-face {
-    font-family: 'Hk Grotesk';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/HKGrotesk-Regular.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/Jost-Regular.ttf') format('truetype');
-    font-display: swap;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -31,14 +15,15 @@
     --font-size-medium-1: 3.6rem;
     --font-size-large: 5.5rem;
     --font-size-huge: 7.5rem;
-    --font-stack: 'Hk Grotesk', sans-serif;
+    --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --black: #000;
-    --pink: #ff3258;
-    --white: #f0e9f2; /* Reverted to old color for consistency */
+    --dark-bg: #1a1a2e;
+    --neon-blue: #00f0ff;
+    --neon-green: #39ff14;
+    --white: #e5e5e6;
     --white-1: #e5e5e6da;
 
     --container-max-width: 1400px;
@@ -52,11 +37,11 @@
     --gutter-small-1: 2.5rem;
     --gutter-small: 2rem;
 
-    --border-light: 1px solid rgb(36, 35, 35);
+    --border-light: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 html {
-    font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
+    font-size: 62.5%;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -73,7 +58,7 @@ body {
     font-weight: 400;
     color: var(--white-1);
     line-height: var(--line-height-normal);
-    background: var(--black);
+    background: var(--dark-bg);
     overflow-x: hidden;
 }
 
@@ -122,7 +107,7 @@ img {
 /* --------------------------------------- */
 
 h1, h2, h3 {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 400;
     line-height: var(--line-height-small);
     color: var(--white);
@@ -132,6 +117,7 @@ h1, h2, h3 {
     line-height: 1;
     font-size: var(--font-size-huge);
     font-weight: 400;
+    text-shadow: 0 0 10px var(--neon-blue);
 }
 
 @media(max-width: 900px) {
@@ -150,7 +136,7 @@ h2::after {
     display: block;
     height: 2px;
     width: 10rem;
-    background: var(--pink);
+    background: var(--neon-blue);
     margin: var(--gutter-small) 0;
 }
 
@@ -190,7 +176,7 @@ p {
 a {
     color: var(--white);
     font-weight: 400;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     transition: all .2s;
     outline: 2px solid transparent;
 }
@@ -200,7 +186,7 @@ a {
 }
 
 button:focus, a:focus {
-    outline: 2px solid var(--pink);
+    outline: 2px solid var(--neon-blue);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -209,7 +195,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-    color: var(--pink);
+    color: var(--neon-blue);
 }
 
 .btn {
@@ -217,9 +203,11 @@ body:not(.user-is-tabbing) a:focus {
     display: inline-block;
     padding: 1rem 4.2rem;
     text-decoration: none;
-    color: inherit;
-    border: 1px solid var(--pink);
+    color: var(--white);
+    border: 1px solid var(--neon-blue);
     font-weight: 400;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px var(--neon-blue);
 }
 
 .btn:focus {
@@ -242,21 +230,24 @@ body:not(.user-is-tabbing) a:focus {
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
-    background: var(--pink);
+    background: var(--neon-blue);
 }
 
-.btn--pink {
-    background: var(--pink);
-    transition: all 0.2s;
+.btn--neon {
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+    transition: all 0.3s;
 }
 
-.btn--pink::after {
+.btn--neon::after {
     display: none;
 }
 
-.btn--pink:hover,
-.btn--pink:focus {
+.btn--neon:hover,
+.btn--neon:focus {
     background: transparent;
+    box-shadow: none;
+    color: var(--neon-blue);
 }
 
 .link__text {
@@ -265,7 +256,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: .6rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid var(--pink);
+    border-bottom: 1px solid var(--neon-blue);
 }
 
 .link__text::after {
@@ -288,7 +279,7 @@ body:not(.user-is-tabbing) a:focus {
 .link__text:hover::after,
 .link__text:focus:after {
     right: 0;
-    background: var(--pink);
+    background: var(--neon-blue);
 }
 
 .link__text span {
@@ -307,8 +298,9 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     height: 5.5rem;
     width: 5.5rem;
-    background-color: var(--pink);
+    background-color: var(--neon-blue);
     border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-blue);
     z-index: 10;
     visibility: hidden;
     transition: all .4s;
@@ -385,6 +377,7 @@ body:not(.user-is-tabbing) a:focus {
     text-decoration: none;
     color: inherit;
     transition: all .2s;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .nav__link::after {
@@ -400,13 +393,14 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link:hover {
-    color: var(--pink);
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
 }
 
 .nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: var(--pink);
+    background: var(--neon-blue);
 }
 
 /* --------------------------------------- */
@@ -414,14 +408,14 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), url('./images/header.jpg');
+    background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .7)), url('https://via.placeholder.com/1920x1080?text=Game+Scene');
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
     position: relative;
-    padding-top: var(--gutter-small); /* Reduced top padding to minimize gap */
+    padding-top: var(--gutter-small);
 }
 
 .header__text-box {
@@ -434,7 +428,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text {
     position: absolute;
-    top: 40%; /* Adjusted to bring content closer to navbar */
+    top: 40%;
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
@@ -452,12 +446,13 @@ body:not(.user-is-tabbing) a:focus {
 .header__text p {
     margin: 1rem 0 2rem;
     max-width: var(--container-medium-width);
-    font-family: 'Jost', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: var(--font-size-medium);
     text-align: center;
+    text-shadow: 0 0 5px var(--neon-blue);
 }
 
-.header .btn--pink {
+.header .btn--neon {
     margin-top: var(--gutter-small-1);
 }
 
@@ -466,7 +461,7 @@ body:not(.user-is-tabbing) a:focus {
         height: auto;
         min-height: 80vh;
         text-align: center;
-        padding-top: 0; /* Reset padding on mobile */
+        padding-top: 0;
     }
     .header__text-box {
         height: auto;
@@ -486,7 +481,7 @@ body:not(.user-is-tabbing) a:focus {
         margin: 1.5rem 0 3.5rem;
         transform: scale(.8);
     }
-    .header .btn--pink {
+    .header .btn--neon {
         margin-top: var(--gutter-small);
     }
     .nav {
@@ -505,6 +500,7 @@ body:not(.user-is-tabbing) a:focus {
         max-width: var(--container-small-width);
     }
 }
+
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
@@ -553,6 +549,39 @@ body:not(.user-is-tabbing) a:focus {
 
 .project__box {
     max-width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--neon-blue);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.project__box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.project__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter-normal);
+    align-items: center;
+    padding: var(--gutter-normal);
+}
+
+.project__media {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+@media (max-width: 768px) {
+    .project__content {
+        grid-template-columns: 1fr;
+    }
+    .project__media {
+        max-height: 200px;
+    }
 }
 
 @media (max-width: 1240px) {
@@ -670,9 +699,9 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .modal__content {
-    background-color: var(--black);
+    background-color: var(--dark-bg);
     padding: var(--gutter-normal);
-    border: 1px solid var(--pink);
+    border: 1px solid var(--neon-blue);
     border-radius: 8px;
     max-width: 600px;
     width: 90%;
@@ -691,11 +720,11 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .modal__close:hover {
-    color: var(--pink);
+    color: var(--neon-blue);
 }
 
 .modal__title {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: var(--font-size-medium-1);
     color: var(--white);
     margin-bottom: var(--gutter-normal);
@@ -712,26 +741,42 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 2rem;
     text-decoration: none;
     color: var(--white);
-    border: 1px solid var(--pink);
-    background-color: var(--pink);
+    border: 1px solid var(--neon-blue);
+    background-color: var(--neon-blue);
     transition: all 0.2s;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: var(--font-size-small);
     flex: 1;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.modal__btn--xr {
+    background-color: var(--neon-green);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.modal__btn--xr:hover,
+.modal__btn--xr:focus {
+    background-color: transparent;
+    color: var(--neon-green);
+    box-shadow: none;
 }
 
 .modal__btn:hover,
 .modal__btn:focus {
     background-color: transparent;
-    color: var(--pink);
+    color: var(--neon-blue);
+    box-shadow: none;
 }
 
 #resumeBtn.btn {
-    background-color: var(--pink);
+    background-color: var(--neon-blue);
     color: var(--white);
     padding: 1rem 2rem;
     font-size: var(--font-size-small);
     transition: all 0.2s;
+    box-shadow: 0 0 10px var(--neon-blue);
 }
 
 #resumeBtn.btn::after {
@@ -741,7 +786,8 @@ body:not(.user-is-tabbing) a:focus {
 #resumeBtn.btn:hover,
 #resumeBtn.btn:focus {
     background-color: transparent;
-    color: var(--pink);
+    color: var(--neon-blue);
+    box-shadow: none;
 }
 
 @media (max-width: 768px) {
@@ -861,6 +907,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .footer__social-image {
     height: 4rem;
+    filter: drop-shadow(0 0 5px var(--neon-blue));
 }
 
 @media(max-width: 500px) {
