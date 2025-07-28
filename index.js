@@ -1,3 +1,4 @@
+// Have focus outline only for keyboard users
 const handleFirstTab = (e) => {
   if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing');
@@ -31,4 +32,31 @@ window.addEventListener("scroll", () => {
     isBackToTopRendered = false;
     alterStyles(isBackToTopRendered);
   }
+});
+
+// Modal Functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const resumeBtn = document.getElementById('resumeBtn');
+  const modal = document.getElementById('resumeModal');
+  const closeModal = document.getElementById('closeModal');
+
+  resumeBtn.addEventListener('click', function () {
+    modal.style.display = 'flex';
+  });
+
+  closeModal.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && modal.style.display === 'flex') {
+      modal.style.display = 'none';
+    }
+  });
 });

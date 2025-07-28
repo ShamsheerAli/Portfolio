@@ -38,7 +38,7 @@
 
     --black: #000;
     --pink: #ff3258;
-    --white: #f0e9f2;
+    --white: #f0e9f2; /* Reverted to old color for consistency */
     --white-1: #e5e5e6da;
 
     --container-max-width: 1400px;
@@ -56,7 +56,7 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -421,7 +421,7 @@ body:not(.user-is-tabbing) a:focus {
     background-attachment: fixed;
     font-size: var(--font-size-normal);
     position: relative;
-    padding-top: var(--gutter-small);
+    padding-top: var(--gutter-small); /* Reduced top padding to minimize gap */
 }
 
 .header__text-box {
@@ -434,7 +434,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text {
     position: absolute;
-    top: 40%;
+    top: 40%; /* Adjusted to bring content closer to navbar */
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
@@ -466,7 +466,7 @@ body:not(.user-is-tabbing) a:focus {
         height: auto;
         min-height: 80vh;
         text-align: center;
-        padding-top: 0;
+        padding-top: 0; /* Reset padding on mobile */
     }
     .header__text-box {
         height: auto;
@@ -505,7 +505,6 @@ body:not(.user-is-tabbing) a:focus {
         max-width: var(--container-small-width);
     }
 }
-
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
@@ -554,32 +553,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .project__box {
     max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gutter-normal);
-    align-items: start;
-}
-
-.project__media {
-    max-width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--pink);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project__media:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px var(--pink);
-}
-
-@media (max-width: 768px) {
-    .project__box {
-        grid-template-columns: 1fr;
-        gap: var(--gutter-small);
-    }
-    .project__media {
-        max-height: 200px;
-    }
 }
 
 @media (max-width: 1240px) {
