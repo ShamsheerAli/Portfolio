@@ -8,15 +8,15 @@
 
   <title>Shamsheer Ali Shaik Portfolio</title>
 
-  <meta name="description" content="Portfolio of Shamsheer Ali Shaik, a Generative AI Engineer and Software Developer specializing in AI, web development, and XR solutions." />
-  <meta name="keywords" content="Shamsheer Ali Shaik, Generative AI, Machine Learning, Web Development, Software Development, Unity, Python, JavaScript, AWS" />
+  <meta name="description" content="Portfolio of Shamsheer Ali Shaik, a Unity and XR Developer specializing in immersive game experiences, AI, and software development." />
+  <meta name="keywords" content="Shamsheer Ali Shaik, Unity Developer, XR Development, Game Design, ARCore, VR Development, C# Programming, AI, Web Development" />
   <link rel="stylesheet" href="index.css" />
-  <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
-  <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
   <header class="header" role="banner" id="top">
     <div class="row">
       <nav class="nav" role="navigation">
@@ -39,13 +39,12 @@
           <span>Shamsheer Ali Shaik</span>
         </h1>
         <p>Aspiring XR & Unity Developer | Crafting Immersive Experiences with a Foundation in AI and Software Engineering</p>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
+        <a href="#contact" class="btn btn--neon">Get in touch</a>
       </div>
     </div>
   </header>
 
   <main role="main">
-
     <section class="work" id="work" role="region" aria-label="Work Experience">
       <div class="row">
         <h2>My Work</h2>
@@ -100,73 +99,89 @@
         </div>
       </div>
     </section>
-    <section class="project" id="xr-projects" role="region" aria-label="XR and Game Projects">
-  <div class="row">
-    <h2>XR & Game Projects</h2>
-    <div class="project__boxes">
-      <div class="project__box">
-        <div class="work__text">
-          <h3>Star Lander Game</h3>
-          <p>• Developed Star Lander, a 2D space navigation game using Unity and C#, featuring physics-based rocket movement, dynamic obstacles, and level based progression. </p>
-          <p>• Implemented player controls for thrusting and rotation, collision handling with audio-visual feedback, and a UI system with a rules pop-up and persistent level display. </p>
-          <p>• Designed modular scripts to manage scene transitions, input systems, and particle effects, ensuring a polished and engaging player experience.</p>
-          <p>• Check out my game here: <a href="https://play.unity.com/en/games/c455aca8-bf60-4c73-86d4-495e8df60446/star-lander" target="_blank">Project Link</a></p>
-          <ul class="work__list">
-            <li>Tools & skills used: Unity, C#, Physics-Based Programming, UI/UX Design, Unity Input System, Scene Management, Particle Systems, Audio Integration, Object-Oriented Programming, Debugging</li>
-          </ul>
+
+    <section class="project" id="xr-projects" role="region" aria-label="XR and Unity Projects">
+      <div class="row">
+        <h2>XR & Unity Projects</h2>
+        <div class="project__boxes">
+          <div class="project__box">
+            <div class="project__content">
+              <div class="work__text">
+                <h3>Star Lander Game</h3>
+                <p>• Developed Star Lander, a 2D space navigation game using Unity and C#, featuring physics-based rocket movement, dynamic obstacles, and level-based progression.</p>
+                <p>• Implemented player controls for thrusting and rotation, collision handling with audio-visual feedback, and a UI system with a rules pop-up and persistent level display.</p>
+                <p>• Designed modular scripts to manage scene transitions, input systems, and particle effects, ensuring a polished and engaging player experience.</p>
+                <p>• Check out my game here: <a href="https://play.unity.com/en/games/c455aca8-bf60-4c73-86d4-495e8df60446/star-lander" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>Tools & skills used: Unity, C#, Physics-Based Programming, UI/UX Design, Unity Input System, Scene Management, Particle Systems, Audio Integration, Object-Oriented Programming, Debugging</li>
+                </ul>
+              </div>
+              <img class="project__media" src="path-to-star-lander.jpg" alt="Star Lander Gameplay Screenshot" loading="lazy" />
+            </div>
+          </div>
+          <div class="project__box">
+            <div class="project__content">
+              <div class="work__text">
+                <h3>Snap & Translate: The Language Playground</h3>
+                <p>• Engineered a mobile application using Unity and C# that captures images via the mobile camera, identifies objects in real-time using Google Vision API, and labels each with its name, processing up to 60 images per minute.</p>
+                <p>• Launched an innovative solution utilizing the Google Translate API for translating visual content descriptions automatically into target languages; reduced manual input time by approximately three hours weekly during project development phases.</p>
+                <p>• Check out my project details here: <a href="https://drive.google.com/drive/folders/15ze2n-t4Ya0DzLDO-ooEgldgk8qLLTup" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>Tools & skills used: Unity, C#, Google Vision API, Google Translate API</li>
+                </ul>
+              </div>
+              <img class="project__media" src="path-to-snap-translate.jpg" alt="Snap & Translate AR Application Screenshot" loading="lazy" />
+            </div>
+          </div>
+          <div class="project__box">
+            <div class="project__content">
+              <div class="work__text">
+                <h3>Obstacle Dodge</h3>
+                <p>• Developed a Unity-based mini game featuring a player-controlled character with real-time camera tracking, navigating through a dynamic obstacle course with spinning, dropping, and projectile hazards.</p>
+                <p>• Implemented collision detection and a hit counter system to track player interactions with obstacles, enhancing gameplay feedback and challenge.</p>
+                <p>• Revitalized core game development skills, including movement mechanics and object dynamics, through iterative testing and refinement over multiple playthroughs.</p>
+                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Obstacle-Dodge" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>Tools & skills used: Unity, C#, Physics Simulation, Collision Detection, Hit counter system</li>
+                </ul>
+              </div>
+              <img class="project__media" src="path-to-obstacle-dodge.jpg" alt="Obstacle Dodge Gameplay Screenshot" loading="lazy" />
+            </div>
+          </div>
+          <div class="project__box">
+            <div class="project__content">
+              <div class="work__text">
+                <h3>Augmented Reality Dragon (AR)</h3>
+                <p>• Engineered a mobile Augmented Reality application in Unity that utilizes the device's camera to recognize a predefined target image in real-time.</p>
+                <p>• Implemented marker-based image tracking to overlay and render an interactive, animated 3D dragon model onto the real-world environment.</p>
+                <p>• Developed intuitive user controls by integrating a virtual joystick to allow for real-time manipulation and interaction with the 3D object.</p>
+                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Augmented-Reality-Dragon-AR" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>Tools & skills used: Unity, C#, ARCore</li>
+                </ul>
+              </div>
+              <img class="project__media" src="path-to-ar-dragon.jpg" alt="Augmented Reality Dragon Screenshot" loading="lazy" />
+            </div>
+          </div>
+          <div class="project__box">
+            <div class="project__content">
+              <div class="work__text">
+                <h3>Extended Reality Building Simulation (VR)</h3>
+                <p>• Developed a dynamic, physics-based simulation in Unity and C# to visualize the assembly and demolition of a complex structure.</p>
+                <p>• Engineered the core mechanics by scripting sequential animations and object hierarchies, and implemented robust collision detection that triggered realistic physics-based responses upon impact.</p>
+                <p>• Enhanced user experience by integrating multiple camera systems and a voiceover introduction to create engaging, multi-perspective educational content.</p>
+                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Extended-Reality-Building-Simulation-VR" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>Tools & skills used: Unity, C#, Physics Simulation</li>
+                </ul>
+              </div>
+              <img class="project__media" src="path-to-building-simulation.jpg" alt="Extended Reality Building Simulation Screenshot" loading="lazy" />
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div class="project__box">
-        <div class="work__text">
-          <h3>Snap & Translate: The Language Playground</h3>
-          <p>• Engineered a mobile application using Unity and C# that captures images via the mobile camera, identifies objects in real-time using Google Vision API, and labels each with its name, processing up to 60 images per minute.</p>
-          <p>• Launched an innovative solution utilizing the Google Translate API for translating visual content descriptions automatically into target languages; reduced manual input time by approximately three hours weekly during project development phases.</p>
-          <p>• Check out my project details here: <a href="https://drive.google.com/drive/folders/15ze2n-t4Ya0DzLDO-ooEgldgk8qLLTup" target="_blank">Project Link</a></p>
-          <ul class="work__list">
-            <li>Tools & skills used: Unity, C#, Google Vision API, Google Translate API</li>
-          </ul>
-        </div>
-      </div>
-      <div class="project__box">
-        <div class="work__text">
-          <h3>Obstacle Dodge</h3>
-          <p>• Developed a Unity-based mini game featuring a player-controlled character with real-time camera tracking, navigating through a dynamic obstacle course with spinning, dropping, and projectile hazards.</p>
-          <p>• Implemented collision detection and a hit counter system to track player interactions with obstacles, enhancing gameplay feedback and challenge.</p>
-          <p>• Revitalized core game development skills, including movement mechanics and object dynamics, through iterative testing and refinement over multiple playthroughs.</p>
-          <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Obstacle-Dodge" target="_blank">Project Link</a></p>
-          <ul class="work__list">
-            <li>Tools & skills used: Unity, C#, Physics Simulation, Collision Detection, Hit counter system</li>
-          </ul>
-        </div>
-      </div>
-      <div class="project__box">
-        <div class="work__text">
-          <h3>Augmented Reality Dragon (AR)</h3>
-          <p>• Engineered a mobile Augmented Reality application in Unity that utilizes the device's camera to recognize a predefined target image in real-time.</p>
-          <p>• Implemented marker-based image tracking to overlay and render an interactive, animated 3D dragon model onto the real-world environment.</p>
-          <p>• Developed intuitive user controls by integrating a virtual joystick to allow for real-time manipulation and interaction with the 3D object.</p>
-          <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Augmented-Reality-Dragon-AR" target="_blank">Project Link</a></p>
-          <ul class="work__list">
-            <li>Tools & skills used: Unity, C#, ARCore</li>
-          </ul>
-        </div>
-      </div>
-      <div class="project__box">
-        <div class="work__text">
-          <h3>Extended Reality Building Simulation (VR)</h3>
-          <p>• Developed a dynamic, physics-based simulation in Unity and C# to visualize the assembly and demolition of a complex structure.</p>
-          <p>• Engineered the core mechanics by scripting sequential animations and object hierarchies, and implemented robust collision detection that triggered realistic physics-based responses upon impact.</p>
-          <p>• Enhanced user experience by integrating multiple camera systems and a voiceover introduction to create engaging, multi-perspective educational content.</p>
-          <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Extended-Reality-Building-Simulation-VR" target="_blank">Project Link</a></p>
-          <ul class="work__list">
-            <li>Tools & skills used: Unity, C#, Physics Simulation</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+
     <section class="project" id="ai-ml-projects" role="region" aria-label="AI and ML Projects">
       <div class="row">
         <h2>AI and ML Projects</h2>
@@ -280,12 +295,12 @@
         <div class="about__content">
           <div class="about__text">
             <p>
-              I’m Shamsheer Ali Shaik, a Master’s student in Computer and Information Sciences at Oklahoma State University, with a strong foundation in software development and AI innovation. My portfolio highlights impactful projects like Snap & Translate, a real-time image recognition and translation app built with Unity and Google APIs, FinWiseAI, an AI-driven financial advisor leveraging FastAPI and market sentiment analysis, and GenInsight, a generative AI web app for news trend analysis using Python and LangChain. With professional experience as a Video Game Development & Database Mentor, Web Developer, and Machine Learning Intern, I’ve optimized web performance by 30%, enhanced ML model accuracy by 15%, and streamlined project management, saving over 20 hours per semester. Proficient in Python, JavaScript, C#, SQL, AWS, and frameworks like TensorFlow and Streamlit, I build scalable, user-focused solutions. Explore my work to see my blend of technical expertise, creativity, and problem-solving in action!
+              I’m Shamsheer Ali Shaik, a Master’s student in Computer and Information Sciences at Oklahoma State University, with a passion for crafting immersive XR and game experiences using Unity. My portfolio showcases projects like Star Lander, a physics-based 2D game, and an AR Dragon application built with ARCore. With professional experience as a Video Game Development & Database Mentor, Web Developer, and Machine Learning Intern, I’ve optimized web performance by 30%, enhanced ML model accuracy by 15%, and streamlined project management, saving over 20 hours per semester. Proficient in Unity, C#, ARCore, Python, JavaScript, and AWS, I build scalable, user-focused solutions. Explore my work to see my blend of technical expertise, creativity, and problem-solving in action!
             </p>
-            <button id="resumeBtn" class="btn">My Resume</button>
+            <button id="resumeBtn" class="btn btn--neon" aria-label="View Shamsheer's Resumes">My Resume</button>
           </div>
           <div class="about__photo-container">
-            <img class="about__photo" src="./images/MyPic.jpg" alt="Portrait of Shamsheer Ali Shaik" loading="lazy" />
+            <img class="about__photo" src="./images/MyPic.jpg" alt="Shamsheer Ali Shaik, Unity and XR Developer" loading="lazy" />
           </div>
         </div>
       </div>
@@ -302,34 +317,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const resumeBtn = document.getElementById('resumeBtn');
-        const modal = document.getElementById('resumeModal');
-        const closeModal = document.getElementById('closeModal');
-
-        resumeBtn.addEventListener('click', function () {
-          modal.style.display = 'flex';
-        });
-
-        closeModal.addEventListener('click', function () {
-          modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', function (event) {
-          if (event.target === modal) {
-            modal.style.display = 'none';
-          }
-        });
-
-        window.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape' && modal.style.display === 'flex') {
-            modal.style.display = 'none';
-          }
-        });
-      });
-    </script>
   </main>
 
   <section class="certifications" id="certifications" role="region" aria-label="Certifications">
@@ -398,9 +385,9 @@
       <h2>Get in Touch</h2>
       <div class="contact__info">
         <p>
-          Want to ask questions? or have some advice for me or just want to say "Hi 👋" in any case feel free to Let me know. 😊 The quickest way to reach out to me is via an email.
+          Want to collaborate on a game project, discuss XR development, or just say "Hi 👋"? Feel free to reach out! The quickest way to contact me is via email.
         </p>
-        <a href="mailto:shamsheeralissa@gmail.com" class="btn">Email</a>
+        <a href="mailto:shamsheeralissa@gmail.com" class="btn btn--neon">Email</a>
       </div>
     </div>
   </section>
