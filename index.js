@@ -84,34 +84,51 @@ function initCollapsibles() {
 
     // Only proceed if a heading and text block exist
     if (!trigger || !workText) {
+      console.warn('Card missing trigger (h3) or work__text:', card); // Added warning
       return;
     }
 
     // Get all content *except* the h3
     const contentElements = Array.from(workText.children).filter(child => child.tagName !== 'H3');
-    
+
     // If no content, don't make it collapsible
     if (contentElements.length === 0) {
+      // Don't add trigger class or arrow if not collapsible
       return;
     }
 
     // Create a wrapper for the content
     const contentWrapper = document.createElement('div');
     contentWrapper.className = 'collapsible-content';
-    
+
     // Move all content elements into the wrapper
     contentElements.forEach(el => contentWrapper.appendChild(el));
-    
+
     // Put the wrapper back into the .work__text
     workText.appendChild(contentWrapper);
 
     // Add the arrow to the trigger
     trigger.classList.add('collapsible-trigger');
-    trigger.innerHTML += ' <span class="collapsible-arrow">▼</span>';
+    // Check if arrow already exists to prevent duplicates on potential re-runs
+    if (!trigger.querySelector('.collapsible-arrow')) {
+        trigger.innerHTML += ' <span class="collapsible-arrow">▼</span>';
+    }
+
 
     // Add click event to the trigger (the h3)
-    trigger.addEventListener('click', () => {
-      card.classList.toggle('active');
+    trigger.addEventListener('click', (event) => {
+      // --- ADDED DIAGNOSTIC LOG ---
+      console.log("Clicked trigger:", trigger.innerText.split('\n')[0]); // Log the heading text
+      
+      // Toggle the active class ONLY on the parent card of the clicked trigger
+      const clickedCard = event.currentTarget.closest('.work__box, .project__box, .leadership__box');
+      if (clickedCard) {
+        clickedCard.classList.toggle('active');
+      } else {
+        console.error("Couldn't find parent card for clicked trigger:", event.currentTarget);
+      }
+      // --- END OF DIAGNOSTIC LOG ---
     });
   });
 }
+
