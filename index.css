@@ -24,60 +24,79 @@
   box-sizing: inherit;
 }
 
+/* ---------------------------------------
+  ----- NEW: ADAPTIVE COLOR PALETTE -----
+  ---------------------------------------
+*/
 :root {
-  /* --- NEW: Modernized Font Sizes --- */
-  --font-size-small: 1.6rem; /* Slightly smaller for cleaner UI */
+  /* Define fonts, sizes, and layout vars */
+  --font-size-small: 1.6rem;
   --font-size-normal: 2.0rem;
   --font-size-medium: 2.4rem;
   --font-size-medium-1: 3.2rem;
   --font-size-large: 4.8rem;
-  --font-size-huge: 6.4rem; /* Adjusted for better scale */
+  --font-size-huge: 6.4rem;
   --font-stack: 'Hk Grotesk', sans-serif;
 
   --line-height-normal: 1.7;
   --line-height-small: 1.2;
 
-  /* --- NEW: "Fun" UX-Friendly Dark Palette --- */
-  --bg-dark: #121212;         /* Main background */
-  --bg-light: #1D1D1D;       /* Card background */
-  --border-color: #333333;    /* Card borders */
-  --text-primary: #F0F0F0;     /* Primary text (brighter) */
-  --text-secondary: #AAAAAA;   /* Secondary text (skills, etc.) */
-  --text-headings: #FFFFFF;    /* Main headings */
-  --accent-primary: #FF32A8;   /* Fun, vibrant pink */
-  --accent-secondary: #00F2A9; /* Fun, minty teal */
-
-  /* --- Renamed old vars to new palette --- */
-  --black: var(--bg-dark);
-  --pink: var(--accent-primary);
-  --white: var(--text-headings);
-  --white-1: var(--text-primary);
-
-  --container-max-width: 1200px; /* Constrained for readability */
-  --container-normal-width: 800px;
-  --container-medium-width: 700px;
-  --container-small-width: 500px;
-
+  --container-max-width: 1200px;
   --gutter-huge: 10rem;
   --gutter-medium: 5rem;
   --gutter-normal: 3rem;
   --gutter-small-1: 2.5rem;
   --gutter-small: 2rem;
 
-  --border-light: 1px solid var(--border-color);
-  --card-radius: 12px; /* NEW: Rounded corners for cards */
-  --btn-radius: 30px;  /* NEW: Rounded pills for buttons */
+  --card-radius: 12px;
+  --btn-radius: 30px;
+
+  /* --- Default to Light Mode Palette --- */
+  --bg-main: #F4F7F9;         /* Very light grey background */
+  --bg-card: #FFFFFF;         /* White cards */
+  --border-color: #E0E0E0;    /* Light grey borders */
+  --text-headings: #1A202C;    /* Dark navy for headings */
+  --text-primary: #2D3748;      /* Dark grey for text */
+  --text-secondary: #718096;   /* Lighter grey for secondary text */
+  --accent: #005B9A;           /* Professional, subtle blue */
+  --accent-light: #E6F0F6;     /* Very light blue for pills/hovers */
+  --accent-text: #005B9A;      /* Text color on light backgrounds */
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --- Dark Mode Palette --- */
+    --bg-main: #121212;         /* Very dark grey background */
+    --bg-card: #1D1D1D;         /* Slightly lighter card */
+    --border-color: #333333;    /* Dark border */
+    --text-headings: #FFFFFF;     /* White headings */
+    --text-primary: #F0F0F0;      /* Light grey text */
+    --text-secondary: #AAAAAA;    /* Medium grey secondary text */
+    --accent: #38A1F3;            /* A brighter, accessible blue for dark mode */
+    --accent-light: #253343;      /* Dark blue for pills/hovers */
+    --accent-text: #38A1F3;       /* Text color on dark backgrounds */
+  }
+}
+
+/* --- Old variables mapped to new theme --- */
+:root {
+  --black: var(--bg-main); /* Mapped to main bg */
+  --pink: var(--accent); /* Mapped to main accent */
+  --white: var(--text-headings);
+  --white-1: var(--text-primary);
+  --border-light: 1px solid var(--border-color);
+}
+
+
 html {
-  font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
+  font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-@media (max-width: 1000px) {
+@media(max-width: 1000px) {
   html {
-    font-size: 56%; /* Adjusted for better mobile scaling */
+    font-size: 56%;
   }
 }
 
@@ -85,10 +104,11 @@ body {
   font-size: var(--font-size-small);
   font-family: var(--font-stack);
   font-weight: 400;
-  color: var(--text-primary); /* NEW: Brighter text */
+  color: var(--text-primary);
   line-height: var(--line-height-normal);
-  background: var(--bg-dark);
+  background: var(--bg-main);
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth theme transition */
 }
 
 .row {
@@ -97,25 +117,24 @@ body {
   padding: 0 var(--gutter-small);
 }
 
-/* Media queries for .row are fine, no change needed */
-@media (max-width: 1440px) {
+@media(max-width: 1440px) {
   .row {
     max-width: 1300px;
   }
 }
-@media (max-width: 1240px) {
+@media(max-width: 1240px) {
   .row {
     padding: 0 var(--gutter-normal);
   }
 }
-@media (max-width: 600px) {
+@media(max-width: 600px) {
   .row {
     padding: 0 var(--gutter-small);
   }
 }
 
 section {
-  padding: var(--gutter-medium) 0; /* Consistent padding */
+  padding: var(--gutter-medium) 0;
   border-bottom: var(--border-light);
 }
 
@@ -134,9 +153,7 @@ img {
 /* ----- Headlines and Paragraphs ----- */
 /* --------------------------------------- */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: 'Jost', sans-serif;
   font-weight: 400;
   line-height: var(--line-height-small);
@@ -144,25 +161,17 @@ h3 {
 }
 
 .heading-primary {
-  line-height: 1.1; /* Tighter line height */
+  line-height: 1.1;
   font-size: var(--font-size-huge);
   font-weight: 400;
 }
 
-/* --- NEW: Fun gradient text for your name --- */
+/* --- NEW: Subtle accent color for name --- */
 .heading-primary span {
-  background: linear-gradient(
-    90deg,
-    var(--accent-secondary),
-    var(--accent-primary)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  color: var(--accent);
 }
 
-@media (max-width: 900px) {
+@media(max-width: 900px) {
   .heading-primary {
     font-size: 6rem;
   }
@@ -173,23 +182,23 @@ h2 {
   margin-bottom: var(--gutter-medium);
 }
 
-/* --- NEW: Using secondary accent for underline --- */
+/* --- NEW: Underline uses accent color --- */
 h2::after {
   content: '';
   display: block;
-  height: 3px; /* Bolder underline */
+  height: 3px;
   width: 10rem;
-  background: var(--accent-secondary); /* NEW: Teal accent */
+  background: var(--accent); /* Use main accent */
   margin: var(--gutter-small) 0;
 }
 
 h3 {
   font-size: var(--font-size-medium-1);
   margin-bottom: var(--gutter-small);
-  color: var(--text-headings); /* Make sure card titles are bright */
+  color: var(--text-headings);
 }
 
-@media (max-width: 500px) {
+@media(max-width: 500px) {
   .heading-primary {
     font-size: var(--font-size-large);
   }
@@ -203,11 +212,11 @@ h3 {
 
 p {
   margin: var(--gutter-small-1) 0;
-  color: var(--text-primary); /* Brighter default text */
+  color: var(--text-primary);
 }
 
-@media (max-width: 900px) {
-  p {
+@media(max-width: 900px) {
+  p { 
     max-width: var(--container-small-width);
   }
 }
@@ -217,10 +226,10 @@ p {
 /* --------------------------------------- */
 
 a {
-  color: var(--white);
+  color: var(--accent); /* Links use accent color */
   font-weight: 400;
   font-family: 'Jost', sans-serif;
-  transition: all 0.2s;
+  transition: all .2s;
   outline: 2px solid transparent;
 }
 
@@ -228,9 +237,8 @@ a {
   border: 0;
 }
 
-button:focus,
-a:focus {
-  outline: 2px solid var(--pink);
+button:focus, a:focus {
+  outline: 2px solid var(--accent);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -239,19 +247,20 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-  color: var(--pink);
+  filter: brightness(1.2); /* Brighten accent on hover */
 }
 
 .btn {
   position: relative;
   display: inline-block;
-  padding: 1.2rem 4.5rem; /* More padding */
+  padding: 1.2rem 4.5rem;
   text-decoration: none;
-  color: inherit;
-  border: 1px solid var(--pink);
+  color: var(--text-headings); /* Use heading color for contrast */
+  border: 1px solid var(--accent);
   font-weight: 400;
-  border-radius: var(--btn-radius); /* NEW: Pill shape */
-  overflow: hidden; /* NEW: contain the ::after */
+  border-radius: var(--btn-radius);
+  overflow: hidden;
+  z-index: 1; /* Ensure text is above ::after */
 }
 
 .btn:focus {
@@ -265,23 +274,27 @@ body:not(.user-is-tabbing) a:focus {
   top: 0;
   left: 0;
   right: 100%;
-  background: var(--pink); /* Solid pink */
+  background: var(--accent);
   height: 100%;
   z-index: -1;
-  transition: all 0.3s ease; /* NEW: Smoother transition */
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+    color: var(--bg-card); /* Change text color on hover to contrast with accent */
 }
 
 .btn:hover::after,
 .btn:focus::after {
   right: 0;
-  background: var(--pink);
 }
 
 /* Main CTA button */
 .btn--pink {
-  background: var(--pink);
+  background: var(--accent);
   transition: all 0.2s;
   border-radius: var(--btn-radius);
+  color: var(--bg-card); /* High contrast text on solid button */
 }
 
 .btn--pink::after {
@@ -291,22 +304,23 @@ body:not(.user-is-tabbing) a:focus {
 .btn--pink:hover,
 .btn--pink:focus {
   background: transparent;
-  transform: scale(1.05); /* NEW: Add a little "pop" */
+  color: var(--accent); /* Text color reverts on hover */
+  transform: scale(1.05);
+  border-color: var(--accent);
 }
 
-/* --- NEW: Simplified link, more UX-friendly --- */
+/* Project/Cert links */
 .link__text {
   position: relative;
   display: inline-block;
   padding: 0.2rem;
-  color: var(--accent-secondary); /* NEW: Teal link */
+  color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-secondary);
+  border-bottom: 1px solid var(--accent);
   transition: all 0.2s ease;
 }
 
 .link__text::after {
-  /* Removed the blocky hover effect */
   display: none;
 }
 
@@ -316,9 +330,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .link__text:hover,
 .link__text:focus {
-  background: rgba(0, 242, 169, 0.1); /* NEW: Subtle teal bg on hover */
+  background: var(--accent-light);
   border-bottom-color: transparent;
-  color: var(--accent-secondary);
+  color: var(--accent-text);
 }
 
 .link__text span {
@@ -327,7 +341,6 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* ----- Back to Top ----- */
-/* This section is fine, no changes needed */
 .back-to-top {
   position: fixed;
   bottom: 4rem;
@@ -337,21 +350,22 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
   height: 5.5rem;
   width: 5.5rem;
-  background-color: var(--pink);
+  background-color: var(--accent);
   border-radius: 50%;
   z-index: 10;
   visibility: hidden;
-  transition: all 0.4s;
+  transition: all .4s;
 }
 .back-to-top__image {
   height: 70%;
+  /* Assuming arrow-up.svg is white or light-colored */
 }
-@media (max-width: 900px) {
+@media(max-width: 900px) {
   .back-to-top {
     right: 2rem;
   }
 }
-@media (max-width: 500px) {
+@media(max-width: 500px) {
   .back-to-top {
     right: 1rem;
   }
@@ -369,26 +383,26 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__items {
   display: flex;
-  flex-wrap: wrap; /* NEW: Allow nav to wrap on smaller screens */
-  justify-content: center; /* Center items when wrapping */
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
 }
 
 .nav__item:not(:last-child) {
-  margin-right: var(--gutter-small); /* Reduced margin */
+  margin-right: var(--gutter-small);
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   .nav {
     justify-content: center;
     padding: var(--gutter-small) 0;
   }
   .nav__items {
-    flex-direction: row; /* Keep as row but allow wrapping */
+    flex-direction: row;
     align-items: center;
   }
   .nav__item {
-    margin: 0.5rem; /* Use margin for spacing */
+    margin: 0.5rem;
   }
   .nav__item:not(:last-child) {
     margin-right: 0.5rem;
@@ -396,25 +410,23 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-/* --- NEW: Modern "Pill" style nav links --- */
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 1rem 1.5rem; /* Padding for pill shape */
+  padding: 1rem 1.5rem;
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s ease;
-  border-radius: var(--btn-radius); /* Rounded */
+  border-radius: var(--btn-radius);
 }
 
 .nav__link::after {
-  /* Removed the old underline hover effect */
   display: none;
 }
 
 .nav__link:hover {
-  color: var(--text-headings);
-  background: rgba(255, 50, 168, 0.1); /* Subtle pink bg */
+  color: var(--accent-text);
+  background: var(--accent-light);
 }
 
 /* --------------------------------------- */
@@ -422,50 +434,62 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-  /* --- NEW: Cleaner gradient header --- */
-  background: linear-gradient(
-    135deg,
-    var(--bg-dark) 0%,
-    #2a1a2a 50%,
-    var(--bg-dark) 100%
-  );
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  /* Remove background image/gradient from main header */
+  background: var(--bg-main);
   font-size: var(--font-size-normal);
   position: relative;
-
-  /* --- NEW: Cleaner flex-based centering --- */
   display: flex;
   flex-direction: column;
   height: auto;
-  min-height: 90vh; /* Shorter than 100vh, feels better */
-  justify-content: flex-start; /* Align nav at top */
+  justify-content: flex-start;
   padding-top: 0;
 }
 
+/* ---------------------------------------
+  ----- NEW: HEADER BANNER IMAGE -----
+  ---------------------------------------
+*/
+.header__banner-container {
+  width: 100%;
+  height: 300px; /* Set a height for your banner */
+  max-height: 40vh;
+  
+  /* --- ▼▼▼ REPLACE THIS URL WITH YOUR OWN IMAGE ▼▼▼ --- */
+  background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3a8009?ixlib=rb-4.0.3&q=80&w=1600&h=400&fit=crop');
+  /* --- ▲▲▲ REPLACE THIS URL WITH YOUR OWN IMAGE ▲▲▲ --- */
+
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+    .header__banner-container {
+        height: 200px; /* Shorter banner on mobile */
+    }
+}
+
+
 .header__text-box {
   position: relative;
-  /* --- NEW: Flex centering for text --- */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* Take remaining space */
+  flex-grow: 1;
   padding: var(--gutter-medium) 0;
 }
 
 .header__text {
-  /* --- NEW: Removed all absolute positioning hacks --- */
   position: static;
   transform: none;
   text-align: center;
   width: 100%;
-  max-width: var(--container-normal-width); /* Constrain text width */
+  max-width: var(--container-normal-width);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 var(--gutter-small);
+  margin-top: calc(-1 * var(--gutter-medium)); /* Pull text up to overlap banner slightly */
 }
 
 .header__text h1 {
@@ -473,7 +497,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header__text p {
-  margin: 1.5rem 0 3rem; /* More space around subtitle */
+  margin: 1.5rem 0 3rem;
   max-width: var(--container-medium-width);
   font-family: 'Jost', sans-serif;
   font-size: var(--font-size-medium);
@@ -485,10 +509,8 @@ body:not(.user-is-tabbing) a:focus {
   margin-top: var(--gutter-small-1);
 }
 
-/* --- NEW: Simplified mobile header --- */
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   .header {
-    min-height: 80vh;
     text-align: center;
   }
   .header__text-box {
@@ -497,12 +519,13 @@ body:not(.user-is-tabbing) a:focus {
   }
   .header__text {
     padding-top: var(--gutter-small);
+    margin-top: calc(-1 * var(--gutter-small));
   }
   .header__text h1 {
     margin-bottom: var(--gutter-small);
   }
   .header__text p {
-    font-size: 2.4rem; /* Readjusted from scale */
+    font-size: 2.4rem;
     transform: none;
     margin: 1.5rem 0 3.5rem;
   }
@@ -517,29 +540,29 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-@media (max-width: 500px) {
+@media(max-width: 500px) {
   .header__text p {
     max-width: var(--container-small-width);
   }
 }
 
 /* --------------------------------------- */
-/* --- NEW: Base Card Style --- */
+/* ----- Base Card Style ----- */
 /* --------------------------------------- */
 
-/* This is the new "card" style we'll apply to projects, work, etc. */
 .work__box,
 .project__box,
 .education__box,
 .certifications__box,
 .leadership__box {
-  background: var(--bg-light);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   padding: var(--gutter-normal);
   transition: all 0.3s ease;
-  display: flex; /* Use flex for consistent internal layout */
+  display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
 .work__box:hover,
@@ -548,24 +571,23 @@ body:not(.user-is-tabbing) a:focus {
 .certifications__box:hover,
 .leadership__box:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-color: var(--accent-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-color: var(--accent);
 }
 
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
 
-/* --- NEW: Grid layout for work --- */
 .work__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns */
+  grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
 }
 
-@media (max-width: 900px) {
+@media(max-width: 900px) {
   .work__boxes {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
   }
   .work__box {
     align-items: initial;
@@ -574,44 +596,44 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__box:not(:last-child) {
-  margin-bottom: 0; /* Handled by grid gap */
+  margin-bottom: 0;
 }
 
 .work__text {
-  flex: 1 1 100%; /* Take full width within card */
+  flex: 1 1 100%;
 }
 
 .work__list {
-  list-style: none; /* NEW: Remove bullets */
+  list-style: none;
   padding-left: 0;
-  margin-bottom: 0; /* Remove bottom margin */
+  margin-bottom: 0;
   margin-top: var(--gutter-normal);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* --- NEW: Skill Pill/Chip styling --- */
+/* --- Skill Pill/Chip styling --- */
 .work__list li {
   display: inline-block;
-  background: rgba(0, 242, 169, 0.1);
-  color: var(--accent-secondary);
+  background: var(--accent-light);
+  color: var(--accent-text);
   padding: 0.5rem 1.2rem;
   border-radius: var(--btn-radius);
   font-size: 1.4rem;
   font-family: 'Jost', sans-serif;
+  font-weight: 500;
 }
 
 /* --------------------------------------- */
 /* ----- Projects ----- */
 /* --------------------------------------- */
 
-/* --- NEW: Grid layout for projects --- */
 .project__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns */
+  grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
-  padding: 0; /* Remove extra padding */
+  padding: 0;
 }
 
 .project__box {
@@ -626,7 +648,7 @@ body:not(.user-is-tabbing) a:focus {
 
 @media (max-width: 900px) {
   .project__boxes {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -635,16 +657,16 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .education__boxes {
-  display: grid; /* NEW: Use grid */
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
-  padding: 0; /* Remove extra padding */
+  padding: 0;
 }
 
 .education__box {
   flex: 1;
-  max-width: 100%; /* Allow grid to control size */
-  text-align: left; /* NEW: Left-align card content */
+  max-width: 100%;
+  text-align: left;
 }
 
 .education__box .work__text {
@@ -652,20 +674,20 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .education__box h3 {
-  font-size: 3rem; /* Adjusted size */
+  font-size: 3rem;
   margin-bottom: 0.75rem;
   color: var(--text-headings);
 }
 
 .education__box p {
-  font-size: 1.8rem; /* Adjusted size */
+  font-size: 1.8rem;
   margin: 0.5rem 0;
   color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
   .education__boxes {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr;
   }
   .education__box {
     margin-bottom: 0;
@@ -682,13 +704,12 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
 }
 
-/* --- NEW: Add a visual border to the photo --- */
 .about__photo-container {
   border-radius: 50%;
-  border: 4px solid var(--accent-secondary);
+  border: 4px solid var(--accent); /* Use accent */
   overflow: hidden;
-  padding: 5px; /* Spacing between border and image */
-  background: var(--bg-dark);
+  padding: 5px;
+  background: var(--bg-main);
 }
 
 .about__photo {
@@ -696,9 +717,9 @@ body:not(.user-is-tabbing) a:focus {
   display: block;
 }
 
-@media (min-width: 901px) {
+@media(min-width: 901px) {
   .about__content {
-    gap: var(--gutter-medium); /* More gap */
+    gap: var(--gutter-medium);
   }
   .about__text {
     flex: 0 0 60%;
@@ -706,18 +727,18 @@ body:not(.user-is-tabbing) a:focus {
   .about__photo-container {
     flex: 0 0 40%;
     margin: 0;
-    max-width: 350px; /* Constrain photo size */
+    max-width: 350px;
   }
 }
 
-@media (max-width: 900px) {
+@media(max-width: 900px) {
   .about__content {
     flex-direction: column-reverse;
-    align-items: center; /* Center photo on mobile */
+    align-items: center;
   }
   .about__text {
     flex: 0 0 auto;
-    text-align: center; /* Center text on mobile */
+    text-align: center;
   }
   .about__photo-container {
     flex: 0 0 auto;
@@ -726,8 +747,10 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-/* --- MODAL STYLES --- */
-/* Kept your modal logic, just restyled to match the new theme */
+/* --------------------------------------- */
+/* ----- Modal ----- */
+/* --------------------------------------- */
+
 .modal {
   display: none;
   position: fixed;
@@ -743,12 +766,12 @@ body:not(.user-is-tabbing) a:focus {
   transition: opacity 0.3s ease-in-out;
 }
 
-.modal[style*='display: flex'] {
+.modal[style*="display: flex"] {
   opacity: 1;
 }
 
 .modal__content {
-  background-color: var(--bg-light);
+  background-color: var(--bg-card);
   padding: var(--gutter-normal);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
@@ -763,13 +786,13 @@ body:not(.user-is-tabbing) a:focus {
   top: 10px;
   right: 15px;
   color: var(--text-headings);
-  font-size: 3rem; /* Larger */
+  font-size: 3rem;
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .modal__close:hover {
-  color: var(--pink);
+  color: var(--accent);
 }
 
 .modal__title {
@@ -789,27 +812,26 @@ body:not(.user-is-tabbing) a:focus {
   display: inline-block;
   padding: 1.2rem 2.5rem;
   text-decoration: none;
-  color: var(--text-headings);
-  border: 1px solid var(--pink);
-  background-color: var(--pink);
+  color: var(--bg-card);
+  border: 1px solid var(--accent);
+  background-color: var(--accent);
   transition: all 0.2s;
   font-family: 'Jost', sans-serif;
   font-size: var(--font-size-small);
   flex: 1;
-  border-radius: var(--btn-radius); /* Rounded */
+  border-radius: var(--btn-radius);
 }
 
 .modal__btn:hover,
 .modal__btn:focus {
   background-color: transparent;
-  color: var(--pink);
+  color: var(--accent);
   transform: scale(1.05);
 }
 
-/* Your resume button */
 #resumeBtn.btn {
-  background-color: var(--pink);
-  color: var(--white);
+  background-color: var(--accent);
+  color: var(--bg-card);
   padding: 1.2rem 2.5rem;
   font-size: var(--font-size-small);
   transition: all 0.2s;
@@ -823,7 +845,7 @@ body:not(.user-is-tabbing) a:focus {
 #resumeBtn.btn:hover,
 #resumeBtn.btn:focus {
   background-color: transparent;
-  color: var(--pink);
+  color: var(--accent);
   transform: scale(1.05);
 }
 
@@ -840,7 +862,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .certifications__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Already a grid, good */
+  grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
   padding: 0;
 }
@@ -848,7 +870,7 @@ body:not(.user-is-tabbing) a:focus {
 .certifications__box {
   flex: 1;
   max-width: 100%;
-  text-align: left; /* NEW: Left-align */
+  text-align: left;
 }
 
 .certifications__box .work__text {
@@ -856,24 +878,24 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .certifications__box h3 {
-  font-size: 2.4rem; /* Adjusted size */
+  font-size: 2.4rem;
   margin-bottom: 0.75rem;
 }
 
 .certifications__box p {
-  font-size: 1.6rem; /* Adjusted size */
+  font-size: 1.6rem;
   margin: 0.5rem 0;
 }
 
-/* NEW: Style the certificate link */
 .certifications__box p a {
-  color: var(--accent-secondary);
-  border-bottom: 1px dashed var(--accent-secondary);
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
   text-decoration: none;
 }
 .certifications__box p a:hover {
-  color: var(--accent-primary);
-  border-bottom-color: var(--accent-primary);
+  color: var(--accent-text);
+  background: var(--accent-light);
+  border-bottom-style: solid;
 }
 
 @media (max-width: 768px) {
@@ -890,7 +912,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .leadership__boxes {
-  display: grid; /* NEW: Use grid */
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
   padding: 0;
@@ -900,14 +922,13 @@ body:not(.user-is-tabbing) a:focus {
   max-width: 100%;
 }
 
-/* Make impact stand out */
 .leadership__box .work__list {
   list-style: none;
   padding: 0;
 }
 .leadership__box .work__list li {
-  background: rgba(255, 50, 168, 0.1);
-  color: var(--accent-primary);
+  background: var(--accent-light);
+  color: var(--accent-text);
 }
 
 @media (max-width: 900px) {
@@ -917,19 +938,17 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Footer ----- */
+/* ----- Contact ----- */
 /* --------------------------------------- */
 
-.footer {
-  text-align: center;
-  padding: var(--gutter-medium) 0 var(--gutter-normal);
-  border-top: var(--border-light); /* NEW: Add border-top */
+.contact {
+    border-bottom: none; /* No border on last section */
 }
 
-/* Contact section (inside footer logic) */
 .contact__info {
   max-width: var(--container-medium-width);
   margin: 0 auto;
+  text-align: center;
 }
 .contact__info p {
   font-size: var(--font-size-normal);
@@ -937,10 +956,20 @@ body:not(.user-is-tabbing) a:focus {
   margin-bottom: var(--gutter-normal);
 }
 
+/* --------------------------------------- */
+/* ----- Footer ----- */
+/* --------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: var(--gutter-medium) 0 var(--gutter-normal);
+  border-top: var(--border-light);
+}
+
 .footer__social-links {
   display: flex;
   justify-content: center;
-  padding: var(--gutter-normal) 0;
+  padding: 0; /* Remove padding from here */
   list-style: none;
 }
 
@@ -951,11 +980,13 @@ body:not(.user-is-tabbing) a:focus {
 .footer__social-image {
   height: 4rem;
   transition: all 0.2s ease;
+  /* Set a base color for SVGs, will be overridden on hover */
+  filter: grayscale(1) opacity(0.7);
 }
 
 .footer__social-link-item a:hover .footer__social-image {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 5px var(--pink)); /* NEW: Add glow */
+  filter: none; /* Show full color on hover */
 }
 
 @media (max-width: 500px) {
