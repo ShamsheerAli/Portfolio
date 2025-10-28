@@ -619,7 +619,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* --- ▼▼▼ THIS IS THE FIX ▼▼▼ --- */
+  grid-template-columns: 1fr; /* Changed from 1fr 1fr */
+  /* --- ▲▲▲ THIS IS THE FIX ▲▲▲ --- */
   gap: var(--gutter-normal);
 }
 
@@ -669,7 +671,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .project__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* --- ▼▼▼ THIS IS THE FIX ▼▼▼ --- */
+  grid-template-columns: 1fr; /* Changed from 1fr 1fr */
+  /* --- ▲▲▲ THIS IS THE FIX ▲▲▲ --- */
   gap: var(--gutter-normal);
   padding: 0;
 }
@@ -696,7 +700,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .education__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* <-- Kept as 2-column, as these are not collapsible */
   gap: var(--gutter-normal);
   padding: 0;
 }
@@ -978,7 +982,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .leadership__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* --- ▼▼▼ THIS IS THE FIX ▼▼▼ --- */
+  grid-template-columns: 1fr; /* Changed from 1fr 1fr */
+  /* --- ▲▲▲ THIS IS THE FIX ▲▲▲ --- */
   gap: var(--gutter-normal);
   padding: 0;
 }
