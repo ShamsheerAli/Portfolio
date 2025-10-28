@@ -497,7 +497,7 @@ body:not(.user-is-tabbing) a:focus {
 .header__profile-pic {
   position: absolute;
   top: -75px;
-  left: 0;
+  left: 30px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
