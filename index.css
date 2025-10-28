@@ -67,7 +67,7 @@
   --accent-blue-text: var(--accent-blue);
 
   /* ▼▼▼ NEW BACKGROUND VARIABLE (DARK) ▼▼▼ */
-  --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+  --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: light) {
