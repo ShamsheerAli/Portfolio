@@ -25,8 +25,8 @@
 }
 
 /* ---------------------------------------
-  ----- NEW: ADAPTIVE COLOR PALETTE -----
-  ---------------------------------------
+   ----- NEW: SPIDER-MAN COLOR PALETTE -----
+   ---------------------------------------
 */
 :root {
   /* Define fonts, sizes, and layout vars */
@@ -35,8 +35,9 @@
   --font-size-medium: 2.4rem;
   --font-size-medium-1: 3.2rem;
   --font-size-large: 4.8rem;
-  --font-size-huge: 6.4rem;
+  --font-size-huge: 7.2rem; /* Slightly larger for comic font */
   --font-stack: 'Hk Grotesk', sans-serif;
+  --font-comic: 'Bangers', 'Jost', sans-serif; /* NEW Comic Font */
 
   --line-height-normal: 1.7;
   --line-height-small: 1.2;
@@ -51,37 +52,43 @@
   --card-radius: 12px;
   --btn-radius: 30px;
 
-  /* --- Default to Light Mode Palette --- */
-  --bg-main: #F4F7F9;         /* Very light grey background */
-  --bg-card: #FFFFFF;         /* White cards */
-  --border-color: #E0E0E0;    /* Light grey borders */
-  --text-headings: #1A202C;    /* Dark navy for headings */
-  --text-primary: #2D3748;      /* Dark grey for text */
-  --text-secondary: #718096;   /* Lighter grey for secondary text */
-  --accent: #005B9A;           /* Professional, subtle blue */
-  --accent-light: #E6F0F6;     /* Very light blue for pills/hovers */
-  --accent-text: #005B9A;      /* Text color on light backgrounds */
+  /* --- Default to DARK (Night) Mode Palette --- */
+  --accent-red: #E62429;      /* Spidey Red */
+  --accent-blue: #00A9E0;     /* Spidey Blue */
+  --bg-main: #10121A;         /* Dark Navy Blue (Night Sky) */
+  --bg-card: #1A1D2A;         /* Lighter Navy (Building) */
+  --border-color: #333333;    /* Dark border */
+  --text-headings: #FFFFFF;     /* White headings */
+  --text-primary: #F0F0F0;      /* Light grey text */
+  --text-secondary: #AAAAAA;    /* Medium grey secondary text */
+  --accent-red-light: rgba(230, 36, 41, 0.1);
+  --accent-blue-light: rgba(0, 169, 224, 0.1);
+  --accent-red-text: var(--accent-red);
+  --accent-blue-text: var(--accent-blue);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    /* --- Dark Mode Palette --- */
-    --bg-main: #121212;         /* Very dark grey background */
-    --bg-card: #1D1D1D;         /* Slightly lighter card */
-    --border-color: #333333;    /* Dark border */
-    --text-headings: #FFFFFF;     /* White headings */
-    --text-primary: #F0F0F0;      /* Light grey text */
-    --text-secondary: #AAAAAA;    /* Medium grey secondary text */
-    --accent: #38A1F3;            /* A brighter, accessible blue for dark mode */
-    --accent-light: #253343;      /* Dark blue for pills/hovers */
-    --accent-text: #38A1F3;       /* Text color on dark backgrounds */
+    /* --- LIGHT (Classic Comic) Mode Palette --- */
+    --accent-red: #E62429;
+    --accent-blue: #005B9A; /* Darker blue for light bg */
+    --bg-main: #F4F7F9;       /* Light grey background */
+    --bg-card: #FFFFFF;       /* White cards */
+    --border-color: #E0E0E0;  /* Light grey borders */
+    --text-headings: #1A202C;  /* Dark navy for headings */
+    --text-primary: #2D3748;    /* Dark grey for text */
+    --text-secondary: #718096; /* Lighter grey for secondary text */
+    --accent-red-light: rgba(230, 36, 41, 0.1);
+    --accent-blue-light: rgba(0, 91, 154, 0.1);
+    --accent-red-text: var(--accent-red);
+    --accent-blue-text: var(--accent-blue);
   }
 }
 
 /* --- Old variables mapped to new theme --- */
 :root {
-  --black: var(--bg-main); /* Mapped to main bg */
-  --pink: var(--accent); /* Mapped to main accent */
+  --black: var(--bg-main);
+  --pink: var(--accent-red); /* Mapped to Spidey Red */
   --white: var(--text-headings);
   --white-1: var(--text-primary);
   --border-light: 1px solid var(--border-color);
@@ -108,7 +115,7 @@ body {
   line-height: var(--line-height-normal);
   background: var(--bg-main);
   overflow-x: hidden;
-  transition: background 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .row {
@@ -154,21 +161,21 @@ img {
 /* --------------------------------------- */
 
 h1, h2, h3 {
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-comic); /* NEW: Comic font! */
   font-weight: 400;
   line-height: var(--line-height-small);
   color: var(--text-headings);
+  letter-spacing: 1px; /* Comic fonts look better with spacing */
 }
 
 .heading-primary {
   line-height: 1.1;
   font-size: var(--font-size-huge);
-  font-weight: 400;
 }
 
-/* --- NEW: Subtle accent color for name --- */
+/* --- NEW: Name is Spidey Red --- */
 .heading-primary span {
-  color: var(--accent);
+  color: var(--accent-red);
 }
 
 @media(max-width: 900px) {
@@ -182,13 +189,13 @@ h2 {
   margin-bottom: var(--gutter-medium);
 }
 
-/* --- NEW: Underline uses accent color --- */
+/* --- NEW: Underline is Spidey Red --- */
 h2::after {
   content: '';
   display: block;
   height: 3px;
   width: 10rem;
-  background: var(--accent); /* Use main accent */
+  background: var(--accent-red); /* Use main accent */
   margin: var(--gutter-small) 0;
 }
 
@@ -216,7 +223,7 @@ p {
 }
 
 @media(max-width: 900px) {
-  p { 
+  p {
     max-width: var(--container-small-width);
   }
 }
@@ -226,7 +233,7 @@ p {
 /* --------------------------------------- */
 
 a {
-  color: var(--accent); /* Links use accent color */
+  color: var(--accent-blue); /* Links are blue */
   font-weight: 400;
   font-family: 'Jost', sans-serif;
   transition: all .2s;
@@ -238,7 +245,7 @@ a {
 }
 
 button:focus, a:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-blue);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -247,7 +254,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-  filter: brightness(1.2); /* Brighten accent on hover */
+  filter: brightness(1.2);
 }
 
 .btn {
@@ -255,12 +262,15 @@ body:not(.user-is-tabbing) a:focus {
   display: inline-block;
   padding: 1.2rem 4.5rem;
   text-decoration: none;
-  color: var(--text-headings); /* Use heading color for contrast */
-  border: 1px solid var(--accent);
+  color: var(--text-headings);
+  border: 1px solid var(--accent-red); /* Red border */
   font-weight: 400;
+  font-family: var(--font-comic); /* Comic font for buttons */
+  font-size: 1.8rem;
+  letter-spacing: 1px;
   border-radius: var(--btn-radius);
   overflow: hidden;
-  z-index: 1; /* Ensure text is above ::after */
+  z-index: 1;
 }
 
 .btn:focus {
@@ -274,14 +284,14 @@ body:not(.user-is-tabbing) a:focus {
   top: 0;
   left: 0;
   right: 100%;
-  background: var(--accent);
+  background: var(--accent-red); /* Red fill */
   height: 100%;
   z-index: -1;
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-    color: var(--bg-card); /* Change text color on hover to contrast with accent */
+    color: var(--bg-card);
 }
 
 .btn:hover::after,
@@ -291,10 +301,11 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Main CTA button */
 .btn--pink {
-  background: var(--accent);
+  background: var(--accent-red);
   transition: all 0.2s;
   border-radius: var(--btn-radius);
-  color: var(--bg-card); /* High contrast text on solid button */
+  color: #FFFFFF; /* White text on red button */
+  border-color: var(--accent-red);
 }
 
 .btn--pink::after {
@@ -303,10 +314,10 @@ body:not(.user-is-tabbing) a:focus {
 
 .btn--pink:hover,
 .btn--pink:focus {
-  background: transparent;
-  color: var(--accent); /* Text color reverts on hover */
+  background: var(--accent-blue); /* Hover to blue! */
+  color: #FFFFFF; /* White text */
   transform: scale(1.05);
-  border-color: var(--accent);
+  border-color: var(--accent-blue);
 }
 
 /* Project/Cert links */
@@ -314,9 +325,9 @@ body:not(.user-is-tabbing) a:focus {
   position: relative;
   display: inline-block;
   padding: 0.2rem;
-  color: var(--accent);
+  color: var(--accent-blue);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent-blue);
   transition: all 0.2s ease;
 }
 
@@ -330,9 +341,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .link__text:hover,
 .link__text:focus {
-  background: var(--accent-light);
+  background: var(--accent-blue-light);
   border-bottom-color: transparent;
-  color: var(--accent-text);
+  color: var(--accent-blue-text);
 }
 
 .link__text span {
@@ -350,15 +361,18 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
   height: 5.5rem;
   width: 5.5rem;
-  background-color: var(--accent);
+  background-color: var(--accent-red); /* Red button */
   border-radius: 50%;
   z-index: 10;
   visibility: hidden;
   transition: all .4s;
 }
+.back-to-top:hover {
+  background-color: var(--accent-blue); /* Hover to blue */
+  transform: scale(1.1);
+}
 .back-to-top__image {
   height: 70%;
-  /* Assuming arrow-up.svg is white or light-colored */
 }
 @media(max-width: 900px) {
   .back-to-top {
@@ -383,13 +397,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__items {
   display: flex;
-  flex-wrap: nowrap; /* <-- No wrapping on desktop/laptop */
+  flex-wrap: nowrap;
   justify-content: center;
   list-style: none;
 }
 
 .nav__item:not(:last-child) {
-  margin-right: 0.2rem; /* <-- Tighter spacing for desktop */
+  margin-right: 0.2rem;
 }
 
 @media(max-width: 768px) {
@@ -398,7 +412,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-small) 0;
   }
   .nav__items {
-    flex-wrap: wrap; /* <-- Add wrap back in for mobile */
+    flex-wrap: wrap;
     align-items: center;
   }
   .nav__item {
@@ -413,11 +427,12 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 0.5rem 1rem; /* <-- Reduced horizontal padding */
+  padding: 1rem 1.2rem;
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s ease;
   border-radius: var(--btn-radius);
+  font-family: 'Jost', sans-serif; /* Keep nav readable */
 }
 
 .nav__link::after {
@@ -425,8 +440,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link:hover {
-  color: var(--accent-text);
-  background: var(--accent-light);
+  color: var(--accent-red-text);
+  background: var(--accent-red-light);
 }
 
 /* --------------------------------------- */
@@ -434,7 +449,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-  /* Remove background image/gradient from main header */
   background: var(--bg-main);
   font-size: var(--font-size-normal);
   position: relative;
@@ -446,26 +460,21 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* ---------------------------------------
-  ----- NEW: HEADER BANNER IMAGE -----
-  ---------------------------------------
+   ----- HEADER BANNER IMAGE -----
+   ---------------------------------------
 */
 .header__banner-container {
   width: 100%;
-  height: 300px; /* Set a height for your banner */
+  height: 300px;
   max-height: 40vh;
-  
-  /* --- ▼▼▼ THIS IS THE SPOT! ▼▼▼ --- */
-  /* --- I've updated this to use your local image path --- */
   background-image: url('./images/Spiderman.png'); 
-  /* --- ▲▲▲ THIS IS THE SPOT! ▲▲▲ --- */
-
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 768px) {
     .header__banner-container {
-        height: 200px; /* Shorter banner on mobile */
+        height: 200px;
     }
 }
 
@@ -490,10 +499,10 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
   justify-content: center;
   padding: 0 var(--gutter-small);
-  margin-top: calc(-1 * var(--gutter-medium)); /* Pull text up to overlap banner slightly */
+  margin-top: calc(-1 * var(--gutter-medium));
 }
 
-/*  STYLES FOR YOUR NEW PROFILE PICTURE */
+/* STYLES FOR YOUR NEW PROFILE PICTURE */
 .header__profile-pic {
   position: absolute;
   top: -75px;
@@ -501,16 +510,15 @@ body:not(.user-is-tabbing) a:focus {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 4px solid var(--bg-main); /* Use main background for cutout effect */
+  border: 4px solid var(--bg-main);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  
-  object-fit: cover; /* Ensures image fills the circle */
+  object-fit: cover;
 }
 /* END OF NEW PROFILE PICTURE STYLES  */
 
 
 .header__text h1 {
-    margin-top: 20px;
+  margin-top: 85px;
   margin-bottom: var(--gutter-small-1);
 }
 
@@ -539,14 +547,18 @@ body:not(.user-is-tabbing) a:focus {
     padding-top: var(--gutter-small);
     margin-top: calc(-1 * var(--gutter-small));
   }
-  /*  STYLES FOR MOBILE PROFILE PICTURE */
+  /* STYLES FOR MOBILE PROFILE PICTURE */
   .header__profile-pic {
     width: 120px;
     height: 120px;
+    position: absolute; 
+    top: -60px;
+    left: 30px;
   }
   /*END OF MOBILE PROFILE PICTURE STYLES */
 
   .header__text h1 {
+    margin-top: 70px;
     margin-bottom: var(--gutter-small);
   }
   .header__text p {
@@ -597,7 +609,7 @@ body:not(.user-is-tabbing) a:focus {
 .leadership__box:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  border-color: var(--accent);
+  border-color: var(--accent-red); /* Red border on hover */
 }
 
 /* --------------------------------------- */
@@ -638,11 +650,11 @@ body:not(.user-is-tabbing) a:focus {
   gap: 1rem;
 }
 
-/* --- Skill Pill/Chip styling --- */
+/* --- Skill Pill/Chip styling (Blue) --- */
 .work__list li {
   display: inline-block;
-  background: var(--accent-light);
-  color: var(--accent-text);
+  background: var(--accent-blue-light);
+  color: var(--accent-blue-text);
   padding: 0.5rem 1.2rem;
   border-radius: var(--btn-radius);
   font-size: 1.4rem;
@@ -731,7 +743,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__photo-container {
   border-radius: 50%;
-  border: 4px solid var(--accent); /* Use accent */
+  border: 4px solid var(--accent-red); /* Red border */
   overflow: hidden;
   padding: 5px;
   background: var(--bg-main);
@@ -740,7 +752,7 @@ body:not(.user-is-tabbing) a:focus {
 .about__photo {
   border-radius: 50%;
   display: block;
-  object-fit: cover; /* Ensures image fills the circle */
+  object-fit: cover;
 }
 
 @media(min-width: 901px) {
@@ -818,11 +830,11 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .modal__close:hover {
-  color: var(--accent);
+  color: var(--accent-red);
 }
 
 .modal__title {
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-comic);
   font-size: var(--font-size-medium-1);
   color: var(--text-headings);
   margin-bottom: var(--gutter-normal);
@@ -838,12 +850,13 @@ body:not(.user-is-tabbing) a:focus {
   display: inline-block;
   padding: 1.2rem 2.5rem;
   text-decoration: none;
-  color: var(--bg-card);
-  border: 1px solid var(--accent);
-  background-color: var(--accent);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-red);
+  background-color: var(--accent-red);
   transition: all 0.2s;
-  font-family: 'Jost', sans-serif;
-  font-size: var(--font-size-small);
+  font-family: var(--font-comic);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
   flex: 1;
   border-radius: var(--btn-radius);
 }
@@ -851,15 +864,39 @@ body:not(.user-is-tabbing) a:focus {
 .modal__btn:hover,
 .modal__btn:focus {
   background-color: transparent;
-  color: var(--accent);
+  color: var(--accent-red);
   transform: scale(1.05);
 }
 
+/* Style the other modal buttons */
+.modal__btn--ai {
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+.modal__btn--ai:hover,
+.modal__btn--ai:focus {
+  background-color: transparent;
+  color: var(--accent-blue);
+}
+/* This is for the "Software Development" button */
+.modal__btn--dev {
+  /* Let's make this one grey or black, like the symbiote suit */
+  background-color: #333;
+  border-color: #333;
+}
+.modal__btn--dev:hover,
+.modal__btn--dev:focus {
+  background-color: transparent;
+  color: #333;
+  border-color: #333;
+}
+
+
 #resumeBtn.btn {
-  background-color: var(--accent);
-  color: var(--bg-card);
+  background-color: var(--accent-red);
+  color: #FFFFFF;
   padding: 1.2rem 2.5rem;
-  font-size: var(--font-size-small);
+  font-size: 1.8rem;
   transition: all 0.2s;
   border-radius: var(--btn-radius);
 }
@@ -870,8 +907,9 @@ body:not(.user-is-tabbing) a:focus {
 
 #resumeBtn.btn:hover,
 #resumeBtn.btn:focus {
-  background-color: transparent;
-  color: var(--accent);
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #FFFFFF;
   transform: scale(1.05);
 }
 
@@ -914,13 +952,13 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .certifications__box p a {
-  color: var(--accent);
-  border-bottom: 1px dashed var(--accent);
+  color: var(--accent-blue);
+  border-bottom: 1px dashed var(--accent-blue);
   text-decoration: none;
 }
 .certifications__box p a:hover {
-  color: var(--accent-text);
-  background: var(--accent-light);
+  color: var(--accent-blue-text);
+  background: var(--accent-blue-light);
   border-bottom-style: solid;
 }
 
@@ -953,8 +991,8 @@ body:not(.user-is-tabbing) a:focus {
   padding: 0;
 }
 .leadership__box .work__list li {
-  background: var(--accent-light);
-  color: var(--accent-text);
+  background: var(--accent-blue-light);
+  color: var(--accent-blue-text);
 }
 
 @media (max-width: 900px) {
@@ -968,7 +1006,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .contact {
-    border-bottom: none; /* No border on last section */
+    border-bottom: none;
 }
 
 .contact__info {
@@ -995,7 +1033,7 @@ body:not(.user-is-tabbing) a:focus {
 .footer__social-links {
   display: flex;
   justify-content: center;
-  padding: 0; /* Remove padding from here */
+  padding: 0;
   list-style: none;
 }
 
@@ -1006,13 +1044,12 @@ body:not(.user-is-tabbing) a:focus {
 .footer__social-image {
   height: 4rem;
   transition: all 0.2s ease;
-  /* Set a base color for SVGs, will be overridden on hover */
   filter: grayscale(1) opacity(0.7);
 }
 
 .footer__social-link-item a:hover .footer__social-image {
   transform: scale(1.1);
-  filter: none; /* Show full color on hover */
+  filter: none;
 }
 
 @media (max-width: 500px) {
@@ -1020,3 +1057,4 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-medium) 0;
   }
 }
+
