@@ -403,7 +403,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__item:not(:last-child) {
-  margin-right: 0.2rem;
+  margin-right: 0.8rem; /* <-- CHANGED: Increased spacing */
 }
 
 @media(max-width: 768px) {
@@ -429,11 +429,12 @@ body:not(.user-is-tabbing) a:focus {
   display: inline-block;
   padding: 1rem 1.2rem;
   text-decoration: none;
-  color: var(--accent-red-text); /* <-- Make text red */
+  color: var(--accent-red-text); 
   transition: all 0.2s ease;
   border-radius: var(--btn-radius);
-  font-family: 'Jost', sans-serif; /* Keep nav readable */
-  background: var(--accent-red-light); /* <-- Add light red background */
+  font-family: 'Jost', sans-serif; 
+  background: var(--accent-red-light); 
+  white-space: nowrap; /* <-- CHANGED: Added this line */
 }
 
 .nav__link::after {
@@ -441,8 +442,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link:hover {
-  color: var(--accent-blue-text); /* <-- Swap to blue on hover */
-  background: var(--accent-blue-light); /* <-- Swap to blue on hover */
+  color: var(--accent-blue-text); 
+  background: var(--accent-blue-light); 
 }
 
 /* --------------------------------------- */
@@ -559,7 +560,7 @@ body:not(.user-is-tabbing) a:focus {
   /*END OF MOBILE PROFILE PICTURE STYLES */
 
   .header__text h1 {
-    margin-top: 20px;
+    margin-top: 70px;
     margin-bottom: var(--gutter-small);
   }
   .header__text p {
@@ -685,7 +686,7 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-warning: 900px) {
   .project__boxes {
     grid-template-columns: 1fr;
   }
