@@ -455,7 +455,7 @@ body:not(.user-is-tabbing) a:focus {
   max-height: 40vh;
   
   /* --- ▼▼▼ REPLACE THIS URL WITH YOUR OWN IMAGE ▼▼▼ --- */
-  background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3a8009?ixlib=rb-4.0.3&q=80&w=1600&h=400&fit=crop');
+  background-image: url('./images/Spiderman.png');
   /* --- ▲▲▲ REPLACE THIS URL WITH YOUR OWN IMAGE ▲▲▲ --- */
 
   background-size: cover;
