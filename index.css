@@ -383,13 +383,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__items {
   display: flex;
-  flex-wrap: nowrap; /* <-- CHANGED: No wrapping on desktop/laptop */
+  flex-wrap: nowrap; /* <-- No wrapping on desktop/laptop */
   justify-content: center;
   list-style: none;
 }
 
 .nav__item:not(:last-child) {
-  margin-right: 0.2rem; /* <-- CHANGED: Tighter spacing for desktop */
+  margin-right: 0.2rem; /* <-- Tighter spacing for desktop */
 }
 
 @media(max-width: 768px) {
@@ -413,7 +413,7 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 1rem 1.2rem; /* <-- CHANGED: Reduced horizontal padding */
+  padding: 1rem 1.2rem; /* <-- Reduced horizontal padding */
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s ease;
@@ -456,7 +456,7 @@ body:not(.user-is-tabbing) a:focus {
   
   /* --- ▼▼▼ THIS IS THE SPOT! ▼▼▼ --- */
   /* --- I've updated this to use your local image path --- */
-  background-image: url('./images/header.jpg'); 
+  background-image: url('./images/Spiderman.png'); 
   /* --- ▲▲▲ THIS IS THE SPOT! ▲▲▲ --- */
 
   background-size: cover;
@@ -493,6 +493,19 @@ body:not(.user-is-tabbing) a:focus {
   margin-top: calc(-1 * var(--gutter-medium)); /* Pull text up to overlap banner slightly */
 }
 
+/*  STYLES FOR YOUR NEW PROFILE PICTURE */
+.header__profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid var(--bg-main); /* Use main background for cutout effect */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: var(--gutter-small);
+  object-fit: cover; /* Ensures image fills the circle */
+}
+/* END OF NEW PROFILE PICTURE STYLES  */
+
+
 .header__text h1 {
   margin-bottom: var(--gutter-small-1);
 }
@@ -522,6 +535,13 @@ body:not(.user-is-tabbing) a:focus {
     padding-top: var(--gutter-small);
     margin-top: calc(-1 * var(--gutter-small));
   }
+  /*  STYLES FOR MOBILE PROFILE PICTURE */
+  .header__profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  /*END OF MOBILE PROFILE PICTURE STYLES */
+
   .header__text h1 {
     margin-bottom: var(--gutter-small);
   }
@@ -716,6 +736,7 @@ body:not(.user-is-tabbing) a:focus {
 .about__photo {
   border-radius: 50%;
   display: block;
+  object-fit: cover; /* Ensures image fills the circle */
 }
 
 @media(min-width: 901px) {
@@ -995,4 +1016,3 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-medium) 0;
   }
 }
-
