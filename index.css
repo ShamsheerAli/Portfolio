@@ -24,45 +24,36 @@
   box-sizing: inherit;
 }
 
-/* --------------------------------------- */
-/* --- NEW: Color Palette (Light Mode) --- */
-/* --------------------------------------- */
 :root {
-  /* --- Subtle Light Mode Palette (Default) --- */
-  --bg-primary: #F9F9F9;
-  --bg-secondary: #FFFFFF;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --text-headings: #111111;
-  --border-color: #E0E0E0;
-  --accent-primary: #007BFF;   /* Professional Blue */
-  --accent-secondary: #17A2B8;  /* Subtle Teal */
-  
-  --link-color: var(--accent-primary);
-  --link-hover-bg: rgba(0, 123, 255, 0.1);
-  --skill-pill-bg: rgba(23, 162, 184, 0.1);
-  --skill-pill-text: #0E6C7C;
-  --impact-pill-bg: rgba(0, 123, 255, 0.1);
-  --impact-pill-text: var(--accent-primary);
-
-  /* Colors for header (on top of dark image) */
-  --header-name-color: #FFFFFF;
-  --header-subtitle-color: #F0F0F0;
-
-  /* --- Font Sizes (Unchanged) --- */
-  --font-size-small: 1.6rem;
+  /* --- NEW: Modernized Font Sizes --- */
+  --font-size-small: 1.6rem; /* Slightly smaller for cleaner UI */
   --font-size-normal: 2.0rem;
   --font-size-medium: 2.4rem;
   --font-size-medium-1: 3.2rem;
   --font-size-large: 4.8rem;
-  --font-size-huge: 6.4rem;
+  --font-size-huge: 6.4rem; /* Adjusted for better scale */
   --font-stack: 'Hk Grotesk', sans-serif;
 
   --line-height-normal: 1.7;
   --line-height-small: 1.2;
 
-  /* --- Layout Vars (Unchanged) --- */
-  --container-max-width: 1200px;
+  /* --- NEW: "Fun" UX-Friendly Dark Palette --- */
+  --bg-dark: #121212;         /* Main background */
+  --bg-light: #1D1D1D;       /* Card background */
+  --border-color: #333333;    /* Card borders */
+  --text-primary: #F0F0F0;     /* Primary text (brighter) */
+  --text-secondary: #AAAAAA;   /* Secondary text (skills, etc.) */
+  --text-headings: #FFFFFF;    /* Main headings */
+  --accent-primary: #FF32A8;   /* Fun, vibrant pink */
+  --accent-secondary: #00F2A9; /* Fun, minty teal */
+
+  /* --- Renamed old vars to new palette --- */
+  --black: var(--bg-dark);
+  --pink: var(--accent-primary);
+  --white: var(--text-headings);
+  --white-1: var(--text-primary);
+
+  --container-max-width: 1200px; /* Constrained for readability */
   --container-normal-width: 800px;
   --container-medium-width: 700px;
   --container-small-width: 500px;
@@ -74,43 +65,19 @@
   --gutter-small: 2rem;
 
   --border-light: 1px solid var(--border-color);
-  --card-radius: 12px;
-  --btn-radius: 30px;
-}
-
-/* --------------------------------------- */
-/* --- NEW: Color Palette (Dark Mode) ---- */
-/* --------------------------------------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* --- Subtle Dark Mode Palette --- */
-    --bg-primary: #121212;
-    --bg-secondary: #1E1E1E;
-    --text-primary: #DCDCDC;
-    --text-secondary: #888888;
-    --text-headings: #FFFFFF;
-    --border-color: #333333;
-    --accent-primary: #3399FF;   /* Lighter Blue */
-    --accent-secondary: #20C997;  /* Brighter Teal */
-
-    --link-color: var(--accent-primary);
-    --link-hover-bg: rgba(51, 153, 255, 0.1);
-    --skill-pill-bg: rgba(32, 201, 151, 0.1);
-    --skill-pill-text: var(--accent-secondary);
-    --impact-pill-bg: rgba(51, 153, 255, 0.1);
-    --impact-pill-text: var(--accent-primary);
-  }
+  --card-radius: 12px; /* NEW: Rounded corners for cards */
+  --btn-radius: 30px;  /* NEW: Rounded pills for buttons */
 }
 
 html {
-  font-size: 62.5%; 
+  font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 @media (max-width: 1000px) {
   html {
-    font-size: 56%;
+    font-size: 56%; /* Adjusted for better mobile scaling */
   }
 }
 
@@ -118,11 +85,10 @@ body {
   font-size: var(--font-size-small);
   font-family: var(--font-stack);
   font-weight: 400;
-  color: var(--text-primary);
+  color: var(--text-primary); /* NEW: Brighter text */
   line-height: var(--line-height-normal);
-  background: var(--bg-primary);
+  background: var(--bg-dark);
   overflow-x: hidden;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .row {
@@ -131,6 +97,7 @@ body {
   padding: 0 var(--gutter-small);
 }
 
+/* Media queries for .row are fine, no change needed */
 @media (max-width: 1440px) {
   .row {
     max-width: 1300px;
@@ -148,7 +115,7 @@ body {
 }
 
 section {
-  padding: var(--gutter-medium) 0;
+  padding: var(--gutter-medium) 0; /* Consistent padding */
   border-bottom: var(--border-light);
 }
 
@@ -177,19 +144,22 @@ h3 {
 }
 
 .heading-primary {
-  line-height: 1.1;
+  line-height: 1.1; /* Tighter line height */
   font-size: var(--font-size-huge);
   font-weight: 400;
 }
 
-/* NEW: Removed gradient from name, as it's now on an image */
+/* --- NEW: Fun gradient text for your name --- */
 .heading-primary span {
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  background-clip: unset;
-  text-fill-color: unset;
-  color: var(--header-name-color); /* Use special header var */
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 @media (max-width: 900px) {
@@ -203,19 +173,20 @@ h2 {
   margin-bottom: var(--gutter-medium);
 }
 
+/* --- NEW: Using secondary accent for underline --- */
 h2::after {
   content: '';
   display: block;
-  height: 3px;
+  height: 3px; /* Bolder underline */
   width: 10rem;
-  background: var(--accent-secondary); /* Use palette */
+  background: var(--accent-secondary); /* NEW: Teal accent */
   margin: var(--gutter-small) 0;
 }
 
 h3 {
   font-size: var(--font-size-medium-1);
   margin-bottom: var(--gutter-small);
-  color: var(--text-headings);
+  color: var(--text-headings); /* Make sure card titles are bright */
 }
 
 @media (max-width: 500px) {
@@ -232,7 +203,7 @@ h3 {
 
 p {
   margin: var(--gutter-small-1) 0;
-  color: var(--text-primary);
+  color: var(--text-primary); /* Brighter default text */
 }
 
 @media (max-width: 900px) {
@@ -246,7 +217,7 @@ p {
 /* --------------------------------------- */
 
 a {
-  color: var(--text-headings);
+  color: var(--white);
   font-weight: 400;
   font-family: 'Jost', sans-serif;
   transition: all 0.2s;
@@ -259,7 +230,7 @@ a {
 
 button:focus,
 a:focus {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid var(--pink);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -268,20 +239,19 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-  color: var(--accent-primary);
+  color: var(--pink);
 }
 
 .btn {
   position: relative;
   display: inline-block;
-  padding: 1.2rem 4.5rem;
+  padding: 1.2rem 4.5rem; /* More padding */
   text-decoration: none;
-  color: var(--accent-primary); /* Text is accent color */
-  border: 1px solid var(--accent-primary);
+  color: inherit;
+  border: 1px solid var(--pink);
   font-weight: 400;
-  border-radius: var(--btn-radius);
-  overflow: hidden;
-  background: transparent; /* Transparent by default */
+  border-radius: var(--btn-radius); /* NEW: Pill shape */
+  overflow: hidden; /* NEW: contain the ::after */
 }
 
 .btn:focus {
@@ -295,25 +265,21 @@ body:not(.user-is-tabbing) a:focus {
   top: 0;
   left: 0;
   right: 100%;
-  background: var(--accent-primary);
+  background: var(--pink); /* Solid pink */
   height: 100%;
   z-index: -1;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  color: #FFF; /* Text becomes white on hover */
+  transition: all 0.3s ease; /* NEW: Smoother transition */
 }
 
 .btn:hover::after,
 .btn:focus::after {
   right: 0;
+  background: var(--pink);
 }
 
-/* Main CTA button (was .btn--pink) */
+/* Main CTA button */
 .btn--pink {
-  background: var(--accent-primary);
-  color: #FFF; /* White text for contrast */
+  background: var(--pink);
   transition: all 0.2s;
   border-radius: var(--btn-radius);
 }
@@ -325,21 +291,22 @@ body:not(.user-is-tabbing) a:focus {
 .btn--pink:hover,
 .btn--pink:focus {
   background: transparent;
-  color: var(--accent-primary); /* Text becomes accent color */
-  transform: scale(1.05);
+  transform: scale(1.05); /* NEW: Add a little "pop" */
 }
 
+/* --- NEW: Simplified link, more UX-friendly --- */
 .link__text {
   position: relative;
   display: inline-block;
   padding: 0.2rem;
-  color: var(--link-color);
+  color: var(--accent-secondary); /* NEW: Teal link */
   text-decoration: none;
-  border-bottom: 1px solid var(--link-color);
+  border-bottom: 1px solid var(--accent-secondary);
   transition: all 0.2s ease;
 }
 
 .link__text::after {
+  /* Removed the blocky hover effect */
   display: none;
 }
 
@@ -349,9 +316,9 @@ body:not(.user-is-tabbing) a:focus {
 
 .link__text:hover,
 .link__text:focus {
-  background: var(--link-hover-bg);
+  background: rgba(0, 242, 169, 0.1); /* NEW: Subtle teal bg on hover */
   border-bottom-color: transparent;
-  color: var(--link-color);
+  color: var(--accent-secondary);
 }
 
 .link__text span {
@@ -360,6 +327,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* ----- Back to Top ----- */
+/* This section is fine, no changes needed */
 .back-to-top {
   position: fixed;
   bottom: 4rem;
@@ -369,7 +337,7 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
   height: 5.5rem;
   width: 5.5rem;
-  background-color: var(--accent-primary);
+  background-color: var(--pink);
   border-radius: 50%;
   z-index: 10;
   visibility: hidden;
@@ -401,13 +369,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__items {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; /* NEW: Allow nav to wrap on smaller screens */
+  justify-content: center; /* Center items when wrapping */
   list-style: none;
 }
 
 .nav__item:not(:last-child) {
-  margin-right: var(--gutter-small);
+  margin-right: var(--gutter-small); /* Reduced margin */
 }
 
 @media (max-width: 768px) {
@@ -416,11 +384,11 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-small) 0;
   }
   .nav__items {
-    flex-direction: row;
+    flex-direction: row; /* Keep as row but allow wrapping */
     align-items: center;
   }
   .nav__item {
-    margin: 0.5rem;
+    margin: 0.5rem; /* Use margin for spacing */
   }
   .nav__item:not(:last-child) {
     margin-right: 0.5rem;
@@ -428,66 +396,71 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
+/* --- NEW: Modern "Pill" style nav links --- */
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem; /* Padding for pill shape */
   text-decoration: none;
-  color: var(--text-secondary); /* Muted nav links */
+  color: var(--text-primary);
   transition: all 0.2s ease;
-  border-radius: var(--btn-radius);
+  border-radius: var(--btn-radius); /* Rounded */
 }
 
 .nav__link::after {
+  /* Removed the old underline hover effect */
   display: none;
 }
 
 .nav__link:hover {
   color: var(--text-headings);
-  background: var(--link-hover-bg);
+  background: rgba(255, 50, 168, 0.1); /* Subtle pink bg */
 }
 
 /* --------------------------------------- */
-/* --- NEW: Header Layout --- */
+/* ----- Header ----- */
 /* --------------------------------------- */
 
 .header {
-  /* This element now holds the Nav Bar */
-  background: var(--bg-secondary); /* Solid background for nav */
-  font-size: var(--font-size-normal);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full height */
-  justify-content: flex-start;
-  padding-top: 0;
-  border-bottom: var(--border-light); /* Separator */
-  transition: background 0.2s ease;
-}
-
-.header__text-box {
-  /* This element now holds the BG Image and Text */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1; /* This makes it fill the space AFTER the nav */
-  padding: var(--gutter-medium) 0;
-  
-  /* --- THIS IS YOUR NEW IMAGE --- */
-  background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url('./images/header.jpg');
+  /* --- NEW: Cleaner gradient header --- */
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark) 0%,
+    #2a1a2a 50%,
+    var(--bg-dark) 100%
+  );
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  font-size: var(--font-size-normal);
+  position: relative;
+
+  /* --- NEW: Cleaner flex-based centering --- */
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 90vh; /* Shorter than 100vh, feels better */
+  justify-content: flex-start; /* Align nav at top */
+  padding-top: 0;
+}
+
+.header__text-box {
+  position: relative;
+  /* --- NEW: Flex centering for text --- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Take remaining space */
+  padding: var(--gutter-medium) 0;
 }
 
 .header__text {
-  /* This is the text (H1, p) on top of the image */
+  /* --- NEW: Removed all absolute positioning hacks --- */
   position: static;
   transform: none;
   text-align: center;
   width: 100%;
-  max-width: var(--container-normal-width);
+  max-width: var(--container-normal-width); /* Constrain text width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -500,38 +473,27 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header__text p {
-  margin: 1.5rem 0 3rem;
+  margin: 1.5rem 0 3rem; /* More space around subtitle */
   max-width: var(--container-medium-width);
   font-family: 'Jost', sans-serif;
   font-size: var(--font-size-medium);
   text-align: center;
-  color: var(--header-subtitle-color); /* Use special header var */
+  color: var(--text-primary);
 }
 
 .header .btn--pink {
   margin-top: var(--gutter-small-1);
-  /* This will now be blue, as defined in .btn--pink */
-  /* We add styles to make it visible on the dark image */
-  background: var(--accent-primary);
-  color: #FFF;
-  border-color: var(--accent-primary);
-}
-.header .btn--pink:hover,
-.header .btn--pink:focus {
-  background: transparent;
-  color: #FFF; /* Keep text white on hover */
-  border-color: #FFF; /* Make border white on hover */
-  transform: scale(1.05);
 }
 
-
+/* --- NEW: Simplified mobile header --- */
 @media (max-width: 768px) {
   .header {
-    min-height: 100vh; /* Keep 100vh on mobile */
+    min-height: 80vh;
+    text-align: center;
   }
   .header__text-box {
     padding: var(--gutter-small) 0 var(--gutter-medium) 0;
-    background-attachment: scroll; /* Turn off fixed bg */
+    flex-grow: 1;
   }
   .header__text {
     padding-top: var(--gutter-small);
@@ -540,9 +502,12 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: var(--gutter-small);
   }
   .header__text p {
-    font-size: 2.4rem;
+    font-size: 2.4rem; /* Readjusted from scale */
     transform: none;
     margin: 1.5rem 0 3.5rem;
+  }
+  .header .btn--pink {
+    margin-top: var(--gutter-small);
   }
   .nav {
     padding-top: var(--gutter-small);
@@ -559,20 +524,21 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Base Card Style ----- */
+/* --- NEW: Base Card Style --- */
 /* --------------------------------------- */
 
+/* This is the new "card" style we'll apply to projects, work, etc. */
 .work__box,
 .project__box,
 .education__box,
 .certifications__box,
 .leadership__box {
-  background: var(--bg-secondary);
+  background: var(--bg-light);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   padding: var(--gutter-normal);
   transition: all 0.3s ease;
-  display: flex;
+  display: flex; /* Use flex for consistent internal layout */
   flex-direction: column;
 }
 
@@ -582,33 +548,24 @@ body:not(.user-is-tabbing) a:focus {
 .certifications__box:hover,
 .leadership__box:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border-color: var(--accent-primary);
-}
-
-@media (prefers-color-scheme: dark) {
-  .work__box:hover,
-  .project__box:hover,
-  .education__box:hover,
-  .certifications__box:hover,
-  .leadership__box:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  }
 }
 
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
 
+/* --- NEW: Grid layout for work --- */
 .work__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
   gap: var(--gutter-normal);
 }
 
 @media (max-width: 900px) {
   .work__boxes {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on mobile */
   }
   .work__box {
     align-items: initial;
@@ -617,44 +574,44 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__box:not(:last-child) {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Handled by grid gap */
 }
 
 .work__text {
-  flex: 1 1 100%;
+  flex: 1 1 100%; /* Take full width within card */
 }
 
 .work__list {
-  list-style: none;
+  list-style: none; /* NEW: Remove bullets */
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: 0; /* Remove bottom margin */
   margin-top: var(--gutter-normal);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Skill Pill/Chip styling */
+/* --- NEW: Skill Pill/Chip styling --- */
 .work__list li {
   display: inline-block;
-  background: var(--skill-pill-bg);
-  color: var(--skill-pill-text);
+  background: rgba(0, 242, 169, 0.1);
+  color: var(--accent-secondary);
   padding: 0.5rem 1.2rem;
   border-radius: var(--btn-radius);
   font-size: 1.4rem;
   font-family: 'Jost', sans-serif;
-  font-weight: 500;
 }
 
 /* --------------------------------------- */
 /* ----- Projects ----- */
 /* --------------------------------------- */
 
+/* --- NEW: Grid layout for projects --- */
 .project__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
   gap: var(--gutter-normal);
-  padding: 0;
+  padding: 0; /* Remove extra padding */
 }
 
 .project__box {
@@ -669,7 +626,7 @@ body:not(.user-is-tabbing) a:focus {
 
 @media (max-width: 900px) {
   .project__boxes {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on mobile */
   }
 }
 
@@ -678,16 +635,16 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .education__boxes {
-  display: grid;
+  display: grid; /* NEW: Use grid */
   grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
-  padding: 0;
+  padding: 0; /* Remove extra padding */
 }
 
 .education__box {
   flex: 1;
-  max-width: 100%;
-  text-align: left;
+  max-width: 100%; /* Allow grid to control size */
+  text-align: left; /* NEW: Left-align card content */
 }
 
 .education__box .work__text {
@@ -695,20 +652,20 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .education__box h3 {
-  font-size: 3rem;
+  font-size: 3rem; /* Adjusted size */
   margin-bottom: 0.75rem;
   color: var(--text-headings);
 }
 
 .education__box p {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Adjusted size */
   margin: 0.5rem 0;
   color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
   .education__boxes {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column */
   }
   .education__box {
     margin-bottom: 0;
@@ -725,13 +682,13 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
 }
 
+/* --- NEW: Add a visual border to the photo --- */
 .about__photo-container {
   border-radius: 50%;
   border: 4px solid var(--accent-secondary);
   overflow: hidden;
-  padding: 5px;
-  background: var(--bg-primary);
-  transition: background 0.2s ease;
+  padding: 5px; /* Spacing between border and image */
+  background: var(--bg-dark);
 }
 
 .about__photo {
@@ -741,7 +698,7 @@ body:not(.user-is-tabbing) a:focus {
 
 @media (min-width: 901px) {
   .about__content {
-    gap: var(--gutter-medium);
+    gap: var(--gutter-medium); /* More gap */
   }
   .about__text {
     flex: 0 0 60%;
@@ -749,18 +706,18 @@ body:not(.user-is-tabbing) a:focus {
   .about__photo-container {
     flex: 0 0 40%;
     margin: 0;
-    max-width: 350px;
+    max-width: 350px; /* Constrain photo size */
   }
 }
 
 @media (max-width: 900px) {
   .about__content {
     flex-direction: column-reverse;
-    align-items: center;
+    align-items: center; /* Center photo on mobile */
   }
   .about__text {
     flex: 0 0 auto;
-    text-align: center;
+    text-align: center; /* Center text on mobile */
   }
   .about__photo-container {
     flex: 0 0 auto;
@@ -769,7 +726,8 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-/* ----- MODAL STYLES ----- */
+/* --- MODAL STYLES --- */
+/* Kept your modal logic, just restyled to match the new theme */
 .modal {
   display: none;
   position: fixed;
@@ -777,7 +735,7 @@ body:not(.user-is-tabbing) a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* Overlay is always dark */
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -790,7 +748,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .modal__content {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-light);
   padding: var(--gutter-normal);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
@@ -805,13 +763,13 @@ body:not(.user-is-tabbing) a:focus {
   top: 10px;
   right: 15px;
   color: var(--text-headings);
-  font-size: 3rem;
+  font-size: 3rem; /* Larger */
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .modal__close:hover {
-  color: var(--accent-primary);
+  color: var(--pink);
 }
 
 .modal__title {
@@ -831,26 +789,27 @@ body:not(.user-is-tabbing) a:focus {
   display: inline-block;
   padding: 1.2rem 2.5rem;
   text-decoration: none;
-  color: #FFF;
-  border: 1px solid var(--accent-primary);
-  background-color: var(--accent-primary);
+  color: var(--text-headings);
+  border: 1px solid var(--pink);
+  background-color: var(--pink);
   transition: all 0.2s;
   font-family: 'Jost', sans-serif;
   font-size: var(--font-size-small);
   flex: 1;
-  border-radius: var(--btn-radius);
+  border-radius: var(--btn-radius); /* Rounded */
 }
 
 .modal__btn:hover,
 .modal__btn:focus {
   background-color: transparent;
-  color: var(--accent-primary);
+  color: var(--pink);
   transform: scale(1.05);
 }
 
+/* Your resume button */
 #resumeBtn.btn {
-  background-color: var(--accent-primary);
-  color: #FFF;
+  background-color: var(--pink);
+  color: var(--white);
   padding: 1.2rem 2.5rem;
   font-size: var(--font-size-small);
   transition: all 0.2s;
@@ -864,7 +823,7 @@ body:not(.user-is-tabbing) a:focus {
 #resumeBtn.btn:hover,
 #resumeBtn.btn:focus {
   background-color: transparent;
-  color: var(--accent-primary);
+  color: var(--pink);
   transform: scale(1.05);
 }
 
@@ -881,7 +840,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .certifications__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Already a grid, good */
   gap: var(--gutter-normal);
   padding: 0;
 }
@@ -889,7 +848,7 @@ body:not(.user-is-tabbing) a:focus {
 .certifications__box {
   flex: 1;
   max-width: 100%;
-  text-align: left;
+  text-align: left; /* NEW: Left-align */
 }
 
 .certifications__box .work__text {
@@ -897,24 +856,24 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .certifications__box h3 {
-  font-size: 2.4rem;
+  font-size: 2.4rem; /* Adjusted size */
   margin-bottom: 0.75rem;
 }
 
 .certifications__box p {
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* Adjusted size */
   margin: 0.5rem 0;
 }
 
+/* NEW: Style the certificate link */
 .certifications__box p a {
-  color: var(--link-color);
-  border-bottom: 1px dashed var(--link-color);
+  color: var(--accent-secondary);
+  border-bottom: 1px dashed var(--accent-secondary);
   text-decoration: none;
-  transition: all 0.2s ease;
 }
 .certifications__box p a:hover {
-  color: var(--text-headings);
-  border-bottom-color: var(--text-headings);
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
 }
 
 @media (max-width: 768px) {
@@ -931,7 +890,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .leadership__boxes {
-  display: grid;
+  display: grid; /* NEW: Use grid */
   grid-template-columns: 1fr 1fr;
   gap: var(--gutter-normal);
   padding: 0;
@@ -941,9 +900,14 @@ body:not(.user-is-tabbing) a:focus {
   max-width: 100%;
 }
 
+/* Make impact stand out */
+.leadership__box .work__list {
+  list-style: none;
+  padding: 0;
+}
 .leadership__box .work__list li {
-  background: var(--impact-pill-bg);
-  color: var(--impact-pill-text);
+  background: rgba(255, 50, 168, 0.1);
+  color: var(--accent-primary);
 }
 
 @media (max-width: 900px) {
@@ -953,29 +917,19 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Footer & Contact ----- */
+/* ----- Footer ----- */
 /* --------------------------------------- */
 
-.contact {
-  /* Style the contact section to feel separate */
-  background: var(--bg-secondary);
-  border-bottom: none; /* No bottom border on this one */
-  transition: background 0.2s ease;
-}
-
-.contact h2 {
+.footer {
   text-align: center;
+  padding: var(--gutter-medium) 0 var(--gutter-normal);
+  border-top: var(--border-light); /* NEW: Add border-top */
 }
 
-.contact h2::after {
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* Contact section (inside footer logic) */
 .contact__info {
   max-width: var(--container-medium-width);
   margin: 0 auto;
-  text-align: center;
 }
 .contact__info p {
   font-size: var(--font-size-normal);
@@ -983,18 +937,10 @@ body:not(.user-is-tabbing) a:focus {
   margin-bottom: var(--gutter-normal);
 }
 
-.footer {
-  text-align: center;
-  padding: var(--gutter-medium) 0 var(--gutter-normal);
-  border-top: var(--border-light);
-  background: var(--bg-primary); /* Match page bg */
-  transition: background 0.2s ease, border 0.2s ease;
-}
-
 .footer__social-links {
   display: flex;
   justify-content: center;
-  padding: var(--gutter-normal) 0 0 0; /* Only padding top */
+  padding: var(--gutter-normal) 0;
   list-style: none;
 }
 
@@ -1005,19 +951,11 @@ body:not(.user-is-tabbing) a:focus {
 .footer__social-image {
   height: 4rem;
   transition: all 0.2s ease;
-  /* NEW: Use filter to color icons */
-  filter: grayscale(1) invert(0.5) opacity(0.7);
-}
-
-@media (prefers-color-scheme: dark) {
-  .footer__social-image {
-    filter: grayscale(1) invert(1) opacity(0.6);
-  }
 }
 
 .footer__social-link-item a:hover .footer__social-image {
   transform: scale(1.1);
-  filter: none; /* Show full color on hover */
+  filter: drop-shadow(0 0 5px var(--pink)); /* NEW: Add glow */
 }
 
 @media (max-width: 500px) {
