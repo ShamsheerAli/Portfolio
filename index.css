@@ -65,6 +65,9 @@
   --accent-blue-light: rgba(0, 169, 224, 0.1);
   --accent-red-text: var(--accent-red);
   --accent-blue-text: var(--accent-blue);
+
+  /* ▼▼▼ NEW BACKGROUND VARIABLE (DARK) ▼▼▼ */
+  --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: light) {
@@ -82,13 +85,13 @@
     --accent-blue-light: rgba(0, 91, 154, 0.1);
     --accent-red-text: var(--accent-red);
     --accent-blue-text: var(--accent-blue);
+    
+    /* ▼▼▼ NEW BACKGROUND VARIABLE (LIGHT) ▼▼▼ */
+    /* 10% opaque black webs for light mode */
+    --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.1)'/%3E%3C/svg%3E");
   }
   
-  /* This rule applies the light mode web pattern */
-  body {
-     /* 5% opaque black webs for light mode */
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,10)'/%3E%3C/svg%3E");
-  }
+  /* --- REMOVED the body rule from here --- */
 }
 
 /* --- Old variables mapped to new theme --- */
@@ -123,10 +126,10 @@ body {
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
   
-  /* This is the default (dark mode) web pattern */
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+  /* ▼▼▼ CHANGED: Now uses the variable ▼▼▼ */
+  background-image: var(--bg-pattern-url);
   background-repeat: repeat;
-  background-attachment: fixed; /* Makes the pattern stay in place on scroll */
+  background-attachment: fixed; 
 }
 
 .row {
@@ -414,7 +417,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__item:not(:last-child) {
-  margin-right: 0.8rem; /* <-- CHANGED: Increased spacing */
+  margin-right: 0.8rem;
 }
 
 @media(max-width: 768px) {
@@ -445,7 +448,7 @@ body:not(.user-is-tabbing) a:focus {
   border-radius: var(--btn-radius);
   font-family: 'Jost', sans-serif; 
   background: var(--accent-red-light); 
-  white-space: nowrap; /* <-- CHANGED: Added this line */
+  white-space: nowrap;
 }
 
 .nav__link::after {
