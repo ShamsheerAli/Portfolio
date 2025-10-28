@@ -383,13 +383,13 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__items {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* <-- CHANGED: No wrapping on desktop/laptop */
   justify-content: center;
   list-style: none;
 }
 
 .nav__item:not(:last-child) {
-  margin-right: var(--gutter-small);
+  margin-right: 0.2rem; /* <-- CHANGED: Tighter spacing for desktop */
 }
 
 @media(max-width: 768px) {
@@ -398,7 +398,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-small) 0;
   }
   .nav__items {
-    flex-direction: row;
+    flex-wrap: wrap; /* <-- Add wrap back in for mobile */
     align-items: center;
   }
   .nav__item {
@@ -413,7 +413,7 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.2rem; /* <-- CHANGED: Reduced horizontal padding */
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s ease;
@@ -454,9 +454,10 @@ body:not(.user-is-tabbing) a:focus {
   height: 300px; /* Set a height for your banner */
   max-height: 40vh;
   
-  /* --- ▼▼▼ REPLACE THIS URL WITH YOUR OWN IMAGE ▼▼▼ --- */
-  background-image: url('./images/Spiderman.png');
-  /* --- ▲▲▲ REPLACE THIS URL WITH YOUR OWN IMAGE ▲▲▲ --- */
+  /* --- ▼▼▼ THIS IS THE SPOT! ▼▼▼ --- */
+  /* --- I've updated this to use your local image path --- */
+  background-image: url('./images/header.jpg'); 
+  /* --- ▲▲▲ THIS IS THE SPOT! ▲▲▲ --- */
 
   background-size: cover;
   background-position: center;
@@ -994,3 +995,4 @@ body:not(.user-is-tabbing) a:focus {
     padding: var(--gutter-medium) 0;
   }
 }
+
