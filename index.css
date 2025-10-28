@@ -190,7 +190,7 @@ h1, h2, h3 {
 /* --- NEW: Name is Spidey Red --- */
 .heading-primary span {
   /* Use gradient as background */
-  background: linear-gradient(30deg, var(--accent-red) 50%, var(--accent-blue) 50%);
+  background: linear-gradient(160deg, var(--accent-red) 60%, var(--accent-blue) 40%);
   /* Clip the background to the text shape */
   -webkit-background-clip: text;
   background-clip: text;
