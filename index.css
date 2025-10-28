@@ -378,7 +378,7 @@ body:not(.user-is-tabbing) a:focus {
 .nav {
   display: flex;
   justify-content: flex-end;
-  padding: var(--gutter-normal) 0;
+  padding: 1.5rem 0;
 }
 
 .nav__items {
@@ -413,7 +413,7 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link {
   position: relative;
   display: inline-block;
-  padding: 1rem 1.2rem; /* <-- Reduced horizontal padding */
+  padding: 0.5rem 1rem; /* <-- Reduced horizontal padding */
   text-decoration: none;
   color: var(--text-primary);
   transition: all 0.2s ease;
