@@ -223,7 +223,7 @@ p {
 }
 
 @media(max-width: 900px) {
-  p {
+  p { 
     max-width: var(--container-small-width);
   }
 }
@@ -518,7 +518,7 @@ body:not(.user-is-tabbing) a:focus {
 
 
 .header__text h1 {
-  margin-top: 20px;
+  margin-top: 85px;
   margin-bottom: var(--gutter-small-1);
 }
 
@@ -607,9 +607,10 @@ body:not(.user-is-tabbing) a:focus {
 .education__box:hover,
 .certifications__box:hover,
 .leadership__box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  border-color: var(--accent-red); /* Red border on hover */
+  /* Remove hover effect from entire card */
+  transform: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  border-color: var(--border-color);
 }
 
 /* --------------------------------------- */
@@ -628,7 +629,7 @@ body:not(.user-is-tabbing) a:focus {
   }
   .work__box {
     align-items: initial;
-    flex-direction: column-reverse;
+    flex-direction: column; /* Keep h3 on top */
   }
 }
 
@@ -1056,5 +1057,55 @@ body:not(.user-is-tabbing) a:focus {
   .footer {
     padding: var(--gutter-medium) 0;
   }
+}
+
+
+/* --------------------------------------- */
+/* ----- NEW: Collapsible Styles ----- */
+/* --------------------------------------- */
+
+.collapsible-trigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Make sure margin-bottom is reset to control spacing with wrapper */
+  margin-bottom: 0 !important;
+  transition: color 0.2s ease;
+}
+
+.collapsible-arrow {
+  transition: transform 0.3s ease-out;
+  font-size: 2rem;
+  font-family: 'Jost', sans-serif; /* Use a standard font for the arrow */
+  color: var(--accent-blue);
+  padding-left: 1rem;
+}
+
+.collapsible-content {
+  /* Collapsed by default */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out, padding-top 0.4s ease-out;
+}
+
+/* When the .active class is added... */
+.active .collapsible-content {
+  /* Expand */
+  max-height: 2000px; /* Large value to fit any content */
+  opacity: 1;
+  padding-top: 1rem; /* Add some space between heading and content */
+  transition: max-height 0.5s ease-in, opacity 0.4s 0.1s ease-in, padding-top 0.5s ease-in;
+}
+
+.active .collapsible-arrow {
+  transform: rotate(180deg);
+  color: var(--accent-red); /* Change arrow color when active */
+}
+
+/* Apply hover effect to the trigger (h3) instead */
+.collapsible-trigger:hover {
+  color: var(--accent-red);
 }
 
