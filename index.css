@@ -420,7 +420,6 @@ body:not(.user-is-tabbing) a:focus {
 .nav__items {
   display: flex;
   flex-wrap: nowrap;
-  /*justify-content: center;*/
   list-style: none;
 }
 
@@ -436,6 +435,7 @@ body:not(.user-is-tabbing) a:focus {
   .nav__items {
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
   .nav__item {
     margin: 0.5rem;
@@ -446,16 +446,17 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
+/* ▼▼▼ REMOVED DEFAULT .nav__link STYLES ▼▼▼ */
 .nav__link {
   position: relative;
   display: inline-block;
   padding: 1rem 1.2rem;
   text-decoration: none;
-  color: var(--accent-red-text); 
+  /* color: var(--accent-red-text); REMOVED */
   transition: all 0.2s ease;
   border-radius: var(--btn-radius);
-  font-family: 'Jost', sans-serif; 
-  background: var(--accent-red-light); 
+  font-family: 'Jost', sans-serif;
+  /* background: var(--accent-red-light); REMOVED */
   white-space: nowrap;
 }
 
@@ -463,9 +464,29 @@ body:not(.user-is-tabbing) a:focus {
   display: none;
 }
 
-.nav__link:hover {
-  color: var(--accent-blue-text); 
-  background: var(--accent-blue-light); 
+/* ▼▼▼ REMOVED DEFAULT .nav__link:hover STYLES ▼▼▼ */
+/* .nav__link:hover { ... } */
+
+
+/* --- ▼▼▼ NEW RULES FOR ALTERNATING COLORS ▼▼▼ --- */
+/* Style for ODD items (1st, 3rd, 5th, etc.) - RED */
+.nav__item:nth-child(odd) .nav__link {
+  background: var(--accent-red-light);
+  color: var(--accent-red-text);
+}
+.nav__item:nth-child(odd) .nav__link:hover {
+  background: var(--accent-blue-light);
+  color: var(--accent-blue-text);
+}
+
+/* Style for EVEN items (2nd, 4th, 6th, etc.) - BLUE */
+.nav__item:nth-child(even) .nav__link {
+  background: var(--accent-blue-light);
+  color: var(--accent-blue-text);
+}
+.nav__item:nth-child(even) .nav__link:hover {
+  background: var(--accent-red-light);
+  color: var(--accent-red-text);
 }
 
 /* --------------------------------------- */
