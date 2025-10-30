@@ -20,10 +20,10 @@ const backToTopButton = document.querySelector(".back-to-top");
 let isBackToTopRendered = false;
 
 let alterStyles = (isBackToTopRendered) => {
-  if (backToTopButton) {
-    backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
-    backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
-    backToTopButton.style.transform = isBackToTopRendered ? "scale(1)" : "scale(0)";
+  if (backToTopButton) { // Check if the button exists
+      backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
+      backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
+      backToTopButton.style.transform = isBackToTopRendered ? "scale(1)" : "scale(0)";
   }
 };
 
@@ -37,98 +37,87 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Modal Functionality
+// Modal Functionality (Original - No Changes Needed Here)
 document.addEventListener('DOMContentLoaded', function () {
   const resumeBtn = document.getElementById('resumeBtn');
   const modal = document.getElementById('resumeModal');
   const closeModal = document.getElementById('closeModal');
 
-  if (resumeBtn) {
+  if (resumeBtn && modal && closeModal) { // Check elements exist
     resumeBtn.addEventListener('click', function () {
-      if (modal) modal.style.display = 'flex';
+      modal.style.display = 'flex';
     });
-  }
 
-  if (closeModal) {
     closeModal.addEventListener('click', function () {
-      if (modal) modal.style.display = 'none';
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+      }
     });
   }
 
-  window.addEventListener('click', function (event) {
-    if (event.target === modal) {
-      if (modal) modal.style.display = 'none';
+  // --- ▼▼▼ UPDATED Collapsible Logic ▼▼▼ ---
+  // Select all trigger elements *except* those inside the UX case study section
+  const triggers = document.querySelectorAll(
+      '.work__box .collapsible-trigger, ' +
+      '.project__box:not(.ux-case-study__card) .collapsible-trigger, ' + // Exclude UX case study cards
+      '.leadership__box .collapsible-trigger'
+  );
+
+  triggers.forEach(trigger => {
+    // Find the closest parent card element that IS NOT a ux-case-study card
+     const parentCard = trigger.closest('.work__box, .project__box:not(.ux-case-study__card), .leadership__box');
+    if (!parentCard) return; // Skip if no parent card found or if it's a UX card
+
+    // Find the content and arrow within that specific card
+    const content = parentCard.querySelector('.collapsible-content');
+    const arrow = trigger.querySelector('.collapsible-arrow');
+
+    if (content && arrow) { // Make sure content and arrow exist
+      // Initial setup: Add arrow and hide content
+      arrow.textContent = '▼'; // Down arrow
+      content.style.display = 'none'; // Initially hide content using JS
+      parentCard.classList.remove('active'); // Ensure cards start closed
+
+      trigger.addEventListener('click', () => {
+        // console.log('Clicked trigger:', trigger.textContent.trim().split('▼')[0].split('▲')[0]); // Log heading text
+        parentCard.classList.toggle('active'); // Toggle active class on the *parent card*
+
+        // Animate open/close
+        if (parentCard.classList.contains('active')) {
+          content.style.display = 'block'; // Make it visible for animation
+           // We need to force a reflow before setting max-height for transition to work correctly
+          content.offsetHeight; // Trigger reflow
+          content.style.maxHeight = content.scrollHeight + 'px'; // Set max-height to content height
+          arrow.textContent = '▲'; // Up arrow
+        } else {
+          content.style.maxHeight = '0px'; // Collapse
+          arrow.textContent = '▼'; // Down arrow
+        }
+      });
+
+        // After collapse transition ends, set display to none for accessibility/tabbing
+        content.addEventListener('transitionend', () => {
+            if (!parentCard.classList.contains('active')) {
+                content.style.display = 'none';
+            }
+        });
+
+    } else {
+        // If content/arrow not found, remove the trigger class to prevent confusion
+        // trigger.classList.remove('collapsible-trigger');
+        // console.warn("Collapsible content or arrow not found for trigger:", trigger);
     }
   });
-
-  window.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && modal && modal.style.display === 'flex') {
-      modal.style.display = 'none';
-    }
-  });
-
-  // --- NEW: Collapsible Card Functionality ---
-  initCollapsibles();
+  
 });
-
-/**
- * NEW: Finds all collapsible cards and sets them up.
- */
-function initCollapsibles() {
-  // Select all cards from all sections
-  const cards = document.querySelectorAll('.work__box, .project__box, .leadership__box');
-
-  cards.forEach(card => {
-    const trigger = card.querySelector('h3');
-    const workText = card.querySelector('.work__text');
-
-    // Only proceed if a heading and text block exist
-    if (!trigger || !workText) {
-      console.warn('Card missing trigger (h3) or work__text:', card); // Added warning
-      return;
-    }
-
-    // Get all content *except* the h3
-    const contentElements = Array.from(workText.children).filter(child => child.tagName !== 'H3');
-
-    // If no content, don't make it collapsible
-    if (contentElements.length === 0) {
-      // Don't add trigger class or arrow if not collapsible
-      return;
-    }
-
-    // Create a wrapper for the content
-    const contentWrapper = document.createElement('div');
-    contentWrapper.className = 'collapsible-content';
-
-    // Move all content elements into the wrapper
-    contentElements.forEach(el => contentWrapper.appendChild(el));
-
-    // Put the wrapper back into the .work__text
-    workText.appendChild(contentWrapper);
-
-    // Add the arrow to the trigger
-    trigger.classList.add('collapsible-trigger');
-    // Check if arrow already exists to prevent duplicates on potential re-runs
-    if (!trigger.querySelector('.collapsible-arrow')) {
-        trigger.innerHTML += ' <span class="collapsible-arrow">▼</span>';
-    }
-
-
-    // Add click event to the trigger (the h3)
-    trigger.addEventListener('click', (event) => {
-      // --- ADDED DIAGNOSTIC LOG ---
-      console.log("Clicked trigger:", trigger.innerText.split('\n')[0]); // Log the heading text
-      
-      // Toggle the active class ONLY on the parent card of the clicked trigger
-      const clickedCard = event.currentTarget.closest('.work__box, .project__box, .leadership__box');
-      if (clickedCard) {
-        clickedCard.classList.toggle('active');
-      } else {
-        console.error("Couldn't find parent card for clicked trigger:", event.currentTarget);
-      }
-      // --- END OF DIAGNOSTIC LOG ---
-    });
-  });
-}
 

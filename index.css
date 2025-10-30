@@ -166,6 +166,7 @@ section {
 img {
   object-fit: contain;
   max-width: 100%;
+  display: block; /* Remove extra space below images */
 }
 
 /* --------------------------------------- */
@@ -241,6 +242,9 @@ h3 {
 p {
   margin: var(--gutter-small-1) 0;
   color: var(--text-primary);
+  font-family: var(--font-stack); /* Ensure paragraphs use standard font */
+  font-size: var(--font-size-small);
+  letter-spacing: normal; /* Reset letter spacing */
 }
 
 @media(max-width: 900px) {
@@ -541,7 +545,7 @@ body:not(.user-is-tabbing) a:focus {
 
 
 .header__text h1 {
-  margin-top: 20px;
+  margin-top: 85px;
   margin-bottom: var(--gutter-small-1);
 }
 
@@ -581,7 +585,7 @@ body:not(.user-is-tabbing) a:focus {
   /*END OF MOBILE PROFILE PICTURE STYLES */
 
   .header__text h1 {
-    margin-top: 70px;
+    margin-top: 20px;
     margin-bottom: var(--gutter-small);
   }
   .header__text p {
@@ -611,7 +615,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .work__box,
-.project__box,
+.project__box, /* Applied to AI/ML and Dev/Unity sections */
 .education__box,
 .certifications__box,
 .leadership__box {
@@ -619,13 +623,13 @@ body:not(.user-is-tabbing) a:focus {
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   padding: var(--gutter-normal);
-  transition: border-color 0.3s ease; /* <-- CHANGED: Only transition border */
+  transition: border-color 0.3s ease; /* Transition border only */
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-/* --- REMOVED :hover rules for the whole card --- */
+/* Base styles - :hover removed */
 
 
 /* --------------------------------------- */
@@ -679,17 +683,17 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Projects ----- */
+/* ----- Projects ----- */ /* AI/ML and Dev/Unity */
 /* --------------------------------------- */
 
-.project__boxes {
+.project__boxes { /* Applied to AI/ML and Dev/Unity sections */
   display: grid;
   grid-template-columns: 1fr; /* Single column */
   gap: var(--gutter-normal);
   padding: 0;
 }
 
-.project__box {
+.project__box { /* Applied to AI/ML and Dev/Unity sections */
   max-width: 100%;
 }
 
@@ -1076,7 +1080,7 @@ body:not(.user-is-tabbing) a:focus {
 
 
 /* --------------------------------------- */
-/* ----- NEW: Collapsible Styles ----- */
+/* ----- Collapsible Styles ----- */ /* Applies to Work, AI/ML, Dev/Unity */
 /* --------------------------------------- */
 
 .collapsible-trigger {
@@ -1120,13 +1124,109 @@ body:not(.user-is-tabbing) a:focus {
   color: var(--accent-red);
 }
 
-/* Target the parent card (.work__box, .project__box, etc.) when the trigger inside it is hovered */
-.collapsible-trigger:hover .work__box,
-.collapsible-trigger:hover .project__box,
-.collapsible-trigger:hover .education__box, /* Added Education just in case */
-.collapsible-trigger:hover .certifications__box, /* Added Certs just in case */
-.collapsible-trigger:hover .leadership__box {
+/* --- ▼▼▼ UPDATED BORDER HOVER EFFECT ▼▼▼ --- */
+/* Target the parent card when the trigger *inside* it is hovered */
+/* This uses the :has pseudo-selector which is well-supported now */
+.work__box:has(.collapsible-trigger:hover),
+.project__box:has(.collapsible-trigger:hover),
+.leadership__box:has(.collapsible-trigger:hover) {
   border-color: var(--accent-red);
 }
+/* --- ▲▲▲ END OF BORDER HOVER EFFECT ▲▲▲ --- */
 
+
+/* --------------------------------------- */
+/* ----- NEW: UX Case Study Styles ----- */
+/* --------------------------------------- */
+.ux-case-study-section .row {
+  max-width: 1000px; /* Allow case studies to be a bit wider */
+}
+
+.ux-case-study__container {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for case studies */
+  gap: var(--gutter-medium); /* Space between multiple case studies */
+  padding: 0; /* Remove default padding */
+}
+
+.ux-case-study__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  overflow: hidden; /* Ensure image corners are rounded */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Image | Text */
+  gap: var(--gutter-normal);
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.ux-case-study__card:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+   border-color: var(--accent-red);
+}
+
+.ux-case-study__image-container {
+  /* No specific styles needed unless image needs cropping */
+}
+
+.ux-case-study__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop image nicely */
+}
+
+.ux-case-study__text {
+  padding: var(--gutter-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.ux-case-study__text h3 {
+  /* Use Comic font for consistency, but maybe slightly smaller */
+  font-size: var(--font-size-medium-1);
+  margin-bottom: var(--gutter-small);
+}
+
+.ux-case-study__summary {
+  font-family: var(--font-stack); /* Use standard font for summary */
+  font-size: var(--font-size-small);
+  color: var(--text-secondary); /* Lighter color for summary */
+  margin-bottom: var(--gutter-normal);
+}
+
+.ux-case-study__button {
+  /* Style the button like other primary buttons */
+  background: var(--accent-red);
+  color: #FFFFFF;
+  border-color: var(--accent-red);
+  padding: 1rem 3rem; /* Adjust padding if needed */
+  align-self: flex-start; /* Align button left */
+}
+
+.ux-case-study__button:hover,
+.ux-case-study__button:focus {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #FFFFFF;
+}
+
+/* Responsive adjustments for Case Studies */
+@media (max-width: 768px) {
+  .ux-case-study__card {
+    grid-template-columns: 1fr; /* Stack image and text vertically */
+    gap: 0; /* Remove gap */
+  }
+
+  .ux-case-study__text {
+    padding: var(--gutter-normal); /* Consistent padding */
+  }
+
+  .ux-case-study__button {
+    align-self: stretch; /* Make button full width on mobile */
+    text-align: center;
+  }
+}
 
