@@ -416,14 +416,14 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 1.5rem 0;
 }
 
 .nav__items {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  /*justify-content: center;*/
   list-style: none;
 }
 
