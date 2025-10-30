@@ -189,7 +189,7 @@ h1, h2, h3 {
 /* --- ▼▼▼ NAME GRADIENT EFFECT ▼▼▼ --- */
 .heading-primary span {
   /* Use gradient as background */
-  background: linear-gradient(45deg, var(--accent-red) 50%, var(--accent-blue) 50%);
+  background: linear-gradient(170deg, var(--accent-red) 50%, var(--accent-blue) 50%);
   /* Clip the background to the text shape */
   -webkit-background-clip: text;
   background-clip: text;
