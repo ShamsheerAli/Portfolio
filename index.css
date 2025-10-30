@@ -67,7 +67,7 @@
   --accent-blue-text: var(--accent-blue);
 
   /* ▼▼▼ NEW BACKGROUND VARIABLE (DARK) ▼▼▼ */
-  --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+  --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: light) {
@@ -85,13 +85,11 @@
     --accent-blue-light: rgba(0, 91, 154, 0.1);
     --accent-red-text: var(--accent-red);
     --accent-blue-text: var(--accent-blue);
-    
+
     /* ▼▼▼ NEW BACKGROUND VARIABLE (LIGHT) ▼▼▼ */
     /* 10% opaque black webs for light mode */
     --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.1)'/%3E%3C/svg%3E");
   }
-  
-  /* --- REMOVED the body rule from here --- */
 }
 
 /* --- Old variables mapped to new theme --- */
@@ -125,11 +123,11 @@ body {
   background: var(--bg-main);
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
-  
-  /* ▼▼▼ CHANGED: Now uses the variable ▼▼▼ */
+
+  /* Uses the variable for background pattern */
   background-image: var(--bg-pattern-url);
   background-repeat: repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
 
 .row {
@@ -187,10 +185,10 @@ h1, h2, h3 {
   font-size: var(--font-size-huge);
 }
 
-/* --- NEW: Name is Spidey Red --- */
+/* --- ▼▼▼ NAME GRADIENT EFFECT ▼▼▼ --- */
 .heading-primary span {
   /* Use gradient as background */
-  background: linear-gradient(170deg, var(--accent-red) 50%, var(--accent-blue) 50%);
+  background: linear-gradient(45deg, var(--accent-red) 50%, var(--accent-blue) 50%);
   /* Clip the background to the text shape */
   -webkit-background-clip: text;
   background-clip: text;
@@ -199,6 +197,7 @@ h1, h2, h3 {
   /* Fallback for browsers that don't support background-clip */
   color: var(--accent-red);
 }
+/* --- ▲▲▲ END OF NAME GRADIENT ▲▲▲ --- */
 
 @media(max-width: 900px) {
   .heading-primary {
@@ -245,7 +244,7 @@ p {
 }
 
 @media(max-width: 900px) {
-  p { 
+  p {
     max-width: var(--container-small-width);
   }
 }
@@ -413,13 +412,14 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 1.5rem 0;
 }
 
 .nav__items {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
   list-style: none;
 }
 
@@ -435,7 +435,6 @@ body:not(.user-is-tabbing) a:focus {
   .nav__items {
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
   }
   .nav__item {
     margin: 0.5rem;
@@ -446,17 +445,16 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-/* ▼▼▼ REMOVED DEFAULT .nav__link STYLES ▼▼▼ */
 .nav__link {
   position: relative;
   display: inline-block;
   padding: 1rem 1.2rem;
   text-decoration: none;
-  /* color: var(--accent-red-text); REMOVED */
+  color: var(--accent-red-text);
   transition: all 0.2s ease;
   border-radius: var(--btn-radius);
   font-family: 'Jost', sans-serif;
-  /* background: var(--accent-red-light); REMOVED */
+  background: var(--accent-red-light);
   white-space: nowrap;
 }
 
@@ -464,29 +462,9 @@ body:not(.user-is-tabbing) a:focus {
   display: none;
 }
 
-/* ▼▼▼ REMOVED DEFAULT .nav__link:hover STYLES ▼▼▼ */
-/* .nav__link:hover { ... } */
-
-
-/* --- ▼▼▼ NEW RULES FOR ALTERNATING COLORS ▼▼▼ --- */
-/* Style for ODD items (1st, 3rd, 5th, etc.) - RED */
-.nav__item:nth-child(odd) .nav__link {
-  background: var(--accent-red-light);
-  color: var(--accent-red-text);
-}
-.nav__item:nth-child(odd) .nav__link:hover {
-  background: var(--accent-blue-light);
+.nav__link:hover {
   color: var(--accent-blue-text);
-}
-
-/* Style for EVEN items (2nd, 4th, 6th, etc.) - BLUE */
-.nav__item:nth-child(even) .nav__link {
   background: var(--accent-blue-light);
-  color: var(--accent-blue-text);
-}
-.nav__item:nth-child(even) .nav__link:hover {
-  background: var(--accent-red-light);
-  color: var(--accent-red-text);
 }
 
 /* --------------------------------------- */
@@ -512,7 +490,7 @@ body:not(.user-is-tabbing) a:focus {
   width: 100%;
   height: 300px;
   max-height: 40vh;
-  background-image: url('./images/Spiderman.png'); 
+  background-image: url('./images/Spiderman.png');
   background-size: cover;
   background-position: center;
 }
@@ -596,7 +574,7 @@ body:not(.user-is-tabbing) a:focus {
   .header__profile-pic {
     width: 120px;
     height: 120px;
-    position: absolute; 
+    position: absolute;
     top: -60px;
     left: 30px;
   }
@@ -641,22 +619,14 @@ body:not(.user-is-tabbing) a:focus {
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   padding: var(--gutter-normal);
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease; /* <-- CHANGED: Only transition border */
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-.work__box:hover,
-.project__box:hover,
-.education__box:hover,
-.certifications__box:hover,
-.leadership__box:hover {
-  /* Remove hover effect from entire card */
-  transform: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-  border-color: var(--border-color);
-}
+/* --- REMOVED :hover rules for the whole card --- */
+
 
 /* --------------------------------------- */
 /* ----- Work ----- */
@@ -1114,7 +1084,6 @@ body:not(.user-is-tabbing) a:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Make sure margin-bottom is reset to control spacing with wrapper */
   margin-bottom: 0 !important;
   transition: color 0.2s ease;
 }
@@ -1122,35 +1091,42 @@ body:not(.user-is-tabbing) a:focus {
 .collapsible-arrow {
   transition: transform 0.3s ease-out;
   font-size: 2rem;
-  font-family: 'Jost', sans-serif; /* Use a standard font for the arrow */
+  font-family: 'Jost', sans-serif;
   color: var(--accent-blue);
   padding-left: 1rem;
 }
 
 .collapsible-content {
-  /* Collapsed by default */
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out, opacity 0.3s ease-out, padding-top 0.4s ease-out;
 }
 
-/* When the .active class is added... */
 .active .collapsible-content {
-  /* Expand */
-  max-height: 2000px; /* Large value to fit any content */
+  max-height: 2000px;
   opacity: 1;
-  padding-top: 1rem; /* Add some space between heading and content */
+  padding-top: 1rem;
   transition: max-height 0.5s ease-in, opacity 0.4s 0.1s ease-in, padding-top 0.5s ease-in;
 }
 
 .active .collapsible-arrow {
   transform: rotate(180deg);
-  color: var(--accent-red); /* Change arrow color when active */
+  color: var(--accent-red);
 }
 
-/* Apply hover effect to the trigger (h3) instead */
+/* Apply text color change hover effect to the trigger */
 .collapsible-trigger:hover {
   color: var(--accent-red);
 }
+
+/* Target the parent card (.work__box, .project__box, etc.) when the trigger inside it is hovered */
+.collapsible-trigger:hover .work__box,
+.collapsible-trigger:hover .project__box,
+.collapsible-trigger:hover .education__box, /* Added Education just in case */
+.collapsible-trigger:hover .certifications__box, /* Added Certs just in case */
+.collapsible-trigger:hover .leadership__box {
+  border-color: var(--accent-red);
+}
+
 
