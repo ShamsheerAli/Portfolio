@@ -454,22 +454,40 @@ body:not(.user-is-tabbing) a:focus {
   display: inline-block;
   padding: 1rem 1.2rem;
   text-decoration: none;
-  color: var(--accent-red-text);
   transition: all 0.2s ease;
   border-radius: var(--btn-radius);
   font-family: 'Jost', sans-serif;
-  background: var(--accent-red-light);
   white-space: nowrap;
 }
 
+/* Default state (Odd items - Red) */
+.nav__item:nth-child(odd) .nav__link {
+  color: var(--accent-red-text);
+  background: var(--accent-red-light);
+}
+
+/* Even items - Blue */
+.nav__item:nth-child(even) .nav__link {
+  color: var(--accent-blue-text);
+  background: var(--accent-blue-light);
+}
+
+/* Hover state (Odd items hover to Blue) */
+.nav__item:nth-child(odd) .nav__link:hover {
+  color: var(--accent-blue-text);
+  background: var(--accent-blue-light);
+}
+
+/* Hover state (Even items hover to Red) */
+.nav__item:nth-child(even) .nav__link:hover {
+  color: var(--accent-red-text);
+  background: var(--accent-red-light);
+}
 .nav__link::after {
   display: none;
 }
 
-.nav__link:hover {
-  color: var(--accent-blue-text);
-  background: var(--accent-blue-light);
-}
+
 
 /* --------------------------------------- */
 /* ----- Header ----- */
