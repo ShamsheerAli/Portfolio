@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <title>Case Study: ITAC Portal - Shamsheer Ali Shaik</title>
+
+  <!-- Main Portfolio Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  
+  <!-- Case Study Specific CSS -->
+  <link rel="stylesheet" href="case-study.css" />
+  
+  <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+
+<body>
+
+  <header class="case-study-header" role="banner" id="top">
+    <div class="row case-study-nav">
+      <a href="index.html" class="case-study-nav__logo">Shamsheer Ali Shaik</a>
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link">← Back to All Projects</a>
+    </div>
+  </header>
+
+  <main role="main">
+    <article class="case-study-content">
+
+      <!-- Project Title -->
+      <h1>The ITAC Operations & Client Portal</h1>
+
+      <!-- High-level Overview -->
+      <section class="case-study-overview-section">
+        <h2>Overview</h2>
+        <p class="case-study-overview">
+          This project involves designing and building a unified web portal for OSU's Industrial Training and Assessment Center (ITAC) to manage the entire client assessment lifecycle. The existing process relies on disconnected spreadsheets, emails, and manual data entry, leading to inefficiencies, errors, and a poor experience for both internal staff and external clients.
+        </p>
+        
+        <!-- Project Roles & Details -->
+        <p>
+          <strong>My Role:</strong> UX Engineer (Lead Designer & Full-Stack Developer)<br>
+          <strong>Timeline:</strong> Oct 2025 - Present (Ongoing)<br>
+          <strong>Tools:</strong> Figma, Django, Python, JavaScript, PostgreSQL
+        </p>
+      </section>
+
+      <!-- Featured Image of Final Product -->
+      <img src="https://placehold.co/1200x800/1A1D2A/E62429?text=Show+Final+Dashboard+Design" 
+           alt="Final design of ITAC Portal"
+           class="case-study-image"
+           onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+
+      <!-- The Problem -->
+      <section>
+        <h2>The Problem</h2>
+        <p>
+          ITAC's assessment process is complex, involving multiple stakeholders (staff, management, student assessors, clients). The current workflow is manual and fragmented, causing several key problems:
+        </p>
+        <ul>
+          <li>**Staff Inefficiency:** Hours are wasted on duplicate data entry and tracking project status via email.</li>
+          <li>**Client Frustration:** Clients have no central place to view their project status, submit documents, or see final reports.</li>
+          <li>**Data Errors:** Manual data transfer between spreadsheets leads to frequent errors and version control nightmares.</li>
+          <li>**Lack of Oversight:** Management has no simple dashboard to view project load, team capacity, or financial status.</li>
+        </ul>
+      </section>
+
+      <!-- The Process & Solution -->
+      <section>
+        <h2>The Process & Solution</h2>
+        <p>
+          As the sole UX Engineer, I am responsible for the entire product lifecycle. The solution is a secure, role-based web portal that provides a single source of truth for all stakeholders.
+        </p>
+
+        <h3>User Research & Personas</h3>
+        <p>
+          I conducted stakeholder interviews with 4 key user groups: ITAC Staff, Management, Student Assessors, and External Clients. This led to the creation of 4 primary personas, each with distinct needs and pain points. For example, the "Staff" persona's main goal is "time-saving and efficiency," while the "Client" persona's main goal is "clarity and transparency."
+        </p>
+        <img src="https://placehold.co/1200x600/1A1D2A/FFFFFF?text=User+Personas" alt="User personas for ITAC project" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/cccccc/ffffff?text=Image+Not+Found';">
+
+        <h3>User Flow & Wireframes</h3>
+        <p>
+          I mapped out the end-to-end user flow for the assessment process, from a client's first inquiry to the final report delivery. This visual map became the blueprint for the portal's architecture. I then created low-fidelity wireframes in Figma to block out the key screens for each user role, focusing on the "Staff Dashboard" and "Client Project View" first.
+        </p>
+        <div class="image-grid-2">
+          <img src="https://placehold.co/600x400/1A1D2A/FFFFFF?text=User+Flow+Diagram" alt="User flow diagram" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+          <img src="https://placehold.co/600x400/1A1D2A/FFFFFF?text=Dashboard+Wireframe" alt="Low-fidelity wireframe of dashboard" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+        </div>
+
+        <h3>High-Fidelity Design & Prototyping</h3>
+        <p>
+          Using the main OSU brand guidelines, I created a clean, accessible, and professional high-fidelity design system in Figma. I built an interactive prototype focusing on the primary task: "Creating a new client project and assigning a team." This prototype was used for initial usability testing with 3 staff members.
+        </p>
+
+        <h3>Development & Implementation</h3>
+        <p>
+          This is where my "Dev-Designer" role is critical. I am currently building the portal from the ground up as a full-stack application.
+        </p>
+        <ul>
+          <li>**Backend:** Django (Python) for the server, handling user authentication, permissions, and the database models.</li>
+          <li>**Database:** PostgreSQL for robust data management.</li>
+          <li>**Frontend:** Vanilla JavaScript, HTML, and CSS (using the `index.css` theme as a base) to build the interactive user interface based on my Figma designs.</li>
+        </ul>
+      </section>
+
+      <!-- Conclusion / What I Learned -->
+      <section>
+        <h2>What I've Learned (So Far)</h2>
+        <p>
+          This ongoing project is a massive lesson in balancing the needs of multiple, diverse user groups. The "Client" needs extreme simplicity, while the "Staff" needs powerful, complex tools. The biggest challenge is designing a single system that serves both without compromise. Building the front-end directly from my own designs has also been incredibly efficient, allowing me to spot and fix usability issues during development that I might have missed in a static prototype.
+        </p>
+      </section>
+
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link" style="margin-top: var(--gutter-medium); display: inline-block;">← Back to All Projects</a>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github Profile" aria-hidden="true">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/shamsheeralishaik/">
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile" aria-hidden="true">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" aria-hidden="true"/>
+  </a>
+  
+  <!-- Main portfolio JS for Back-to-Top button, etc. -->
+  <script src="./index.js"></script>
+</body>
+</html>

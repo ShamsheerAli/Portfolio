@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <title>Case Study: My Health Story - Shamsheer Ali Shaik</title>
+
+  <!-- Main Portfolio Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  
+  <!-- Case Study Specific CSS -->
+  <link rel="stylesheet" href="case-study.css" />
+  
+  <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+
+<body>
+
+  <header class="case-study-header" role="banner" id="top">
+    <div class="row case-study-nav">
+      <a href="index.html" class="case-study-nav__logo">Shamsheer Ali Shaik</a>
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link">← Back to All Projects</a>
+    </div>
+  </header>
+
+  <main role="main">
+    <article class="case-study-content">
+
+      <!-- Project Title -->
+      <h1>My Health Story</h1>
+
+      <!-- High-level Overview -->
+      <section class="case-study-overview-section">
+        <h2>Overview</h2>
+        <p class="case-study-overview">
+          Patients receive critical health data in formats (typically PDFs) that are dense, full of medical jargon, and lack historical context. This project redesigns the medical report experience to empower patients by transforming confusing data into a personal, intuitive, and understandable health narrative.
+        </p>
+        
+        <!-- Project Roles & Details -->
+        <p>
+          <strong>My Role:</strong> UX/UI Designer, User Researcher<br>
+          <strong>Timeline:</strong> 8 Weeks (Fall 2024)<br>
+          <strong>Tools:</strong> Figma, FigJam, Google Forms
+        </p>
+      </section>
+
+      <!-- Featured Image of Final Product -->
+      <img src="https://placehold.co/1200x800/1A1D2A/E62429?text=Show+Final+Mobile+App+Screens" 
+           alt="Final design of My Health Story app"
+           class="case-study-image"
+           onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+
+      <!-- The Problem -->
+      <section>
+        <h2>The Problem</h2>
+        <p>
+          After conducting initial user interviews, a clear problem emerged: patients feel anxious, confused, and disempowered by their own health data. Reports are "sterile" and "feel like a test I didn't study for." The lack of context, use of medical jargon, and poor data visualization create a barrier to understanding, preventing patients from taking an active role in their health journey.
+        </p>
+      </section>
+
+      <!-- The Process & Solution -->
+      <section>
+        <h2>The Process & Solution</h2>
+        <p>
+          My goal was to design a mobile-first experience that translates raw data into a story. The solution aggregates data from various sources (lab results, doctor's notes, wearable tech) and presents it through a clear, chronological timeline with simple visualizations and plain-English explanations.
+        </p>
+
+        <h3>User Research</h3>
+        <p>
+          I started with 5 user interviews with individuals who regularly manage a chronic condition. Key insights included:
+        </p>
+        <ul>
+          <li>Users felt "data rich but information poor."</li>
+          <li>The most important thing was seeing trends over time, not a single data point.</li>
+          <li>"Normal" ranges on reports felt absolute and scary if a result was barely outside the line.</li>
+        </ul>
+
+        <h3>Wireframes</h3>
+        <p>
+          Based on the research, I focused on a "timeline" as the main dashboard. Low-fidelity wireframes explored how to display different "events" (like lab results, symptoms, or doctor visits) on a single, scrollable feed.
+        </p>
+        <div class="image-grid-2">
+          <img src="https://placehold.co/600x400/1A1D2A/FFFFFF?text=Low-fi+Wireframe+1" alt="Low-fidelity wireframe of dashboard" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+          <img src="https://placehold.co/600x400/1A1D2A/FFFFFF?text=Low-fi+Wireframe+2" alt="Low-fidelity wireframe of results" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+        </div>
+
+        <h3>Usability Testing</h3>
+        <p>
+          I conducted moderated usability tests with 3 users using a Figma prototype. The main feedback was that users wanted to "tap" on a data point to get more context. The original design hid this context, so I iterated to create a "tap-to-expand" card system, which tested much better.
+        </p>
+
+        <h3>Final Designs</h3>
+        <p>
+          The final high-fidelity design uses a soft, encouraging color palette (not the red/blue of this portfolio!) and clear typography. Data is presented in context, and complex terms include a "translate" button to show a simple explanation.
+        </p>
+        <img src="https://placehold.co/1200x800/1A1D2A/E62429?text=High-Fidelity+Final+Screens" 
+             alt="Final high-fidelity designs"
+             class="case-study-image"
+             onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+      </section>
+
+      <!-- Conclusion / What I Learned -->
+      <section>
+        <h2>What I Learned</h2>
+        <p>
+          This project was a deep dive into empathy. The key takeaway was that in health tech, clarity and context are not just features—they are the entire product. Removing anxiety for the user was the most important design metric. I also learned the power of quick iteration based on usability testing; the "tap-to-expand" feature, which became central to the design, only emerged after seeing users struggle in the first test.
+        </p>
+      </section>
+
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link" style="margin-top: var(--gutter-medium); display: inline-block;">← Back to All Projects</a>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github Profile" aria-hidden="true">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/shamsheeralishaik/">
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile" aria-hidden="true">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" aria-hidden="true"/>
+  </a>
+  
+  <!-- Main portfolio JS for Back-to-Top button, etc. -->
+  <script src="./index.js"></script>
+</body>
+</html>

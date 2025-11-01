@@ -1,0 +1,143 @@
+/* --------------------------------------- */
+/* ----- Case Study Specific Styles ----- */
+/* --------------------------------------- */
+
+/* Use main variables from index.css, but override layout */
+body {
+  /* Ensure background pattern is applied */
+  background-image: var(--bg-pattern-url);
+}
+
+/* --------------------------------------- */
+/* ----- Case Study Header & Nav ----- */
+/* --------------------------------------- */
+.case-study-header {
+  padding: 1.5rem 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.case-study-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.case-study-nav__logo {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  color: var(--accent-red);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.case-study-nav__back-link {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.6rem;
+  color: var(--accent-blue-text);
+  background: var(--accent-blue-light);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.case-study-nav__back-link:hover {
+  background: var(--accent-red-light);
+  color: var(--accent-red-text);
+  transform: scale(1.05);
+}
+
+/* --------------------------------------- */
+/* ----- Case Study Content Layout ----- */
+/* --------------------------------------- */
+.case-study-content {
+  max-width: 900px; /* Optimal width for reading text */
+  margin: 0 auto;
+  padding: var(--gutter-medium) var(--gutter-small);
+}
+
+.case-study-content h1 {
+  font-size: var(--font-size-huge);
+  line-height: 1.1;
+  color: var(--accent-red);
+  margin-bottom: var(--gutter-small);
+}
+
+.case-study-content h2 {
+  font-size: var(--font-size-large);
+  color: var(--accent-blue);
+  margin-top: var(--gutter-medium);
+  margin-bottom: var(--gutter-small-1);
+}
+
+.case-study-content h3 {
+  font-size: var(--font-size-medium-1);
+  color: var(--text-headings);
+  margin-top: var(--gutter-normal);
+  margin-bottom: var(--gutter-small);
+}
+
+.case-study-content p, 
+.case-study-content li {
+  font-family: var(--font-stack);
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  margin-bottom: var(--gutter-small);
+}
+
+.case-study-content ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+.case-study-content a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+.case-study-content a:hover {
+  color: var(--accent-red);
+}
+
+/* Special class for project overview summary */
+.case-study-overview {
+  font-size: var(--font-size-medium);
+  color: var(--text-secondary);
+  font-family: 'Jost', sans-serif;
+  line-height: 1.6;
+  border-left: 3px solid var(--accent-red);
+  padding-left: var(--gutter-small);
+  margin: var(--gutter-normal) 0;
+}
+
+/* --------------------------------------- */
+/* ----- Case Study Images ----- */
+/* --------------------------------------- */
+.case-study-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-color);
+  margin: var(--gutter-small) 0;
+}
+
+/* Utility for side-by-side images */
+.image-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter-small);
+  margin: var(--gutter-small) 0;
+}
+
+.image-grid-2 img {
+  width: 100%;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 600px) {
+  .image-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
