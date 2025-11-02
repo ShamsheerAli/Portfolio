@@ -514,7 +514,7 @@ body:not(.user-is-tabbing) a:focus {
   max-height: 40vh;
   background-image: url('./images/Spiderman final edit.jpg');
   /* ▼▼▼ FIX 1: Change 'cover' to 'contain' ▼▼▼ */
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   /* ▼▼▼ FIX 1.5: Add 'no-repeat' ▼▼▼ */
   background-repeat: no-repeat;
