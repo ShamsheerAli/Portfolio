@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="case-study.css" /> <!-- ▼▼▼ ADD THIS NEW CSS FILE ▼▼▼ -->
+  <link rel="stylesheet" href="case-study.css" />
   <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
 </head>
@@ -26,16 +26,16 @@
     <div class="row">
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          <!-- ▼▼▼ Link back to main page ▼▼▼ -->
+          <!-- ▼▼▼ UPDATED NAV LINKS ▼▼▼ -->
           <li class="nav__item"><a href="./index.html#about" class="nav__link">About</a></li>
           <li class="nav__item"><a href="./index.html#work" class="nav__link">Work Experience</a></li>
           <li class="nav__item"><a href="./index.html#ux-case-studies" class="nav__link">UX Case Studies</a></li>
-          <li class="nav__item"><a href="./index.html#ai-ml-projects" class="nav__link">AI & ML Projects</a></li>
-          <li class="nav__item"><a href="./index.html#projects" class="nav__link">Dev & Unity Projects</a></li>
+          <li class="nav__item"><a href="./index.html#ai-dev-projects" class="nav__link">AI & Dev Projects</a></li>
           <li class="nav__item"><a href="./index.html#education" class="nav__link">Education</a></li>
           <li class="nav__item"><a href="./index.html#certifications" class="nav__link">Certifications</a></li>
           <li class="nav__item"><a href="./index.html#leadership-service" class="nav__link">Leadership & Service</a></li>
           <li class="nav__item"><a href="./index.html#contact" class="nav__link">Contact</a></li>
+          <!-- ▲▲▲ END OF UPDATED NAV LINKS ▲▲▲ -->
         </ul>
       </nav>
     </div>
@@ -54,7 +54,7 @@
   </header>
 
   <main role="main">
-     <!-- UX CASE STUDY SECTION - Stays the same, no collapsible parts -->
+     <!-- UX CASE STUDY SECTION -->
     <section class="project ux-case-study-section" id="ux-case-studies" role="region" aria-label="UX Case Studies">
       <div class="row">
         <h2>UX Case Studies</h2>
@@ -71,7 +71,6 @@
               <p class="ux-case-study__summary">
                 Problem: Patients receive critical health data in dense, jargon-filled formats lacking context, causing anxiety and hindering understanding. This project redesigns health reports into a personal, intuitive narrative.
               </p>
-              <!-- ▼▼▼ UPDATED LINK ▼▼▼ -->
               <a href="./quickfix.html" class="btn ux-case-study__button">Read Case Study</a>
             </div>
           </div>
@@ -87,7 +86,6 @@
               <p class="ux-case-study__summary">
                 Product: A unified web portal for Oklahoma State University's Industrial Training and Assessment Center (ITAC) designed to manage the entire client assessment lifecycle. It will serve internal staff, management, students, and external clients.
               </p>
-              <!-- ▼▼▼ UPDATED LINK ▼▼▼ -->
               <a href="./itac.html" class="btn ux-case-study__button">Read Case Study</a>
             </div>
           </div>
@@ -96,6 +94,7 @@
       </div>
     </section>
 
+    <!-- WORK EXPERIENCE SECTION -->
     <section class="work" id="work" role="region" aria-label="Work Experience">
       <div class="row">
         <h2>Work Experince - Total Experience: 3 years 8 months </h2>
@@ -163,11 +162,13 @@
       </div>
     </section>
 
-    <section class="project" id="ai-ml-projects" role="region" aria-label="AI and ML Projects">
+    <!-- ▼▼▼ START OF COMBINED AI & DEV PROJECTS SECTION ▼▼▼ -->
+    <section class="project" id="ai-dev-projects" role="region" aria-label="AI and Dev Projects">
       <div class="row">
-        <h2>AI and ML Projects</h2>
+        <h2>AI & Dev Projects</h2>
         <div class="project__boxes">
 
+          <!-- AI & ML Projects First -->
           <div class="project__box">
             <div class="work__text">
                <h3 class="collapsible-trigger">FinWiseAI: AI-Powered Personal Finance Advisor <span class="collapsible-arrow"></span></h3>
@@ -222,15 +223,8 @@
                </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="project" id="projects" role="region" aria-label="Development Projects">
-      <div class="row">
-        <h2>Dev & Unity Projects</h2>
-        <div class="project__boxes">
-
+          <!-- Dev & Unity Projects Second -->
           <div class="project__box">
             <div class="work__text">
                <h3 class="collapsible-trigger">Star Lander Game <span class="collapsible-arrow"></span></h3>
@@ -337,7 +331,9 @@
         </div>
       </div>
     </section>
+    <!-- ▲▲▲ END OF COMBINED SECTION ▲▲▲ -->
 
+    <!-- EDUCATION SECTION -->
     <section class="education" id="education" role="region" aria-label="Education">
       <div class="row">
         <h2>Education</h2>
@@ -361,6 +357,7 @@
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section class="about" id="about" role="region" aria-label="About Me">
       <div class="row">
         <h2>About Me</h2>
@@ -382,6 +379,7 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
       </div>
     </section>
 
+    <!-- MODAL SECTION -->
     <div id="resumeModal" class="modal">
       <div class="modal__content">
         <span id="closeModal" class="modal__close">×</span>
@@ -424,6 +422,7 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
     </script>
   </main>
 
+  <!-- CERTIFICATIONS SECTION -->
   <section class="certifications" id="certifications" role="region" aria-label="Certifications">
     <div class="row">
       <h2>Certifications</h2>
@@ -488,6 +487,7 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
     </div>
   </section>
 
+  <!-- LEADERSHIP SECTION -->
   <section class="leadership" id="leadership-service" role="region" aria-label="Leadership and Service">
     <div class="row">
       <h2>Leadership and Service</h2>
@@ -496,7 +496,7 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
           <div class="work__text">
              <h3 class="collapsible-trigger">Cultural Secretary, Indian Student Association, OSU <span class="collapsible-arrow"></span></h3>
              <div class="collapsible-content">
-              <p>• •Led a team of 20 in the end-to-end execution of large-scale cultural events, from initial concept and design of promotional flyers and posters to seamless on-site coordination, enhancing cultural awareness and driving student engagement.</p>
+              <p>• Led a team of 20 in the end-to-end execution of large-scale cultural events, from initial concept and design of promotional flyers and posters to seamless on-site coordination, enhancing cultural awareness and driving student engagement.</p>
               <ul class="work__list">
                 <li>Impact: Boosted student participation in cultural events by 25%, fostering greater cultural appreciation and community engagement across the university.</li>
               </ul>
@@ -518,6 +518,7 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
     </div>
   </section>
 
+  <!-- CONTACT SECTION -->
   <section class="contact" id="contact" role="region" aria-label="Contact">
     <div class="row">
       <h2>Get in Touch</h2>
@@ -530,6 +531,7 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer role="contentinfo" class="footer">
     <div class="row">
       <ul class="footer__social-links">
