@@ -40,81 +40,159 @@
       <section class="case-study-overview-section">
         <h2>Overview</h2>
         <p class="case-study-overview">
-          This project involves designing and building a unified web portal for OSU's Industrial Training and Assessment Center (ITAC) to manage the entire client assessment lifecycle. The existing process relies on disconnected spreadsheets, emails, and manual data entry, leading to inefficiencies, errors, and a poor experience for both internal staff and external clients.
+          The goal is to replace a fragmented, email-reliant workflow with a controlled, trackable, and traceable system through automation. This unified web portal for OSU's ITAC will manage the entire client assessment lifecycle, eliminate process bottlenecks, and provide a single source of truth for all project stakeholders (internal staff, management, students, and external clients).
         </p>
         
         <!-- Project Roles & Details -->
         <p>
-          <strong>My Role:</strong> UX Engineer (Lead Designer & Full-Stack Developer)<br>
-          <strong>Timeline:</strong> Oct 2025 - Present (Ongoing)<br>
-          <strong>Tools:</strong> Figma, Django, Python, JavaScript, PostgreSQL
+          <strong>My Role:</strong> UX Designer (End-to-End). I conducted the entire design process, from user research and ideation to wireframing and prototyping.<br>
+          <strong>Responsibilities:</strong> Conducting user research, defining user journeys, wireframing and prototyping, and developing the full-stack web application, including integrated AI agents.<br>
+          <strong>Project Duration:</strong> Oct 2025 - Present (Ongoing)
         </p>
       </section>
 
-      <!-- Featured Image of Final Product -->
-      <img src="https://placehold.co/1200x800/1A1D2A/E62429?text=Show+Final+Dashboard+Design" 
+      <!-- Featured Image (Placeholder) -->
+      <img src="./images/ITAC Logo (black background).png" 
            alt="Final design of ITAC Portal"
            class="case-study-image"
            onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
 
       <!-- The Problem -->
       <section>
-        <h2>The Problem</h2>
+        <h2>The Problem: Understanding the User</h2>
         <p>
-          ITAC's assessment process is complex, involving multiple stakeholders (staff, management, student assessors, clients). The current workflow is manual and fragmented, causing several key problems:
+          The primary research was a detailed, semi-structured interview with a key ITAC staff member who manages the client pipeline. The interview revealed that the current process is almost entirely manual, leading to significant inefficiencies and a lack of visibility.
         </p>
+        <p>This uncovered four major pain points:</p>
         <ul>
-          <li>**Staff Inefficiency:** Hours are wasted on duplicate data entry and tracking project status via email.</li>
-          <li>**Client Frustration:** Clients have no central place to view their project status, submit documents, or see final reports.</li>
-          <li>**Data Errors:** Manual data transfer between spreadsheets leads to frequent errors and version control nightmares.</li>
-          <li>**Lack of Oversight:** Management has no simple dashboard to view project load, team capacity, or financial status.</li>
+          <li><strong>No Centralized Visibility:</strong> There is no mechanism for management or staff to see the client backlog or project statuses. Staff must keep manual lists, creating confusion and communication gaps.</li>
+          <li><strong>"Clumsy and Clunky" Onboarding:</strong> The initial client interaction involves a multi-step email process with 3-4 attachments, which is inefficient and difficult to track.</li>
+          <li><strong>Lack of Client Status Tracking:</strong> ITAC has no systematic way of tracking which clients have submitted documents, what's missing, or when to follow up, causing potential projects to languish.</li>
+          <li><strong>Data Delays Cause Bottlenecks:</strong> On-site audits are started before all utility data is collected. This forces students writing the report to chase down data later, stretching a 5-day task into 15 days and jeopardizing deadlines.</li>
+        </ul>
+      </section>
+
+      <!-- Personas -->
+      <section>
+        <h3>Persona: "Jack" the Program Coordinator</h3>
+        <p>Based on the research, I created a persona to represent the primary staff user, "Jack."</p>
+        <p class="case-study-overview" style="font-size: var(--font-size-medium-1); line-height: 1.4;">
+          "I started doing this [keeping a list] and it was too much... I'm having to keep it in a separate file somewhere."
+        </p>
+        <p>
+          <strong>Problem Statement:</strong> Jack is a busy project coordinator who needs a centralized and automated system to manage the client pipeline because the current manual, email-based process makes it impossible to track client statuses effectively, leading to project delays and a significant administrative burden.
+        </p>
+        <!-- 
+          ADD YOUR PERSONA IMAGE HERE -->
+          <img src="./images/Javk_Persona_ITAC.png" alt="Persona for Jack, the program coordinator" class="case-study-image">
+      </section>
+
+      <!-- User Journey Map -->
+      <section>
+        <h3>User Journey Map</h3>
+        <p>Jack's journey for onboarding a new client is defined by manual tasks, context-switching, and a lack of automated support. I mapped this process to find clear opportunities for improvement.</p>
+        <!-- ADD YOUR USER JOURNEY MAP IMAGE HERE -->
+        <img src="./images/UserJourneyITAC.png" alt="User journey map for client onboarding" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/cccccc/ffffff?text=Image+Not+Found';">
+        <img src="./images/IAITAC.png" alt="User journey map for client onboarding" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/cccccc/ffffff?text=Image+Not+Found';">
+        <p><strong>Improvement Opportunities Identified:</strong></p>
+        <ul>
+          <li>A single intake form to auto-create projects.</li>
+          <li>An automated welcome email with a link to a personalized client dashboard.</li>
+          <li>Auto-generated digital folder structures.</li>
+          <li>A real-time dashboard showing document status for every client.</li>
+          <li>System-generated reminder emails for clients with incomplete documents.</li>
         </ul>
       </section>
 
       <!-- The Process & Solution -->
       <section>
-        <h2>The Process & Solution</h2>
+        <h2>Starting the Design</h2>
+        
+        <h3>Paper Wireframes</h3>
         <p>
-          As the sole UX Engineer, I am responsible for the entire product lifecycle. The solution is a secure, role-based web portal that provides a single source of truth for all stakeholders.
+          I started with paper and pencil to quickly explore layouts and information hierarchies. This allowed me to focus on the core structure, exploring both a comprehensive client and staff dashboard. My initial sketches helped establish a cohesive flow, starting with a login that leads to respective dashboards.
         </p>
-
-        <h3>User Research & Personas</h3>
-        <p>
-          I conducted stakeholder interviews with 4 key user groups: ITAC Staff, Management, Student Assessors, and External Clients. This led to the creation of 4 primary personas, each with distinct needs and pain points. For example, the "Staff" persona's main goal is "time-saving and efficiency," while the "Client" persona's main goal is "clarity and transparency."
-        </p>
-        <img src="https://placehold.co/1200x600/1A1D2A/FFFFFF?text=User+Personas" alt="User personas for ITAC project" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/cccccc/ffffff?text=Image+Not+Found';">
-
-        <h3>User Flow & Wireframes</h3>
-        <p>
-          I mapped out the end-to-end user flow for the assessment process, from a client's first inquiry to the final report delivery. This visual map became the blueprint for the portal's architecture. I then created low-fidelity wireframes in Figma to block out the key screens for each user role, focusing on the "Staff Dashboard" and "Client Project View" first.
-        </p>
+        <!-- ADD YOUR PAPER WIREFRAME IMAGES HERE -->
         <div class="image-grid-2">
-          <img src="https://placehold.co/600x400/1A1D2A/FFFFFF?text=User+Flow+Diagram" alt="User flow diagram" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
-          <img src="https://placehold.co/600x400/1A1D2A/FFFFFF?text=Dashboard+Wireframe" alt="Low-fidelity wireframe of dashboard" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+          <img src="./images/PaperWireframesITAC.png" alt="Paper wireframe of staff dashboard" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+          <img src="./images/PaperWireframesITAC2.png" alt="Paper wireframe of client document submission" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
         </div>
 
-        <h3>High-Fidelity Design & Prototyping</h3>
+        <h3>Digital Wireframes & Low-Fidelity Prototype</h3>
         <p>
-          Using the main OSU brand guidelines, I created a clean, accessible, and professional high-fidelity design system in Figma. I built an interactive prototype focusing on the primary task: "Creating a new client project and assigning a team." This prototype was used for initial usability testing with 3 staff members.
-        </p>
-
-        <h3>Development & Implementation</h3>
-        <p>
-          This is where my "Dev-Designer" role is critical. I am currently building the portal from the ground up as a full-stack application.
+          My digital wireframes translated these solutions into a clear, functional blueprint.
         </p>
         <ul>
-          <li>**Backend:** Django (Python) for the server, handling user authentication, permissions, and the database models.</li>
-          <li>**Database:** PostgreSQL for robust data management.</li>
-          <li>**Frontend:** Vanilla JavaScript, HTML, and CSS (using the `index.css` theme as a base) to build the interactive user interface based on my Figma designs.</li>
+          <li><strong>Staff Dashboard & Kanban Board:</strong> This is the central command center. It directly addresses the "No centralized visibility" pain point by providing a single, "at-a-glance" visual pipeline of all client projects (New Inquiry, Awaiting Documents, Audit Scheduled, etc.).</li>
+          <li><strong>Client Dashboard:</strong> This is the client's home base, designed for clarity. A prominent visual status tracker solves the "Lack of client status tracking" and provides transparency.</li>
+          <li><strong>"Uploaded Documents" Screen:</strong> This replaces the "clumsy onboarding" process. A simple checklist with upload buttons ensures all data is received in one organized place before an audit is scheduled, fixing the "Data delays" bottleneck.</li>
         </ul>
+        <!-- ADD YOUR DIGITAL WIREFRAME & PROTOTYPE IMAGES HERE -->
+         <p>Some of my digital wireframe images</p>
+        <img src="./images/DigitalWireframe1ITAc.png" alt="Digital wireframe of staff dashboard" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+        <img src="./images/DigitalWireframe2ITAC.png" alt="Digital wireframe of client dashboard" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+        <img src="./images/DigitalWireframe3ITAC.png" alt="Digital wireframe of Kanban board" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+        <img src="./images/LoFiPrototypeITAC.png" alt="Low-fidelity prototype flow" class="case-study-image" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+        <p><a href="https://www.figma.com/proto/iR3tcD3R0jVLUccIlc6FLN/Untitled?node-id=28-2&p=f&t=4kkQrmch2vyufiq4-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=28%3A2" target="_blank">View the Low-Fidelity Prototype</a></p>
+
+
+        <h3>Usability Study: Round 1 Findings</h3>
+        <p>
+          I conducted a design review and usability study with the key ITAC staff member. This study was incredibly valuable and uncovered a major gap in the initial design, leading to a significant pivot.
+        </p>
+        <ol>
+          <li><strong>Critical Discovery:</strong> The design was missing a critical, upfront vetting process *before* a client is approved for document submission.</li>
+          <li><strong>Functional Gap:</strong> The original design did not account for different service types (ITAC - Industrial, ITAC - Commercial, REAC), which is the first decision the staff makes.</li>
+          <li><strong>Workflow Invalidated:</strong> The assumption of a single client flow was incorrect. The portal needed a new two-phase onboarding process to separate "vetting" from "assessment."</li>
+        </ol>
+
+        <h3>Updated Architecture & Prototype</h3>
+        <p>
+          Based on the findings, I re-architected the flow to include the new two-phase vetting process. This introduced a "Client Temporary Dashboard" for initial data collection and a "Staff - Client Review Page" to manage the new approval step.
+        </p>
+        <!-- ADD YOUR UPDATED IA AND PROTOTYPE FLOW IMAGES HERE -->
+        <img src="./images/IA2ITAC.png" alt="Updated Information Architecture diagram" class="case-study-image" onerror="this.onerror=null; this.src='https.placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+        <img src="./images/LoFIPrototype2ITAC.png" alt="Updated low-fidelity prototype flow" class="case-study-image" onerror="this.onerror=null; this.src='https.placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+        <p><a href="https://www.figma.com/proto/iR3tcD3R0jVLUccIlc6FLN/Untitled?node-id=28-2&p=f&t=4kkQrmch2vyufiq4-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=28%3A2" target="_blank">View the Updated Low-Fidelity Prototype</a></p>
+
+      </section>
+
+      <!-- Refining the Design -->
+      <section>
+        <h2>Refining the Design</h2>
+        <p>(This section is in progress - creating high-fidelity prototype, adding high-fidelity mockups, accessibility considerations, and final prototypes.)</p>
+        
+        <!--<h3>Accessibility Considerations</h3>
+        <ol>
+          <li>Designed with clear color contrast for text and UI elements to meet WCAG AA standards.</li>
+          <li>Ensured all interactive elements have clear focus states for keyboard navigation.</li>
+          <li>Used clear, hierarchical headings and ARIA labels for screen reader accessibility.</li>
+        </ol> 
+
+        ADD YOUR MOCKUP IMAGES HERE
+         <img src="https://placehold.co/1200x800/1A1D2A/FFFFFF?text=High-Fidelity+Mockups" alt="High-fidelity mockups" class="case-study-image" onerror="this.onerror=null; this.src='https.placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+      -->
       </section>
 
       <!-- Conclusion / What I Learned -->
       <section>
-        <h2>What I've Learned (So Far)</h2>
+        <h2>Takeaways</h2>
         <p>
-          This ongoing project is a massive lesson in balancing the needs of multiple, diverse user groups. The "Client" needs extreme simplicity, while the "Staff" needs powerful, complex tools. The biggest challenge is designing a single system that serves both without compromise. Building the front-end directly from my own designs has also been incredibly efficient, allowing me to spot and fix usability issues during development that I might have missed in a static prototype.
+          <strong>Impact:</strong> The new design, once implemented, is projected to automate the entire client onboarding process, saving staff an estimated 5-8 hours per week in manual data entry and follow-up emails.
         </p>
+        <p>
+          <strong>What I learned:</strong> This ongoing project is a massive lesson in balancing the needs of multiple, diverse user groups. The "Client" needs extreme simplicity, while the "Staff" needs powerful, complex tools. The biggest challenge is designing a single system that serves both without compromise. Building the front-end directly from my own designs has also been incredibly efficient, allowing me to spot and fix usability issues during development that I might have missed in a static prototype.
+        </p>
+      </section>
+
+      <!-- Next Steps -->
+      <section>
+        <h2>Next Steps</h2>
+        <ol>
+          <li>Complete the high-fidelity prototype and mockups for all user flows.</li>
+          <li>Conduct a Round 2 usability study with both staff and a test group of clients.</li>
+          <li>Continue full-stack development of the portal based on the validated designs.</li>
+        </ol>
       </section>
 
       <a href="index.html#ux-case-studies" class="case-study-nav__back-link" style="margin-top: var(--gutter-medium); display: inline-block;">← Back to All Projects</a>
@@ -147,3 +225,4 @@
   <script src="./index.js"></script>
 </body>
 </html>
+
