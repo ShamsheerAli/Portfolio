@@ -708,11 +708,18 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Projects ----- */ /* AI/ML and Dev/Unity */
 /* --------------------------------------- */
 
-.project__boxes { /* Applied to AI/ML and Dev/Unity sections */
+.project__boxes {
   display: grid;
-  grid-template-columns: 1fr; /* Single column */
+  /* This creates a grid that fits as many columns as possible, 
+     but keeps them at least 450px wide so text doesn't get squished */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
   gap: var(--gutter-normal);
   padding: 0;
+}
+
+/* Optional: If the tabs feel "too big" (tall), let's reduce the padding inside the boxes */
+.project__box {
+  padding: 1.5rem 2rem; /* Reduced padding (was var(--gutter-normal)) */
 }
 
 .project__box { /* Applied to AI/ML and Dev/Unity sections */
