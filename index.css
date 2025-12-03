@@ -710,11 +710,14 @@ body:not(.user-is-tabbing) a:focus {
 
 .project__boxes {
   display: grid;
-  /* This creates a grid that fits as many columns as possible, 
-     but keeps them at least 450px wide so text doesn't get squished */
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
-  gap: var(--gutter-normal);
+  /* Keeps 2 columns on desktop, stacks on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 2rem;
   padding: 0;
+  
+  /* ▼▼▼ THIS IS THE FIX ▼▼▼ */
+  align-items: start; 
+  /* This prevents the "neighbor" card from stretching when one expands */
 }
 
 /* Optional: If the tabs feel "too big" (tall), let's reduce the padding inside the boxes */
