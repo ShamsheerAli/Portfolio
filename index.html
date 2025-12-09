@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="case-study.css" />
   <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
@@ -26,7 +29,6 @@
     <div class="row">
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          
           <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
           <li class="nav__item"><a href="#work" class="nav__link">Work Experience</a></li>
           <li class="nav__item"><a href="#ux-case-studies" class="nav__link">UX Case Studies</a></li>
@@ -36,14 +38,13 @@
           <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
           <li class="nav__item"><a href="#leadership-service" class="nav__link">Leadership & Service</a></li>
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-          
         </ul>
       </nav>
     </div>
 
     <div class="header__banner-container"></div>
     <div class="header__text-box row">
-      <div class="header__text">
+      <div class="header__text" data-aos="fade-up" data-aos-duration="1000">
         <img src="./images/MainProfilePic.png" alt="Shamsheer Ali Shaik profile picture" class="header__profile-pic" />
         <h1 class="heading-primary">
           <span>Shamsheer Ali Shaik </span>
@@ -55,54 +56,54 @@
   </header>
 
   <main role="main">
-     <!-- UX CASE STUDY SECTION -->
+    
     <section class="project ux-case-study-section" id="ux-case-studies" role="region" aria-label="UX Case Studies">
       <div class="row">
-        <h2>UX Case Studies</h2>
+        <h2 data-aos="fade-right">UX Case Studies</h2>
         <div class="ux-case-study__container">
-          <div class="ux-case-study__card">
+          
+          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200">
             <div class="ux-case-study__image-container">
               <img src="./images/ITAC Logo (black background).png"
-                   alt="My Health Story Case Study Preview"
+                   alt="ITAC Portal Case Study"
                    class="ux-case-study__image"
-                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/cccccc/ffffff?text=Image+Not+Found';">
+                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1A1D2A/ffffff?text=ITAC+Portal+Preview';">
             </div>
             <div class="ux-case-study__text">
               <h3>The ITAC Operations & Client Portal</h3>
               <p class="ux-case-study__summary">
-                Product: A unified web portal for Oklahoma State University's Industrial Training and Assessment Center (ITAC) designed to manage the entire client assessment lifecycle. It will serve internal staff, management, students, and external clients.
+                Product: A unified web portal for Oklahoma State University's Industrial Training and Assessment Center (ITAC). Designed to replace manual workflows with an automated lifecycle for staff, management, and clients.
               </p>
               <a href="./itac.html" class="btn ux-case-study__button">Read Case Study</a>
             </div>
           </div>
-          <div class="ux-case-study__card">
+
+          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200">
             <div class="ux-case-study__image-container">
               <img src="./images/my-health-story-cover.png"
-                   alt="My Health Story Case Study Preview"
+                   alt="My Health Story Case Study"
                    class="ux-case-study__image"
-                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/cccccc/ffffff?text=Image+Not+Found';">
+                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=My+Health+Story+Preview';">
             </div>
             <div class="ux-case-study__text">
               <h3>My Health Story</h3>
               <p class="ux-case-study__summary">
-                Problem: Patients receive critical health data in dense, jargon-filled formats lacking context, causing anxiety and hindering understanding. This project redesigns health reports into a personal, intuitive narrative.
+                Problem: Medical reports are dense and scary. This project redesigns health data into a personal, intuitive narrative that empowers patients to understand their own health history.
               </p>
               <a href="./quickfix.html" class="btn ux-case-study__button">Read Case Study</a>
             </div>
           </div>
           
-          <!-- Add more case studies here -->
         </div>
       </div>
     </section>
 
-    <!-- WORK EXPERIENCE SECTION -->
     <section class="work" id="work" role="region" aria-label="Work Experience">
       <div class="row">
-        <h2>Work Experince - Total Experience: 3 years 8 months </h2>
+        <h2 data-aos="fade-right">Work Experience - Total: 3 years 8 months</h2>
         <div class="work__boxes">
 
-          <div class="work__box">
+          <div class="work__box" data-aos="fade-up">
             <div class="work__text">
               <h3 class="collapsible-trigger">Product Designer (Oct 2025 - Present) <span class="collapsible-arrow"></span></h3>
               <div class="collapsible-content">
@@ -117,42 +118,39 @@
             </div>
           </div>
 
-          <div class="work__box">
+          <div class="work__box" data-aos="fade-up">
             <div class="work__text">
                <h3 class="collapsible-trigger">Gen-AI Researcher (Aug 2025 - Oct 2025) <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Developed a conditional diffusion model in PyTorch to predict 512x512 binary deposit morphologies in aerosol jet printing, achieving IoU > 0.8 and F1 Score > 0.89, enhancing process optimization for printed electronics.</p>
-                <p>• Designed and trained a U-Net-based diffusion model with physics-informed penalties, processing 23,367 images to capture complex AJP features like edge roughness and overspray, improving upon cGAN stability.</p>
-                <p>• Implemented dataset preprocessing and evaluated model performance using AJP-specific metrics (trace width, continuity, roughness, overspray) with OpenCV, streamlining manufacturing workflows.</p>
+                <p>• Developed a conditional diffusion model in PyTorch to predict 512x512 binary deposit morphologies in aerosol jet printing, achieving IoU > 0.8 and F1 Score > 0.89.</p>
+                <p>• Designed and trained a U-Net-based diffusion model with physics-informed penalties, processing 23,367 images to capture complex AJP features.</p>
                 <ul class="work__list">
                   <li>Frontend: Python</li>
-                  <li>Frameworks & Techniques: PyTorch, OpenCV, Tensorflow, CNN, cGAN, Diffusion Models</li>
+                  <li>Frameworks: PyTorch, OpenCV, Tensorflow, CNN, cGAN, Diffusion Models</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <div class="work__box">
+          <div class="work__box" data-aos="fade-up">
             <div class="work__text">
               <h3 class="collapsible-trigger">Video Game Development Mentor (Jun 2024 - May 2025) <span class="collapsible-arrow"></span></h3>
               <div class="collapsible-content">
                 <p>• Mentored and guided over 20 student teams in the development of video game projects using the Unity Engine and C#.</p>
-                <p>• Ensured high-quality code and seamless collaboration by overseeing source code management, branch strategies, and pull requests for all student projects using Git and GitHub.</p>
-                <p>• Taught and reinforced core game development concepts, including relational database integration for game data and data modeling for complex game systems, enhancing student capabilities by over 30%.</p>
+                <p>• Ensured high-quality code and seamless collaboration by overseeing source code management, branch strategies, and pull requests.</p>
                 <ul class="work__list">
-                  <li>Tools & skills used: GitHub CLI, C#, Unity, SQL, NoSql, Neo4j, MongoDB</li>
+                  <li>Tools: GitHub CLI, C#, Unity, SQL, NoSql, Neo4j, MongoDB</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="work__box">
+          <div class="work__box" data-aos="fade-up">
             <div class="work__text">
               <h3 class="collapsible-trigger">UX Designer & Web Developer (Apr 2021 - Jul 2023) <span class="collapsible-arrow"></span></h3>
               <div class="collapsible-content">
-                <p>• Led the UX design process from conception to implementation, conducting user research to define requirements and creating wireframes and interactive prototypes to visualize solutions.</p>
-                <p>• Collaborated with engineers to implement front-end designs, using HTML/CSS/JS to ensure 100% cross-browser compatibility and reduce design-to-dev handoff time by 30%.</p>
-                <p>• Conducted usability testing and resolved critical interface bugs, which increased task completion rates by 25% and significantly simplified the user journey.</p>
+                <p>• Led the UX design process from conception to implementation, conducting user research to define requirements and creating wireframes.</p>
+                <p>• Collaborated with engineers to implement front-end designs, using HTML/CSS/JS to ensure 100% cross-browser compatibility.</p>
                 <ul class="work__list">
                   <li>Frontend: PHP, JavaScript, HTML, CSS, XML</li>
                   <li>Backend: SQL, MongoDB</li>
@@ -164,239 +162,213 @@
       </div>
     </section>
 
-    <!-- ▼▼▼ START OF COMBINED AI & DEV PROJECTS SECTION ▼▼▼ -->
     <section class="project" id="ai-dev-projects" role="region" aria-label="AI and Dev Projects">
       <div class="row">
-        <h2>AI & Dev Projects</h2>
+        <h2 data-aos="fade-right">AI & Dev Projects</h2>
+        
         <div class="project__boxes">
 
-          <!-- AI & ML Projects First -->
-          <div class="project__box">
+          <div class="project__box" data-aos="zoom-in" data-aos-delay="100">
             <div class="work__text">
-               <h3 class="collapsible-trigger">FinWiseAI: AI-Powered Personal Finance Advisor <span class="collapsible-arrow"></span></h3>
+               <h3 class="collapsible-trigger">FinWiseAI: Finance Advisor <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Built an AI-driven web app using FastAPI and React to provide personalized financial advice, investment recommendations, and market sentiment analysis, leveraging flan-t5-large, distilbert, and Alpha Vantage API for real-time data.</p>
-                <p>• Implemented FAISS for vector search of investment options and Chart.js for visualizations (budget pie chart, sentiment bar chart), enhancing user experience with interactive data insights.</p>
+                <p>• Built an AI-driven web app using FastAPI and React to provide personalized financial advice, investment recommendations, and market sentiment analysis.</p>
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/FinWiseAI" target="_blank">Project Link</a></p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Python, FastAPI, React, flan-t5-large, distilbert, Transformers, Langchain, FAISS, Chart.js</li>
+                  <li>Python</li><li>FastAPI</li><li>React</li><li>Chart.js</li>
                 </ul>
                </div>
             </div>
           </div>
-          <div class="project__box">
+
+          <div class="project__box" data-aos="zoom-in" data-aos-delay="200">
             <div class="work__text">
-               <h3 class="collapsible-trigger">Snap & Translate: Language Playground <span class="collapsible-arrow"></span></h3>
+               <h3 class="collapsible-trigger">GenInsight: GenAI Analyzer <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Engineered a mobile application using Unity and C# that captures images via the mobile camera, identifies objects in real-time using Google Vision API, and labels each with its name, processing up to 60 images per minute.</p>
-                <p>• Launched an innovative solution utilizing the Google Translate API for translating visual content descriptions automatically into target languages; reduced manual input time by approximately three hours weekly during project development phases.</p>
+                <p>• Engineered a GenAI-driven web app using Python, Streamlit, and LangChain to analyze news articles and answer user queries on market trends.</p>
+                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/GenInsight-Project" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>Python</li><li>Streamlit</li><li>LangChain</li><li>FAISS</li>
+                </ul>
+               </div>
+            </div>
+          </div>
+
+          <div class="project__box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="work__text">
+               <h3 class="collapsible-trigger">Art Gallery DB System <span class="collapsible-arrow"></span></h3>
+               <div class="collapsible-content">
+                <p>• Designed and implemented a robust database system for artwork, artists, customers, and sales management using PHP, MySQL, and XAMPP.</p>
+                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Art-Gallery-Project" target="_blank">Project Link</a></p>
+                <ul class="work__list">
+                  <li>PHP</li><li>SQL</li><li>HTML/CSS</li><li>JS</li>
+                </ul>
+               </div>
+            </div>
+          </div>
+
+          <div class="project__box" data-aos="zoom-in">
+             <div class="work__text">
+               <h3 class="collapsible-trigger">Online Meeseva Services <span class="collapsible-arrow"></span></h3>
+               <div class="collapsible-content">
+                <p>• Created a web page using PHP, HTML, and JavaScript to develop a web-based platform for project management.</p>
+                <ul class="work__list">
+                  <li>PHP</li><li>JavaScript</li><li>SQL</li>
+                </ul>
+               </div>
+            </div>
+          </div>
+
+          <div class="project__box" data-aos="zoom-in">
+            <div class="work__text">
+               <h3 class="collapsible-trigger">Snap & Translate App <span class="collapsible-arrow"></span></h3>
+               <div class="collapsible-content">
+                <p>• Engineered a mobile app in Unity that captures images, identifies objects via Google Vision API, and translates descriptions using Google Translate API.</p>
                 <p>• Check out my project details here: <a href="https://drive.google.com/drive/folders/15ze2n-t4Ya0DzLDO-ooEgldgk8qLLTup" target="_blank">Project Link</a></p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Unity, C#, Google Vision API, Google Translate API</li>
+                  <li>Unity</li><li>C#</li><li>Google Vision API</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <div class="project__box">
+          <div class="project__box" data-aos="zoom-in">
             <div class="work__text">
-               <h3 class="collapsible-trigger">Breast Cancer Classification Using Convolutional Neural Networks(CNN) <span class="collapsible-arrow"></span></h3>
+               <h3 class="collapsible-trigger">Breast Cancer Classification <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Improved a deep learning model using Convolutional Neural Networks (CNN) to classify breast cancer tumors as benign or malignant based on histopathological images from the Breast Cancer Wisconsin (Diagnostic) dataset.</p>
-                <p>• Applied data augmentation & KNN techniques to enhance the model's generalization capability, achieving an accuracy of 95% on the test set, thereby demonstrating the model's effectiveness in aiding early diagnosis and treatment planning.</p>
+                <p>• Improved a deep learning model using Convolutional Neural Networks (CNN) to classify breast cancer tumors as benign or malignant with 95% accuracy.</p>
                 <ul class="work__list">
-                  <li>Tools & skills used: CNN, Python, Numpy, Sklearn, Matplotlib, Tensorflow, Keras, KNN techniques</li>
+                  <li>CNN</li><li>Python</li><li>Tensorflow</li><li>Keras</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <div class="project__box">
-            <div class="work__text">
-               <h3 class="collapsible-trigger">Efficient Prediction of Cardiovascular Disease <span class="collapsible-arrow"></span></h3>
+          <div class="project__box" data-aos="zoom-in">
+             <div class="work__text">
+               <h3 class="collapsible-trigger">Cardiovascular Prediction <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Utilized machine learning algorithms and advanced feature selection techniques, resulting in a predictive model with an accuracy rate of 92%, showcasing expertise in data analysis and machine learning.</p>
-                <p>• Applied data science knowledge in the context of health informatics, analyzing over 50,000 healthcare records to derive actionable, data-driven insights that contributed to a 15% improvement in healthcare decision-making efficiency.</p>
+                <p>• Utilized machine learning algorithms and advanced feature selection techniques, resulting in a predictive model with an accuracy rate of 92%.</p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Python, feature selection techniques, Numpy, Matplotlib</li>
+                  <li>Python</li><li>Numpy</li><li>Matplotlib</li><li>ML</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <!-- Dev & Unity Projects Second -->
-          <div class="project__box">
+          <div class="project__box" data-aos="zoom-in">
             <div class="work__text">
                <h3 class="collapsible-trigger">Star Lander Game <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Developed Star Lander, a 2D space navigation game using Unity and C#, featuring physics-based rocket movement, dynamic obstacles, and level based progression. </p>
-                <p>• Implemented player controls for thrusting and rotation, collision handling with audio-visual feedback, and a UI system with a rules pop-up and persistent level display. </p>
-                <p>• Designed modular scripts to manage scene transitions, input systems, and particle effects, ensuring a polished and engaging player experience.</p>
+                <p>• Developed Star Lander, a 2D space navigation game using Unity and C#, featuring physics-based rocket movement and dynamic obstacles.</p>
                 <p>• Check out my game here: <a href="https://play.unity.com/en/games/c455aca8-bf60-4c73-86d4-495e8df60446/star-lander" target="_blank">Project Link</a></p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Unity, C#, Physics-Based Programming, UI/UX Design, Unity Input System, Scene Management, Particle Systems, Audio Integration, Object-Oriented Programming, Debugging</li>
+                  <li>Unity</li><li>C#</li><li>Physics</li><li>UI/UX</li>
                 </ul>
                </div>
             </div>
           </div>
-          <div class="project__box">
-            <div class="work__text">
-               <h3 class="collapsible-trigger">GenInsight: Generative AI Analyzer <span class="collapsible-arrow"></span></h3>
-               <div class="collapsible-content">
-                <p>• Engineered a GenAI-driven web app using Python, Streamlit, and LangChain to analyze news articles and answer user queries on market trends.</p>
-                <p>• Leveraged flan-t5-base for question answering, SentenceTransformer for embeddings, and FAISS for efficient similarity search, processing real-time news data.</p>
-                <p>• Utilized web scraping with UnstructuredURLLoader, text chunking with RecursiveCharacterTextSplitter, and Pickle for data persistence, demonstrating strong data handling skills.</p>
-                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/GenInsight-Project" target="_blank">Project Link</a></p>
-                <ul class="work__list">
-                  <li>Tools & skills used: Python, Streamlit, LangChain, flan-t5-base, SentenceTransformer, FAISS, UnstructuredURLLoader, RecursiveCharacterTextSplitter</li>
-                </ul>
-               </div>
-            </div>
-          </div>
-          
-          <div class="project__box">
+
+          <div class="project__box" data-aos="zoom-in">
             <div class="work__text">
                <h3 class="collapsible-trigger">Obstacle Dodge <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Developed a Unity-based mini game featuring a player-controlled character with real-time camera tracking, navigating through a dynamic obstacle course with spinning, dropping, and projectile hazards.</p>
-                <p>• Implemented collision detection and a hit counter system to track player interactions with obstacles, enhancing gameplay feedback and challenge.</p>
-                <p>• Revitalized core game development skills, including movement mechanics and object dynamics, through iterative testing and refinement over multiple playthroughs.</p>
+                <p>• Developed a Unity-based mini game featuring a player-controlled character with real-time camera tracking and dynamic obstacles.</p>
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Obstacle-Dodge" target="_blank">Project Link</a></p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Unity, C#, Physics Simulation, Collision Detection, Hit counter system</li>
+                  <li>Unity</li><li>C#</li><li>Physics</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <div class="project__box">
+          <div class="project__box" data-aos="zoom-in">
             <div class="work__text">
-               <h3 class="collapsible-trigger">Augmented Reality Dragon (AR) <span class="collapsible-arrow"></span></h3>
+               <h3 class="collapsible-trigger">Augmented Reality Dragon <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Engineered a mobile Augmented Reality application in Unity that utilizes the device's camera to recognize a predefined target image in real-time.</p>
-                <p>• Implemented marker-based image tracking to overlay and render an interactive, animated 3D dragon model onto the real-world environment.</p>
-                <p>• Developed intuitive user controls by integrating a virtual joystick to allow for real-time manipulation and interaction with the 3D object.</p>
+                <p>• Engineered a mobile AR app in Unity using marker-based tracking to overlay an interactive 3D dragon model onto the real world.</p>
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Augmented-Reality-Dragon-AR" target="_blank">Project Link</a></p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Unity, C#, ARCore</li>
+                  <li>Unity</li><li>C#</li><li>ARCore</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <div class="project__box">
-            <div class="work__text">
-               <h3 class="collapsible-trigger">Extended Reality Building Sim (VR) <span class="collapsible-arrow"></span></h3>
+          <div class="project__box" data-aos="zoom-in">
+             <div class="work__text">
+               <h3 class="collapsible-trigger">XR Building Sim (VR) <span class="collapsible-arrow"></span></h3>
                <div class="collapsible-content">
-                <p>• Developed a dynamic, physics-based simulation in Unity and C# to visualize the assembly and demolition of a complex structure.</p>
-                <p>• Engineered the core mechanics by scripting sequential animations and object hierarchies, and implemented robust collision detection that triggered realistic physics-based responses upon impact.</p>
-                <p>• Enhanced user experience by integrating multiple camera systems and a voiceover introduction to create engaging, multi-perspective educational content.</p>
+                <p>• Developed a physics-based VR simulation in Unity to visualize the assembly and demolition of complex structures.</p>
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Extended-Reality-Building-Simulation-VR" target="_blank">Project Link</a></p>
                 <ul class="work__list">
-                  <li>Tools & skills used: Unity, C#, Physics Simulation</li>
+                  <li>Unity</li><li>C#</li><li>VR</li>
                 </ul>
                </div>
             </div>
           </div>
 
-          <div class="project__box">
-            <div class="work__text">
-               <h3 class="collapsible-trigger">Art Gallery Database Mgmt System <span class="collapsible-arrow"></span></h3>
-               <div class="collapsible-content">
-                <p>• Designed and implemented a robust database system for artwork, artists, customers, and sales management using PHP, MySQL, and XAMPP.</p>
-                <p>• Elevated data management efficiency by 40% and reduced user errors by 30% with user-friendly interfaces in HTML, CSS, and JavaScript.</p>
-                <p>• Established secure database connectivity and implemented custom queries and login authentication using XAMPP, significantly enhancing data integrity and access control across the platform.</p>
-                <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Art-Gallery-Project" target="_blank">Project Link</a></p>
-                <ul class="work__list">
-                  <li>Frontend: PHP, JavaScript, HTML, CSS</li>
-                  <li>Backend: SQL</li>
-                </ul>
-               </div>
-            </div>
-          </div>
-
-          <div class="project__box">
-            <div class="work__text">
-               <h3 class="collapsible-trigger">Online Meeseva Services <span class="collapsible-arrow"></span></h3>
-               <div class="collapsible-content">
-                <p>• Created a web page using PHP, HTML, JavaScript, Numpy and implemented the project in the tool Jupyter.</p>
-                <p>• Contributed to developing the web-based platform and project management.</p>
-                <ul class="work__list">
-                  <li>Frontend: PHP, JavaScript, HTML, CSS</li>
-                  <li>Backend: SQL</li>
-                </ul>
-               </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
-    <!-- ▲▲▲ END OF COMBINED SECTION ▲▲▲ -->
-     <section class="project" id="uidesigns" role="region" aria-label="Other UI Designs">
+
+    <section class="project" id="uidesigns" role="region" aria-label="Other UI Designs">
       <div class="row">
-        <h2>Other UI Designs</h2>
+        <h2 data-aos="fade-right">Other UI Designs</h2>
         
         <div class="project__boxes">
-          <div class="project__box">
+          <div class="project__box" data-aos="fade-up">
             <div class="work__text">
                <h3 class="collapsible-trigger">Android UI Collection <span class="collapsible-arrow"></span></h3>
-               
                <div class="collapsible-content">
                   <p>A collection of high-fidelity mockups designed for Android interfaces.</p>
-                  
                   <div class="ui-designs__container" style="margin-bottom: 2rem;">
-                     <img src="./images/AndroidUI.png" alt="Digital wireframe of staff dashboard" class="case-study-image" style="border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+                      <img src="./images/AndroidUI.png" alt="Digital wireframe of staff dashboard" class="case-study-image" style="border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
                   </div>
-                  
                   <div class="ui-designs__container">
-                     <img src="./images/AndroidDesigns2.png" alt="Digital wireframe of staff dashboard" class="case-study-image" style="border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+                      <img src="./images/AndroidDesigns2.png" alt="Digital wireframe of staff dashboard" class="case-study-image" style="border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
                   </div>
                </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- EDUCATION SECTION -->
     <section class="education" id="education" role="region" aria-label="Education">
       <div class="row">
-        <h2>Education</h2>
+        <h2 data-aos="fade-right">Education</h2>
         <div class="education__boxes">
-          <div class="education__box">
+          <div class="education__box" data-aos="flip-up">
             <div class="work__text">
               <h3>Google UX Design Professional certificate</h3>
               <p>coursera</p>
               <p><a href="https://coursera.org/share/76163fe5153f41aa3f7528ae27018f8a" target="_blank">Certificate Link</a></p>
             </div>
           </div>
-          <div class="education__box">
+          <div class="education__box" data-aos="flip-up" data-aos-delay="100">
             <div class="work__text">
               <h3>Master of Science in Computer Science</h3>
-              <p>Oklahoma State University, Stillwater, Oklahoma</p>
-              <p>Graduated: May 2025</p>
-              <p>GPA: 3.63/4.0</p>
+              <p>Oklahoma State University</p>
+              <p>Graduated: May 2025 | GPA: 3.63/4.0</p>
             </div>
           </div>
-          <div class="education__box">
+          <div class="education__box" data-aos="flip-up" data-aos-delay="200">
             <div class="work__text">
               <h3>Bachelor of Technology in Information Technology</h3>
-              <p>RVR & JC College of Engineering, Guntur, AP, India</p>
+              <p>RVR & JC College of Engineering</p>
               <p>GPA: 7.44/10</p>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section class="about" id="about" role="region" aria-label="About Me">
       <div class="row">
-        <h2>About Me</h2>
+        <h2 data-aos="fade-right">About Me</h2>
         <div class="about__content">
-          <div class="about__text">
+          <div class="about__text" data-aos="fade-right">
             <p>
               Product Designer with 3+ years of IT experience. I am a creative
 problem solver who speaks fluent 'Developer.' Armed with a Master’s
@@ -411,14 +383,13 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
             </p>
             <button id="resumeBtn" class="btn">My Resume</button>
           </div>
-          <div class="about__photo-container">
+          <div class="about__photo-container" data-aos="zoom-in">
             <img class="about__photo" src="./images/MyPic.jpg" alt="Portrait of Shamsheer Ali Shaik" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MODAL SECTION -->
     <div id="resumeModal" class="modal">
       <div class="modal__content">
         <span id="closeModal" class="modal__close">×</span>
@@ -430,196 +401,92 @@ I recently earned my Master's degree in Computer Science from Oklahoma State Uni
       </div>
     </div>
 
+    <section class="certifications" id="certifications" role="region" aria-label="Certifications">
+      <div class="row">
+        <h2 data-aos="fade-right">Certifications</h2>
+        <div class="certifications__boxes">
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Google UX Design Professional certificate</h3><p>coursera</p><p><a href="https://coursera.org/share/76163fe5153f41aa3f7528ae27018f8a" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Design a User Experience for Social Good</h3><p>Google</p><p><a href="https://coursera.org/share/8b7c5a60f515b57f054a03f4f278a3d4" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Build Dynamic User Interfaces (UI)</h3><p>Google</p><p><a href="https://coursera.org/share/113e0411feb43081b11a2b2875ad9d3d" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Create High-Fidelity Designs</h3><p>Google</p><p><a href="https://coursera.org/share/e7d6ecda034a7b537fbb1e63c9d04f98" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Conduct UX Research</h3><p>Google</p><p><a href="https://coursera.org/share/6f0e5e7aa00036fc1e03997600224d5a" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Build Wireframes</h3><p>Google</p><p><a href="https://www.coursera.org/account/accomplishments/verify/0TCN4P6R2W03" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Foundations of UX Design</h3><p>Google</p><p><a href="https://coursera.org/share/ca31a7de241ade7c8584a6dfbff15de5" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Start the UX Design Process</h3><p>Google</p><p><a href="https://www.coursera.org/account/accomplishments/verify/XQL0MBY68P9U" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>AWS Academy Graduate</h3><p>AWS</p><p><a href="https://www.credly.com/badges/44f51d3c-82cf-4ae5-b86a-aadb7bb4fb26/public_url" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>AWS Educate Intro to GenAI</h3><p>AWS</p><p><a href="https://www.credly.com/badges/e3beb401-98e7-4b99-ad2b-b072c1aa757b/public_url" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Java Certification</h3><p>Udemy</p><p><a href="https://www.udemy.com/certificate/UC-0bf1399d-0392-4367-be31-1b4b980a7543/" target="_blank">Certificate Link</a></p></div></div>
+           <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>C# Unity Game Dev</h3><p>Udemy</p><p><a href="https://www.udemy.com/certificate/UC-263b6021-ce35-46a8-b5fc-9e9cf0bcc424/" target="_blank">Certificate Link</a></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="leadership" id="leadership-service" role="region" aria-label="Leadership and Service">
+      <div class="row">
+        <h2 data-aos="fade-right">Leadership and Service</h2>
+        <div class="leadership__boxes">
+          <div class="leadership__box" data-aos="fade-up">
+            <div class="work__text">
+               <h3 class="collapsible-trigger">Cultural Secretary, Indian Student Association, OSU <span class="collapsible-arrow"></span></h3>
+               <div class="collapsible-content">
+                <p>• Led a team of 20 in the end-to-end execution of large-scale cultural events...</p>
+                <ul class="work__list"><li>Impact: Boosted student participation by 25%.</li></ul>
+               </div>
+            </div>
+          </div>
+          <div class="leadership__box" data-aos="fade-up">
+            <div class="work__text">
+               <h3 class="collapsible-trigger">Academic Support Volunteer, MAD <span class="collapsible-arrow"></span></h3>
+               <div class="collapsible-content">
+                <p>• Enhanced instructional skills by teaching a year-long educational program...</p>
+                <ul class="work__list"><li>Impact: Improved student academic performance by 20%.</li></ul>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" role="region" aria-label="Contact">
+      <div class="row">
+        <h2 data-aos="zoom-in">Get in Touch</h2>
+        <div class="contact__info" data-aos="fade-up">
+          <p>
+            Want to ask questions? or have some advice for me? Feel free to Let me know. 😊
+          </p>
+          <a href="mailto:shamsheeralissa@gmail.com" class="btn">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <footer role="contentinfo" class="footer">
+      <div class="row">
+        <ul class="footer__social-links">
+          <li class="footer__social-link-item">
+            <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
+              <img src="./images/github.svg" class="footer__social-image" alt="Github Profile">
+            </a>
+          </li>
+          <li class="footer__social-link-item">
+            <a href="https://www.linkedin.com/in/shamsheeralishaik/">
+              <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <a href="#top" class="back-to-top" title="Back to Top">
+      <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" aria-hidden="true"/>
+    </a>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const resumeBtn = document.getElementById('resumeBtn');
-        const modal = document.getElementById('resumeModal');
-        const closeModal = document.getElementById('closeModal');
-
-        if(resumeBtn && modal && closeModal) { // Check elements exist before adding listeners
-          resumeBtn.addEventListener('click', function () {
-            modal.style.display = 'flex';
-          });
-
-          closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-          });
-
-          window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-              modal.style.display = 'none';
-            }
-          });
-
-          window.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && modal.style.display === 'flex') {
-              modal.style.display = 'none';
-            }
-          });
-        }
+      AOS.init({
+        once: true, // Animations happen only once
+        offset: 100, // Offset (in px) from the original trigger point
       });
     </script>
-  </main>
-
-  <!-- CERTIFICATIONS SECTION -->
-  <section class="certifications" id="certifications" role="region" aria-label="Certifications">
-    <div class="row">
-      <h2>Certifications</h2>
-      <div class="certifications__boxes">
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Google UX Design Professional certificate</h3>
-            <p>coursera</p>
-            <p><a href="https://coursera.org/share/76163fe5153f41aa3f7528ae27018f8a" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-          <div class="certifications__box">
-          <div class="work__text">
-            <h3>Design a User Experience for Social Good & Prepare for Jobs</h3>
-            <p>Google</p>
-            <p><a href="https://coursera.org/share/8b7c5a60f515b57f054a03f4f278a3d4" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-          <div class="certifications__box">
-          <div class="work__text">
-            <h3>Build Dynamic User Interfaces (UI) for Websites</h3>
-            <p>Google</p>
-            <p><a href="https://coursera.org/share/113e0411feb43081b11a2b2875ad9d3d" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Create High-Fidelity Designs and Prototypes in Figma</h3>
-            <p>Google</p>
-            <p><a href="https://coursera.org/share/e7d6ecda034a7b537fbb1e63c9d04f98" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Conduct UX Research and Test Early Concepts</h3>
-            <p>Google</p>
-            <p><a href="https://coursera.org/share/6f0e5e7aa00036fc1e03997600224d5a" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Build Wireframes and Low-Fidelity Prototypes</h3>
-            <p>Google</p>
-            <p><a href="https://www.coursera.org/account/accomplishments/verify/0TCN4P6R2W03" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Foundations of User Experience (UX) Design</h3>
-            <p>Google</p>
-            <p><a href="https://coursera.org/share/ca31a7de241ade7c8584a6dfbff15de5" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Start the UX Design Process: Empathize, Define, and Ideate</h3>
-            <p>Google</p>
-            <p><a href="https://www.coursera.org/account/accomplishments/verify/XQL0MBY68P9U" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>AWS Academy Graduate</h3>
-            <p>AWS Cloud Foundation</p>
-            <p><a href="https://www.credly.com/badges/44f51d3c-82cf-4ae5-b86a-aadb7bb4fb26/public_url" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>AWS Educate Introduction to Generative AI</h3>
-            <p>Amazon Web Services</p>
-            <p><a href="https://www.credly.com/badges/e3beb401-98e7-4b99-ad2b-b072c1aa757b/public_url" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>The Complete Java Certification Course</h3>
-            <p>Udemy</p>
-            <p><a href="https://www.udemy.com/certificate/UC-0bf1399d-0392-4367-be31-1b4b980a7543/" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-        <div class="certifications__box">
-          <div class="work__text">
-            <h3>Complete C# Unity 3D Game Development</h3>
-            <p>Udemy</p>
-            <p><a href="https://www.udemy.com/certificate/UC-263b6021-ce35-46a8-b5fc-9e9cf0bcc424/" target="_blank">Certificate Link</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP SECTION -->
-  <section class="leadership" id="leadership-service" role="region" aria-label="Leadership and Service">
-    <div class="row">
-      <h2>Leadership and Service</h2>
-      <div class="leadership__boxes">
-        <div class="leadership__box">
-          <div class="work__text">
-             <h3 class="collapsible-trigger">Cultural Secretary, Indian Student Association, OSU <span class="collapsible-arrow"></span></h3>
-             <div class="collapsible-content">
-              <p>• Led a team of 20 in the end-to-end execution of large-scale cultural events, from initial concept and design of promotional flyers and posters to seamless on-site coordination, enhancing cultural awareness and driving student engagement.</p>
-              <ul class="work__list">
-                <li>Impact: Boosted student participation in cultural events by 25%, fostering greater cultural appreciation and community engagement across the university.</li>
-              </ul>
-             </div>
-          </div>
-        </div>
-        <div class="leadership__box">
-          <div class="work__text">
-             <h3 class="collapsible-trigger">Academic Support Volunteer, Make A Difference(MAD) <span class="collapsible-arrow"></span></h3>
-             <div class="collapsible-content">
-              <p>• Enhanced instructional skills by teaching a year-long educational program, delivering impactful lessons and mentoring over 15 students, while fostering a supportive and engaging learning environment that significantly increased teaching effectiveness.</p>
-              <ul class="work__list">
-                <li>Impact: Improved student academic performance by 20% through tailored mentoring and engaging lessons, while boosting student confidence and participation in the learning program.</li>
-              </ul>
-             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="contact" id="contact" role="region" aria-label="Contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          Want to ask questions? or have some advice for me or just want to say "Hi 👋" in any case feel free to Let me know. 😊 The quickest way to reach out to me is via an email.
-        </p>
-        <a href="mailto:shamsheeralissa@gmail.com" class="btn">Email</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github Profile" aria-hidden="true">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://www.linkedin.com/in/shamsheeralishaik/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile" aria-hidden="true">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" aria-hidden="true"/>
-  </a>
-  <script src="./index.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
-

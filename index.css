@@ -70,27 +70,7 @@
   --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    /* --- LIGHT (Classic Comic) Mode Palette --- */
-    --accent-red: #E62429;
-    --accent-blue: #005B9A; /* Darker blue for light bg */
-    --bg-main: #F4F7F9;       /* Light grey background */
-    --bg-card: #FFFFFF;       /* White cards */
-    --border-color: #E0E0E0;  /* Light grey borders */
-    --text-headings: #1A202C;  /* Dark navy for headings */
-    --text-primary: #2D3748;    /* Dark grey for text */
-    --text-secondary: #718096; /* Lighter grey for secondary text */
-    --accent-red-light: rgba(230, 36, 41, 0.1);
-    --accent-blue-light: rgba(0, 91, 154, 0.1);
-    --accent-red-text: var(--accent-red);
-    --accent-blue-text: var(--accent-blue);
-
-    /* ▼▼▼ NEW BACKGROUND VARIABLE (LIGHT) ▼▼▼ */
-    /* 10% opaque black webs for light mode */
-    --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.1)'/%3E%3C/svg%3E");
-  }
-}
+/* DELETED: Light Mode Media Query to Fix Text Color Issue */
 
 /* --- Old variables mapped to new theme --- */
 :root {
@@ -106,6 +86,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Fix for AOS causing horizontal scroll */
 }
 
 @media(max-width: 1000px) {
@@ -123,8 +104,6 @@ body {
   background: var(--bg-main);
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
-
-  /* Uses the variable for background pattern */
   background-image: var(--bg-pattern-url);
   background-repeat: repeat;
   background-attachment: fixed;
@@ -166,7 +145,7 @@ section {
 img {
   object-fit: contain;
   max-width: 100%;
-  display: block; /* Remove extra space below images */
+  display: block; 
 }
 
 /* --------------------------------------- */
@@ -174,11 +153,11 @@ img {
 /* --------------------------------------- */
 
 h1, h2, h3 {
-  font-family: var(--font-comic); /* NEW: Comic font! */
+  font-family: var(--font-comic); 
   font-weight: 400;
   line-height: var(--line-height-small);
   color: var(--text-headings);
-  letter-spacing: 1px; /* Comic fonts look better with spacing */
+  letter-spacing: 1px; 
 }
 
 .heading-primary {
@@ -186,19 +165,13 @@ h1, h2, h3 {
   font-size: var(--font-size-huge);
 }
 
-/* --- ▼▼▼ NAME GRADIENT EFFECT ▼▼▼ --- */
 .heading-primary span {
-  /* Use gradient as background */
   background: linear-gradient(170deg, var(--accent-red) 45%, var(--accent-blue) 55%);
-  /* Clip the background to the text shape */
   -webkit-background-clip: text;
   background-clip: text;
-  /* Make the text color transparent */
   -webkit-text-fill-color: transparent;
-  /* Fallback for browsers that don't support background-clip */
   color: var(--accent-red);
 }
-/* --- ▲▲▲ END OF NAME GRADIENT ▲▲▲ --- */
 
 @media(max-width: 900px) {
   .heading-primary {
@@ -211,13 +184,12 @@ h2 {
   margin-bottom: var(--gutter-medium);
 }
 
-/* --- NEW: Underline is Spidey Red --- */
 h2::after {
   content: '';
   display: block;
   height: 3px;
   width: 10rem;
-  background: var(--accent-red); /* Use main accent */
+  background: var(--accent-red); 
   margin: var(--gutter-small) 0;
 }
 
@@ -242,9 +214,9 @@ h3 {
 p {
   margin: var(--gutter-small-1) 0;
   color: var(--text-primary);
-  font-family: var(--font-stack); /* Ensure paragraphs use standard font */
+  font-family: var(--font-stack); 
   font-size: var(--font-size-small);
-  letter-spacing: normal; /* Reset letter spacing */
+  letter-spacing: normal; 
 }
 
 @media(max-width: 900px) {
@@ -258,7 +230,7 @@ p {
 /* --------------------------------------- */
 
 a {
-  color: var(--accent-blue); /* Links are blue */
+  color: var(--accent-blue); 
   font-weight: 400;
   font-family: 'Jost', sans-serif;
   transition: all .2s;
@@ -288,9 +260,9 @@ body:not(.user-is-tabbing) a:focus {
   padding: 1.2rem 4.5rem;
   text-decoration: none;
   color: var(--text-headings);
-  border: 1px solid var(--accent-red); /* Red border */
+  border: 1px solid var(--accent-red); 
   font-weight: 400;
-  font-family: var(--font-comic); /* Comic font for buttons */
+  font-family: var(--font-comic); 
   font-size: 1.8rem;
   letter-spacing: 1px;
   border-radius: var(--btn-radius);
@@ -309,7 +281,7 @@ body:not(.user-is-tabbing) a:focus {
   top: 0;
   left: 0;
   right: 100%;
-  background: var(--accent-red); /* Red fill */
+  background: var(--accent-red); 
   height: 100%;
   z-index: -1;
   transition: all 0.3s ease;
@@ -324,12 +296,11 @@ body:not(.user-is-tabbing) a:focus {
   right: 0;
 }
 
-/* Main CTA button */
 .btn--pink {
   background: var(--accent-red);
   transition: all 0.2s;
   border-radius: var(--btn-radius);
-  color: #FFFFFF; /* White text on red button */
+  color: #FFFFFF; 
   border-color: var(--accent-red);
 }
 
@@ -339,13 +310,12 @@ body:not(.user-is-tabbing) a:focus {
 
 .btn--pink:hover,
 .btn--pink:focus {
-  background: var(--accent-blue); /* Hover to blue! */
-  color: #FFFFFF; /* White text */
+  background: var(--accent-blue); 
+  color: #FFFFFF; 
   transform: scale(1.05);
   border-color: var(--accent-blue);
 }
 
-/* Project/Cert links */
 .link__text {
   position: relative;
   display: inline-block;
@@ -376,7 +346,6 @@ body:not(.user-is-tabbing) a:focus {
   font-family: sans-serif;
 }
 
-/* ----- Back to Top ----- */
 .back-to-top {
   position: fixed;
   bottom: 4rem;
@@ -386,14 +355,14 @@ body:not(.user-is-tabbing) a:focus {
   align-items: center;
   height: 5.5rem;
   width: 5.5rem;
-  background-color: var(--accent-red); /* Red button */
+  background-color: var(--accent-red); 
   border-radius: 50%;
   z-index: 10;
   visibility: hidden;
   transition: all .4s;
 }
 .back-to-top:hover {
-  background-color: var(--accent-blue); /* Hover to blue */
+  background-color: var(--accent-blue); 
   transform: scale(1.1);
 }
 .back-to-top__image {
@@ -423,7 +392,6 @@ body:not(.user-is-tabbing) a:focus {
 .nav__items {
   display: flex;
   flex-wrap: nowrap;
-  /*justify-content: center;*/
   list-style: none;
 }
 
@@ -460,25 +428,21 @@ body:not(.user-is-tabbing) a:focus {
   white-space: nowrap;
 }
 
-/* Default state (Odd items - Red) */
 .nav__item:nth-child(odd) .nav__link {
   color: var(--accent-red-text);
   background: var(--accent-red-light);
 }
 
-/* Even items - Blue */
 .nav__item:nth-child(even) .nav__link {
   color: var(--accent-blue-text);
   background: var(--accent-blue-light);
 }
 
-/* Hover state (Odd items hover to Blue) */
 .nav__item:nth-child(odd) .nav__link:hover {
   color: var(--accent-blue-text);
   background: var(--accent-blue-light);
 }
 
-/* Hover state (Even items hover to Red) */
 .nav__item:nth-child(even) .nav__link:hover {
   color: var(--accent-red-text);
   background: var(--accent-red-light);
@@ -486,8 +450,6 @@ body:not(.user-is-tabbing) a:focus {
 .nav__link::after {
   display: none;
 }
-
-
 
 /* --------------------------------------- */
 /* ----- Header ----- */
@@ -504,19 +466,13 @@ body:not(.user-is-tabbing) a:focus {
   padding-top: 0;
 }
 
-/* ---------------------------------------
-   ----- HEADER BANNER IMAGE -----
-   ---------------------------------------
-*/
 .header__banner-container {
   width: 100%;
   height: 300px;
   max-height: 40vh;
   background-image: url('./images/Spiderman\ final\ edited.jpg');
-  /* ▼▼▼ FIX 1: Change 'cover' to 'contain' ▼▼▼ */
   background-size: cover;
   background-position: center;
-  /* ▼▼▼ FIX 1.5: Add 'no-repeat' ▼▼▼ */
   background-repeat: no-repeat;
 }
 
@@ -525,7 +481,6 @@ body:not(.user-is-tabbing) a:focus {
         height: 200px;
     }
 }
-
 
 .header__text-box {
   position: relative;
@@ -550,7 +505,6 @@ body:not(.user-is-tabbing) a:focus {
   margin-top: calc(-1 * var(--gutter-medium));
 }
 
-/* STYLES FOR YOUR NEW PROFILE PICTURE */
 .header__profile-pic {
   position: absolute;
   top: -75px;
@@ -562,8 +516,6 @@ body:not(.user-is-tabbing) a:focus {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   object-fit: cover;
 }
-/* END OF NEW PROFILE PICTURE STYLES  */
-
 
 .header__text h1 {
   margin-top: 20px;
@@ -595,7 +547,6 @@ body:not(.user-is-tabbing) a:focus {
     padding-top: var(--gutter-small);
     margin-top: calc(-1 * var(--gutter-small));
   }
-  /* STYLES FOR MOBILE PROFILE PICTURE */
   .header__profile-pic {
     width: 120px;
     height: 120px;
@@ -603,10 +554,7 @@ body:not(.user-is-tabbing) a:focus {
     top: -60px;
     left: 30px;
   }
-  /*END OF MOBILE PROFILE PICTURE STYLES */
-
   .header__text h1 {
-    /* ▼▼▼ FIX 2: Change '20px' to '70px' ▼▼▼ */
     margin-top: 70px;
     margin-bottom: var(--gutter-small);
   }
@@ -637,7 +585,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .work__box,
-.project__box, /* Applied to AI/ML and Dev/Unity sections */
+.project__box,
 .education__box,
 .certifications__box,
 .leadership__box {
@@ -645,14 +593,23 @@ body:not(.user-is-tabbing) a:focus {
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   padding: var(--gutter-normal);
-  transition: border-color 0.3s ease; /* Transition border only */
+  /* ▼▼▼ CHANGED: Added transition for hover effect ▼▼▼ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-/* Base styles - :hover removed */
-
+/* ▼▼▼ ADDED: Hover Lift Effect ▼▼▼ */
+.work__box:hover,
+.project__box:hover,
+.education__box:hover,
+.certifications__box:hover,
+.leadership__box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-red);
+}
 
 /* --------------------------------------- */
 /* ----- Work ----- */
@@ -660,7 +617,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__boxes {
   display: grid;
-  grid-template-columns: 1fr; /* Single column */
+  grid-template-columns: 1fr; 
   gap: var(--gutter-normal);
 }
 
@@ -670,7 +627,7 @@ body:not(.user-is-tabbing) a:focus {
   }
   .work__box {
     align-items: initial;
-    flex-direction: column; /* Keep h3 on top */
+    flex-direction: column; 
   }
 }
 
@@ -692,7 +649,6 @@ body:not(.user-is-tabbing) a:focus {
   gap: 1rem;
 }
 
-/* --- Skill Pill/Chip styling (Blue) --- */
 .work__list li {
   display: inline-block;
   background: var(--accent-blue-light);
@@ -705,27 +661,19 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Projects ----- */ /* AI/ML and Dev/Unity */
+/* ----- Projects (Grid Layout) ----- */
 /* --------------------------------------- */
 
 .project__boxes {
   display: grid;
-  /* Keeps 2 columns on desktop, stacks on mobile */
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
   gap: 2rem;
   padding: 0;
-  
-  /* ▼▼▼ THIS IS THE FIX ▼▼▼ */
   align-items: start; 
-  /* This prevents the "neighbor" card from stretching when one expands */
 }
 
-/* Optional: If the tabs feel "too big" (tall), let's reduce the padding inside the boxes */
 .project__box {
-  padding: 1.5rem 2rem; /* Reduced padding (was var(--gutter-normal)) */
-}
-
-.project__box { /* Applied to AI/ML and Dev/Unity sections */
+  padding: 1.5rem 2rem; 
   max-width: 100%;
 }
 
@@ -747,7 +695,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .education__boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Kept as 2-column */
+  grid-template-columns: 1fr 1fr; 
   gap: var(--gutter-normal);
   padding: 0;
 }
@@ -795,7 +743,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__photo-container {
   border-radius: 50%;
-  border: 4px solid var(--accent-red); /* Red border */
+  border: 4px solid var(--accent-red); 
   overflow: hidden;
   padding: 5px;
   background: var(--bg-main);
@@ -920,7 +868,6 @@ body:not(.user-is-tabbing) a:focus {
   transform: scale(1.05);
 }
 
-/* Style the other modal buttons */
 .modal__btn--ai {
   background-color: var(--accent-blue);
   border-color: var(--accent-blue);
@@ -930,19 +877,6 @@ body:not(.user-is-tabbing) a:focus {
   background-color: transparent;
   color: var(--accent-blue);
 }
-/* This is for the "Software Development" button */
-.modal__btn--dev {
-  /* Let's make this one grey or black, like the symbiote suit */
-  background-color: #333;
-  border-color: #333;
-}
-.modal__btn--dev:hover,
-.modal__btn--dev:focus {
-  background-color: transparent;
-  color: #333;
-  border-color: #333;
-}
-
 
 #resumeBtn.btn {
   background-color: var(--accent-red);
@@ -1029,7 +963,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .leadership__boxes {
   display: grid;
-  grid-template-columns: 1fr; /* Single column */
+  grid-template-columns: 1fr; 
   gap: var(--gutter-normal);
   padding: 0;
 }
@@ -1112,7 +1046,7 @@ body:not(.user-is-tabbing) a:focus {
 
 
 /* --------------------------------------- */
-/* ----- Collapsible Styles ----- */ /* Applies to Work, AI/ML, Dev/Unity */
+/* ----- Collapsible Styles ----- */
 /* --------------------------------------- */
 
 .collapsible-trigger {
@@ -1151,91 +1085,95 @@ body:not(.user-is-tabbing) a:focus {
   color: var(--accent-red);
 }
 
-/* Apply text color change hover effect to the trigger */
 .collapsible-trigger:hover {
   color: var(--accent-red);
 }
 
-/* --- ▼▼▼ UPDATED BORDER HOVER EFFECT ▼▼▼ --- */
-/* Target the parent card when the trigger *inside* it is hovered */
-/* This uses the :has pseudo-selector which is well-supported now */
 .work__box:has(.collapsible-trigger:hover),
 .project__box:has(.collapsible-trigger:hover),
 .leadership__box:has(.collapsible-trigger:hover) {
   border-color: var(--accent-red);
 }
-/* --- ▲▲▲ END OF BORDER HOVER EFFECT ▲▲▲ --- */
 
 
 /* --------------------------------------- */
-/* ----- NEW: UX Case Study Styles ----- */
+/* ----- NEW: UX Case Study Styles (DESIGNER STYLE) ----- */
 /* --------------------------------------- */
+
+/* Force Stack for Impact */
 .ux-case-study-section .row {
-  max-width: 1000px; /* Allow case studies to be a bit wider */
+  max-width: 1000px; 
 }
 
 .ux-case-study__container {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column for case studies */
-  gap: var(--gutter-medium); /* Space between multiple case studies */
-  padding: 0; /* Remove default padding */
+  display: flex;             /* Changed from Grid to Flex Column */
+  flex-direction: column;    /* Stack them vertically */
+  gap: 4rem;                 /* Big spacing between case studies */
+  padding: 0; 
 }
 
+/* Make Cards Huge */
 .ux-case-study__card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-  overflow: hidden; /* Ensure image corners are rounded */
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Image | Text */
-  gap: var(--gutter-normal);
-  align-items: center;
-  transition: all 0.3s ease;
+  overflow: hidden; 
+  display: flex;             /* Flex Column for big image on top */
+  flex-direction: column;    /* Image Top, Text Bottom */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ux-case-study__card:hover {
-   transform: translateY(-6px);
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+   transform: translateY(-8px);
+   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
    border-color: var(--accent-red);
 }
 
 .ux-case-study__image-container {
-  /* No specific styles needed unless image needs cropping */
+  width: 100%;
+  height: 400px;             /* Fixed big height for impact */
+  overflow: hidden;
 }
 
 .ux-case-study__image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crop image nicely */
+  object-fit: cover;         /* Ensure it fills the box beautifully */
+  transition: transform 0.5s ease;
+}
+
+/* Subtle Zoom effect on hover */
+.ux-case-study__card:hover .ux-case-study__image {
+  transform: scale(1.05);
 }
 
 .ux-case-study__text {
-  padding: var(--gutter-normal);
+  padding: 3rem;             /* More breathing room */
   display: flex;
   flex-direction: column;
 }
 
 .ux-case-study__text h3 {
-  /* Use Comic font for consistency, but maybe slightly smaller */
-  font-size: var(--font-size-medium-1);
-  margin-bottom: var(--gutter-small);
+  font-size: 3.2rem;         /* Bigger Title */
+  margin-bottom: 1.5rem;
 }
 
 .ux-case-study__summary {
-  font-family: var(--font-stack); /* Use standard font for summary */
-  font-size: var(--font-size-small);
-  color: var(--text-secondary); /* Lighter color for summary */
-  margin-bottom: var(--gutter-normal);
+  font-family: var(--font-stack);
+  font-size: 1.8rem;
+  color: var(--text-primary); /* Better contrast */
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
 .ux-case-study__button {
-  /* Style the button like other primary buttons */
   background: var(--accent-red);
   color: #FFFFFF;
   border-color: var(--accent-red);
-  padding: 1rem 3rem; /* Adjust padding if needed */
-  align-self: flex-start; /* Align button left */
+  padding: 1.2rem 3.5rem; 
+  align-self: flex-start;
+  font-size: 1.8rem;
 }
 
 .ux-case-study__button:hover,
@@ -1247,18 +1185,13 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Responsive adjustments for Case Studies */
 @media (max-width: 768px) {
-  .ux-case-study__card {
-    grid-template-columns: 1fr; /* Stack image and text vertically */
-    gap: 0; /* Remove gap */
+  .ux-case-study__image-container {
+    height: 250px; /* Smaller height for mobile */
   }
-
   .ux-case-study__text {
-    padding: var(--gutter-normal); /* Consistent padding */
+    padding: 2rem;
   }
-
-  .ux-case-study__button {
-    align-self: stretch; /* Make button full width on mobile */
-    text-align: center;
+  .ux-case-study__text h3 {
+    font-size: 2.4rem;
   }
 }
-
