@@ -1223,3 +1223,105 @@ body:not(.user-is-tabbing) a:focus {
     font-size: 2.4rem;
   }
 }
+/* --------------------------------------- */
+/* ----- THEME TOGGLE SWITCH STYLES ----- */
+/* --------------------------------------- */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0; /* Spacing between name and intro text */
+  gap: 1rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #333; /* Dark slider bg */
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  border: 1px solid var(--accent-blue); /* Blue border for Spidey feel */
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-red); /* Spidey Red when checked (Dark Mode) */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.theme-icon {
+  font-size: 2rem;
+}
+
+/* --------------------------------------- */
+/* ----- MANUAL THEME OVERRIDES ----- */
+/* --------------------------------------- */
+
+/* FORCE LIGHT MODE (When toggle is Sun) */
+html[data-theme="light"] {
+    --accent-red: #E62429;
+    --accent-blue: #006494;
+    --bg-main: #F4F7F9;
+    --bg-card: #FFFFFF;
+    --border-color: #E2E8F0;
+    --text-headings: #1A202C;
+    --text-primary: #2D3748;
+    --text-secondary: #4A5568;
+    --accent-red-light: rgba(230, 36, 41, 0.1);
+    --accent-blue-light: rgba(0, 100, 148, 0.1);
+    --accent-red-text: #C53030;
+    --accent-blue-text: #2B6CB0;
+    --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
+}
+
+/* FORCE DARK MODE (When toggle is Moon) */
+html[data-theme="dark"] {
+    --accent-red: #E62429;
+    --accent-blue: #00A9E0;
+    --bg-main: #10121A;
+    --bg-card: #1A1D2A;
+    --border-color: #333333;
+    --text-headings: #FFFFFF;
+    --text-primary: #F0F0F0;
+    --text-secondary: #AAAAAA;
+    --accent-red-light: rgba(230, 36, 41, 0.1);
+    --accent-blue-light: rgba(0, 169, 224, 0.1);
+    --accent-red-text: var(--accent-red);
+    --accent-blue-text: var(--accent-blue);
+    --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+}

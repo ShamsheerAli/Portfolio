@@ -121,3 +121,34 @@ document.addEventListener('DOMContentLoaded', function () {
   
 });
 
+// Theme Toggle Logic
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+// 1. Check for saved user preference on load
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+} else {
+    // 2. If no saved preference, check system preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        toggleSwitch.checked = true;
+        // Optional: Set default attribute if you want to be explicit
+        // document.documentElement.setAttribute('data-theme', 'dark'); 
+    }
+}
+
+// 3. Listen for switch changes
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme);
