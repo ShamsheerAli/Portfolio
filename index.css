@@ -70,7 +70,35 @@
   --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
 }
 
-/* DELETED: Light Mode Media Query to Fix Text Color Issue */
+/* ---------------------------------------
+   ----- LIGHT MODE THEME (Restored & Fixed) -----
+   ---------------------------------------
+*/
+@media (prefers-color-scheme: light) {
+  :root {
+    /* --- Light Mode Palette (Classic Comic) --- */
+    --accent-red: #E62429;        /* Spidey Red (Kept same) */
+    --accent-blue: #006494;       /* Darker Blue for better contrast on white */
+    
+    --bg-main: #F4F7F9;           /* Light Grey Background */
+    --bg-card: #FFFFFF;           /* White Cards */
+    --border-color: #E2E8F0;      /* Light Grey Borders */
+    
+    /* --- TEXT COLORS (The Fix) --- */
+    --text-headings: #1A202C;     /* Dark Navy/Black for Headings */
+    --text-primary: #2D3748;      /* Dark Grey for Body Text (Readable!) */
+    --text-secondary: #4A5568;    /* Medium Grey */
+    
+    --accent-red-light: rgba(230, 36, 41, 0.1);
+    --accent-blue-light: rgba(0, 100, 148, 0.1);
+    
+    --accent-red-text: #C53030;   /* Darker red for text readability */
+    --accent-blue-text: #2B6CB0;  /* Darker blue for text readability */
+
+    /* Light Mode Background Pattern (Subtle Grey Web) */
+    --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
+  }
+}
 
 /* --- Old variables mapped to new theme --- */
 :root {
