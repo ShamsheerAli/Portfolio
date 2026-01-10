@@ -142,7 +142,7 @@ body {
   }
 }
 
-/* --- Image Comparison Slider Styles --- */
+/* --- Image Comparison Slider Styles (UPDATED) --- */
 .comparison-slider-container {
   margin-top: 2rem;
   border-radius: var(--card-radius);
@@ -152,22 +152,30 @@ body {
 }
 
 img-comparison-slider {
-  /* Ensure the slider fills the container */
+  /* ▼▼▼ FIX 1: Force a consistent aspect ratio ▼▼▼ */
   width: 100%;
+  aspect-ratio: 16 / 9; /* You can change this to 3 / 2 or 4 / 3 if you prefer */
   outline: none;
-  cursor: col-resize; /* Show resize cursor */
+  cursor: col-resize;
+  
+  /* ▼▼▼ FIX 2: Make the slider handle more visible ▼▼▼ */
+  /* Use your theme's bright accent color */
+  --divider-color: var(--accent-red); 
+  --default-handle-color: var(--accent-red);
+  /* Make the handle larger */
+  --default-handle-width: 60px; 
 }
 
 img-comparison-slider img {
-  /* Make sure images fit perfectly */
+  /* ▼▼▼ FIX 1: Ensure images fill the space without stretching ▼▼▼ */
   width: 100%;
-  height: auto;
+  height: 100%; /* Force height to match the container's aspect ratio */
   display: block;
-  object-fit: cover;
+  object-fit: cover; /* This is the magic property that crops instead of squishing */
 }
 
-/* Optional: Custom handle color to match your theme */
-img-comparison-slider {
+/* Optional: Change handle color on hover for extra interactivity */
+img-comparison-slider:hover {
   --divider-color: var(--accent-blue);
   --default-handle-color: var(--accent-blue);
 }
