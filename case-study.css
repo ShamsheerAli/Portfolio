@@ -141,3 +141,33 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Image Comparison Slider Styles --- */
+.comparison-slider-container {
+  margin-top: 2rem;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+img-comparison-slider {
+  /* Ensure the slider fills the container */
+  width: 100%;
+  outline: none;
+  cursor: col-resize; /* Show resize cursor */
+}
+
+img-comparison-slider img {
+  /* Make sure images fit perfectly */
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Optional: Custom handle color to match your theme */
+img-comparison-slider {
+  --divider-color: var(--accent-blue);
+  --default-handle-color: var(--accent-blue);
+}
