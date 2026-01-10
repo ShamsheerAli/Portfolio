@@ -53,8 +53,8 @@
            onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=YouBloom+Dashboard+Hero';">
 
       <section data-aos="fade-up">
-        <h2>The Challenge: Identity Crisis & Friction</h2>
-        <p>Through stakeholder interviews and observing users on the legacy platform, I identified three critical failures in the experience:</p>
+        <h2>The Challenge: 4 Critical Friction Points</h2>
+        <p>Through stakeholder interviews and observing users on the legacy platform, I identified four specific failures in the user journey:</p>
         
         <div class="challenge-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
             <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
@@ -62,12 +62,16 @@
                 <p>Users were confused about whether they were in "Fan Mode" or "Creator Mode" due to a lack of visual distinction.</p>
             </div>
             <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
-                <h3 style="font-size: 2rem; color: var(--accent-red);">2. "Dead-End" Onboarding</h3>
-                <p>Users hit a hard stop when creating events because "Location" and "Stripe" settings were buried in deep menus, causing frustration.</p>
+                <h3 style="font-size: 2rem; color: var(--accent-red);">2. The "Ghost" Dashboard (Location Logic)</h3>
+                <p>When users logged in, they saw the full dashboard, but the buttons were unclickable because they hadn't set their location yet. The UI failed to inform them why access was blocked or where to fix it, leading to extreme frustration.</p>
             </div>
             <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
-                <h3 style="font-size: 2rem; color: var(--accent-red);">3. Disjointed Discovery</h3>
-                <p>Adding an artist required leaving the "Create Event" page to search, forcing users to lose their progress.</p>
+                <h3 style="font-size: 2rem; color: var(--accent-red);">3. Front-Loaded Payment Friction (Stripe)</h3>
+                <p>The legacy flow forced users to connect a Stripe account as the very first step of creating an event. This complex requirement created a high barrier to entry before the user had even started their draft, causing high drop-off rates.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="font-size: 2rem; color: var(--accent-red);">3. The "Blank Box" Discovery Problem</h3>
+                <p>When adding artists to an event, the interface relied entirely on "Recall"—users had to type the exact name into a search box to see results. There was no way to browse artist details or photos during this step, meaning if the user didn't know the specific name, they were stuck.</p>
             </div>
         </div>
       </section>
@@ -92,7 +96,8 @@
 
         <div style="margin-bottom: 4rem;" data-aos="fade-up">
             <h3 style="color: var(--accent-blue);">Solution A: The Mandatory "Location Gate"</h3>
-            <p><strong>The Fix:</strong> I designed a Mandatory Onboarding Gateway. The main dashboard remains locked until the location is saved.</p>
+            <p><strong>The Problem:</strong> Users were seeing a dashboard they couldn't use because they hadn't set a location, with no error messaging to guide them.</p>
+            <p><strong>The Fix:</strong>I designed a Mandatory Onboarding Gateway. The main dashboard remains locked until the location is saved.</p>
             <ul style="margin-bottom: 2rem;">
                 <li><strong>Trigger:</strong> First-time Login.</li>
                 <li><strong>Action:</strong> Redirect to "Set Location" page.</li>
@@ -106,8 +111,22 @@
 
         <div style="margin-bottom: 4rem;" data-aos="fade-up">
             <h3 style="color: var(--accent-blue);">Solution B: The "Artist Cart"</h3>
+            <p><strong>The Problem:</strong> The "Create Event" search box required users to memorize artist names, offering no context or details to help them choose.</p>
             <p><strong>The Fix:</strong> I applied an E-commerce mental model to talent booking. Users browse the "Talent Pool" and add artists to a "Cart".</p>
-            <p>When using the "Create Event" wizard, the selector pulls directly from this Cart. This separates the <em>Discovery mindset</em> from the <em>Logistics mindset</em>.</p>
+            <p>When creating the event, the artist selector pulls directly from the Cart. This allows users to browse visually first, rather than typing blindly.</p>
+            <img src="./images/YouBloom_ArtistCart.png" 
+                 alt="Artist Cart Feature UI"
+                 class="case-study-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1000x500/1A1D2A/ffffff?text=Artist+Cart+UI';">
+        </div>
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Solution C: The "Value-First" Wizard (Stripe Integration)</h3>
+            <p><strong>The Problem:</strong> Asking for Stripe connection at Step 1 caused users to quit before they started.</p>
+            <p><strong>The Fix:</strong> I moved the payment integration to the end of the funnel.</p>
+            <ul style="margin-bottom: 2rem;">
+                <li><strong>The Flow:</strong> Users act on their motivation first-setting the Venue, Date, and Artist.</li>
+                <li><strong>The Switch:</strong> Only in the final "Ticketing" step, after they have invested effort into the draft, are they asked to connect Stripe. This utilizes the "Sunk Cost" psychological principle to increase completion rates.</li>
+            </ul>
             <img src="./images/YouBloom_ArtistCart.png" 
                  alt="Artist Cart Feature UI"
                  class="case-study-image"
@@ -115,7 +134,8 @@
         </div>
 
         <div style="margin-bottom: 4rem;" data-aos="fade-up">
-            <h3 style="color: var(--accent-blue);">Solution C: The 5-Step Wizard</h3>
+            <h3 style="color: var(--accent-blue);">Solution D: The 5-Step Linear Wizard</h3>
+             <p><strong>The Problem:</strong> Creating an event involves complex logistics.</p>
             <p><strong>The Fix:</strong> To reduce cognitive load, I broke the complex event creation process into a linear wizard:</p>
             <ol>
                 <li><strong>What:</strong> Event Details & Category.</li>
