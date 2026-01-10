@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <title>Case Study: YouBloom Dashboard - Shamsheer Ali Shaik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  
+  <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+
+<body>
+
+  <header class="case-study-header" role="banner" id="top">
+    <div class="row case-study-nav">
+      <a href="index.html" class="case-study-nav__logo">Shamsheer Ali Shaik</a>
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link">← Back to All Projects</a>
+    </div>
+  </header>
+
+  <main role="main">
+    <article class="case-study-content">
+
+      <h1 data-aos="fade-up">Redesigning the YouBloom Event Creator Dashboard</h1>
+
+      <section class="case-study-overview-section" data-aos="fade-up" data-aos-delay="100">
+        <h2>Executive Summary</h2>
+        <p class="case-study-overview">
+          The goal was to design a centralized dashboard for Event Managers to discover talent and organize gigs. Driven by the critical insight that <strong>90% of user activity is setting up shows</strong>, I redesigned the experience to prioritize "Creation" above all else. The solution introduces e-commerce mental models (Artist Cart) and mandatory onboarding gates to drastically reduce error rates.
+        </p>
+        
+        <div class="case-study-meta">
+          <p><strong>Role:</strong> UX/UI Designer</p>
+          <p><strong>Timeline:</strong> 4 Weeks</p>
+          <p><strong>Tools:</strong> Figma, Contextual Inquiry</p>
+        </div>
+      </section>
+
+      <img src="./images/YouBloom_Hero.png" 
+           alt="YouBloom Dashboard Redesign Hero"
+           class="case-study-image"
+           data-aos="zoom-in"
+           onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=YouBloom+Dashboard+Hero';">
+
+      <section data-aos="fade-up">
+        <h2>The Challenge: Identity Crisis & Friction</h2>
+        <p>Through stakeholder interviews and observing users on the legacy platform, I identified three critical failures in the experience:</p>
+        
+        <div class="challenge-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="font-size: 2rem; color: var(--accent-red);">1. The Identity Crisis</h3>
+                <p>Users were confused about whether they were in "Fan Mode" or "Creator Mode" due to a lack of visual distinction.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="font-size: 2rem; color: var(--accent-red);">2. "Dead-End" Onboarding</h3>
+                <p>Users hit a hard stop when creating events because "Location" and "Stripe" settings were buried in deep menus, causing frustration.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="font-size: 2rem; color: var(--accent-red);">3. Disjointed Discovery</h3>
+                <p>Adding an artist required leaving the "Create Event" page to search, forcing users to lose their progress.</p>
+            </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up">
+        <h2>Discovery & Strategy: The "90% Rule"</h2>
+        <p>
+          <strong>Stakeholder Insight:</strong> The CEO established a clear hierarchy: The dashboard must prioritize "Create Event" (P0), followed by "Upcoming Events", then "My Events".
+        </p>
+        <p>
+          I restructured the Information Architecture (IA) to align with this goal. Instead of equal weight for all features, the navigation focuses on three distinct workflows:
+        </p>
+        <ul>
+            <li><strong>Talent Pool:</strong> For discovery (Browsing).</li>
+            <li><strong>Shows:</strong> For management (The "90%" task).</li>
+            <li><strong>Ratings:</strong> For feedback and improvement.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 data-aos="fade-right">The Solution: Optimizing the Critical Path</h2>
+
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Solution A: The Mandatory "Location Gate"</h3>
+            <p><strong>The Fix:</strong> I designed a Mandatory Onboarding Gateway. The main dashboard remains locked until the location is saved.</p>
+            <ul style="margin-bottom: 2rem;">
+                <li><strong>Trigger:</strong> First-time Login.</li>
+                <li><strong>Action:</strong> Redirect to "Set Location" page.</li>
+                <li><strong>Result:</strong> Eliminates the downstream error entirely.</li>
+            </ul>
+            <img src="./images/YouBloom_LocationGate.png" 
+                 alt="Mandatory Location Gate UI"
+                 class="case-study-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1000x500/1A1D2A/ffffff?text=Location+Gate+UI';">
+        </div>
+
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Solution B: The "Artist Cart"</h3>
+            <p><strong>The Fix:</strong> I applied an E-commerce mental model to talent booking. Users browse the "Talent Pool" and add artists to a "Cart".</p>
+            <p>When using the "Create Event" wizard, the selector pulls directly from this Cart. This separates the <em>Discovery mindset</em> from the <em>Logistics mindset</em>.</p>
+            <img src="./images/YouBloom_ArtistCart.png" 
+                 alt="Artist Cart Feature UI"
+                 class="case-study-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1000x500/1A1D2A/ffffff?text=Artist+Cart+UI';">
+        </div>
+
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Solution C: The 5-Step Wizard</h3>
+            <p><strong>The Fix:</strong> To reduce cognitive load, I broke the complex event creation process into a linear wizard:</p>
+            <ol>
+                <li><strong>What:</strong> Event Details & Category.</li>
+                <li><strong>Where:</strong> Venue Selection.</li>
+                <li><strong>When:</strong> Date & Time.</li>
+                <li><strong>How Much:</strong> Ticketing & Stripe Integration.</li>
+                <li><strong>Publish:</strong> Review & Launch.</li>
+            </ol>
+            <img src="./images/YouBloom_Wizard.png" 
+                 alt="Event Creation Wizard UI"
+                 class="case-study-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1000x500/1A1D2A/ffffff?text=5-Step+Wizard+UI';">
+        </div>
+      </section>
+
+      <section data-aos="fade-up">
+        <h2>Service Design: Closing the Loop</h2>
+        <p>Recognizing that users might drop off during complex setups, I collaborated with the BA team to design engagement loops:</p>
+        <div class="challenge-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3>The "Nudge" Email</h3>
+                <p>Triggered if a user registers but doesn't create a show in 24 hours.</p>
+                <p><em>"Create your first event in 5 minutes"</em></p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3>The "Save" Email</h3>
+                <p>Triggered if a user abandons the wizard halfway.</p>
+                <p><em>"Your fans are waiting! Finish setting up..."</em></p>
+            </div>
+        </div>
+      </section>
+
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link" style="margin-top: 5rem; display: inline-block;">← Back to All Projects</a>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github Profile">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/shamsheeralishaik/">
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 100 });
+  </script>
+</body>
+</html>
