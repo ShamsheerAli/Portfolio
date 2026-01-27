@@ -118,13 +118,9 @@
             <p><strong>The Fix:</strong>I designed a Mandatory Onboarding Gateway. The main dashboard remains locked until the location is saved.</p>
 
             <ul style="margin-bottom: 2rem;">
-
                 <li><strong>Trigger:</strong> First-time Login.</li>
-
                 <li><strong>Action:</strong> Redirect to "Set Location" page.</li>
-
                 <li><strong>Result:</strong> Eliminates the downstream error entirely.</li>
-
             </ul>
             
             <div class="comparison-slider-container">
@@ -168,11 +164,8 @@
             <p><strong>The Fix:</strong> I moved the payment integration to the end of the funnel.</p>
 
             <ul style="margin-bottom: 2rem;">
-
                 <li><strong>The Flow:</strong> Users act on their motivation first-setting the Venue, Date, and Artist.</li>
-
                 <li><strong>The Switch:</strong> Only in the final "Ticketing" step, after they have invested effort into the draft, are they asked to connect Stripe. This utilizes the "Sunk Cost" psychological principle to increase completion rates.</li>
-
             </ul>
 
             <div class="comparison-slider-container">
@@ -196,15 +189,10 @@
 
             <ol>
                 <li><strong>Event Basics:</strong> Event Details & Category.</li>
-
                 <li><strong>Venue & Time: </strong> Venue & Time Selection</li>
-
                 <li><strong>The Lineup:</strong> Adding Artists/Bands</li>
-
                 <li><strong>Tickets & Policies: </strong> Ticketing & Policies of event.</li>
-
                 <li><strong>Publish:</strong> Stripe Integration & Review, Launch.</li>
-
             </ol>
 
             <div class="comparison-slider-container">
@@ -218,7 +206,48 @@
               </img-comparison-slider>
             </div>
         </div>
-      </section>
+
+        <div style="margin-bottom: 6rem;" data-aos="fade-up">
+           <h3 style="color: var(--accent-blue);">Solution E: The "Smart" Compliance Engine (DAC7 & OECD)</h3>
+
+             <p><strong>The Problem:</strong> The platform needed to scale globally, but a static "Account Details" form would fail strict tax laws (DAC7 in EU, OECD in UK/Norway). Asking a US user for a "VAT Number" creates confusion and legal risk.</p>
+
+            <p><strong>The Fix:</strong> I architected a Dynamic Decision Tree for the Onboarding Profile.</p>
+
+            <ul>
+                <li><strong>The Anchor Logic:</strong> The form adapts in real-time based on the "Country of Residence" selection.</li>
+                <li><strong>Contextual Validation:</strong> Triggers VIES API for EU, or Regex (e.g., "GB" + 9 digits) for UK users.</li>
+                <li><strong>Payout Safety:</strong> Designed "Payout Freeze" states to alert users before revenue is blocked.</li>
+            </ul>
+
+            <img src="./images/YouBloom_Compliance_UI.png" 
+                 alt="Dynamic Tax Compliance UI"
+                 class="case-study-image"
+                 style="margin-top: 2rem; border-radius: 12px; border: 1px solid #333;"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1200x800/2A2E35/ffffff?text=Dynamic+Tax+Compliance+UI+(Solution+E)';">
+        </div>
+
+        <div style="margin-bottom: 6rem;" data-aos="fade-up">
+           <h3 style="color: var(--accent-blue);">Solution F: Financial Transparency</h3>
+
+             <p><strong>The Problem:</strong> Users struggled to distinguish between "Gross Revenue" and "Net Profit" and were confused by the technical term "Tickets Issued."</p>
+
+            <p><strong>The Fix:</strong> I redesigned the Post-Event Analytics Dashboard to prioritize financial clarity.</p>
+
+            <ul>
+                <li><strong>Semantic Correction:</strong> Renamed "Tickets Issued" to the user-friendly "Tickets Sold".</li>
+                <li><strong>Revenue Visualization:</strong> Designed a "Waterfall" breakdown showing Gross Sales → Fees → Net Payout.</li>
+                <li><strong>Inventory Visibility:</strong> Implemented visual charts to differentiate between Paid tickets (Revenue) and Free tickets (Comps).</li>
+            </ul>
+
+            <img src="./images/YouBloom_Performance_Dashboard.png" 
+                 alt="New Performance Dashboard"
+                 class="case-study-image"
+                 style="margin-top: 2rem; border-radius: 12px; border: 1px solid #333;"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1200x800/2A2E35/ffffff?text=Financial+Transparency+Dashboard+(Solution+F)';">
+        </div>
+
+        </section>
 
       <section data-aos="fade-up">
         <h2>Service Design: Closing the Loop</h2>
@@ -234,6 +263,29 @@
                 <p>Triggered if a user abandons the wizard halfway.</p>
                 <p><em>"Your fans are waiting! Finish setting up..."</em></p>
             </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" style="margin-top: 6rem;">
+        <h2>Phase 2: Beyond the Dashboard</h2>
+        
+        <div style="margin-bottom: 4rem;">
+            <h3 style="color: var(--accent-blue);">Bonus: The "Growth" Homepage</h3>
+
+            <p><strong>The Problem:</strong> The marketing site focused on generic features, failing to communicate the platform's primary differentiator: <strong>Lower Fees.</strong></p>
+
+            <p><strong>The Fix:</strong> I designed a high-conversion homepage focused on value comparison.</p>
+
+            <ul>
+                <li><strong>Interactive Savings Calculator:</strong> A widget allowing users to input ticket price/qty to see dynamic "You save $X" results.</li>
+                <li><strong>Trust Signals:</strong> Added a "Social Proof" strip and a "Feature Grid" aligning with new dashboard capabilities.</li>
+            </ul>
+
+            <img src="./images/YouBloom_Homepage_Design.png" 
+                 alt="New Growth Homepage Design"
+                 class="case-study-image"
+                 style="margin-top: 2rem; border-radius: 12px; border: 1px solid #333;"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1200x1600/2A2E35/ffffff?text=New+Growth+Homepage+Design+(Bonus)';">
         </div>
       </section>
 
