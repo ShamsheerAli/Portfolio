@@ -1,600 +1,1155 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+
 
   <title>Shamsheer Ali Shaik Portfolio</title>
 
+
+
   <meta name="description" content="Portfolio of Shamsheer Ali Shaik, UX Designer" />
+
   <meta name="keywords" content="Shamsheer Ali Shaik, UX Designer" />
 
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  
+
+ 
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
+
+ 
+
   <link rel="stylesheet" href="index.css" />
+
   <link rel="stylesheet" href="case-study.css" />
+
   <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
+
   <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
 </head>
+
+
 
 <body>
 
+
+
   <header class="header" role="banner" id="top">
+
     <div class="sticky-nav-wrapper">
+
     <div class="row">
+
       <nav class="nav" role="navigation">
+
         <ul class="nav__items">
+
           <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+
           <li class="nav__item"><a href="#work" class="nav__link">Work Experience</a></li>
+
           <li class="nav__item"><a href="#ux-case-studies" class="nav__link">UX Case Studies</a></li>
+
           <li class="nav__item"><a href="#ai-dev-projects" class="nav__link">AI & Dev Projects</a></li>
+
           <li class="nav__item"><a href="#uidesigns" class="nav__link">UI Designs</a></li>
+
           <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+
           <li class="nav__item"><a href="#certifications" class="nav__link">Certifications</a></li>
+
           <li class="nav__item"><a href="#leadership-service" class="nav__link">Leadership & Service</a></li>
+
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+
         </ul>
+
       </nav>
+
     </div>
+
     </div>
+
+
 
     <div class="header__banner-container"></div>
+
     <div class="header__text-box row">
-      <div class="header__text">
-        
-        <img src="./images/MainProfilePic.png" alt="Shamsheer Ali Shaik profile picture" class="header__profile-pic" data-aos="zoom-in" data-aos-duration="800" />
-        
-        <h1 class="heading-primary" data-aos="fade-up" data-aos-duration="1000">
+
+      <div class="header__text" data-aos="fade-up" data-aos-duration="1000">
+
+        <img src="./images/MainProfilePic.png" alt="Shamsheer Ali Shaik profile picture" class="header__profile-pic" />
+
+        <h1 class="heading-primary">
+
           <span>Shamsheer Ali Shaik </span>
+
         </h1>
-        
-        <p data-aos="fade-up" data-aos-duration="1200">Hello there! I am Shamsheer, <span id="typed-text" style="color: var(--accent-blue); font-weight: bold;"></span></p>
-        
-        <div class="theme-switch-wrapper" data-aos="fade-up" data-aos-duration="1400">
+
+        <p>Hello there! I am Shamsheer, Your friendly neighborhood UX Designer🕷. Obsessed with making complex tech feel simple and human (Wielding Figma & Code).</p>
+
+        <div class="theme-switch-wrapper">
+
            <span class="theme-icon">☀️</span>
+
            <label class="theme-switch" for="checkbox">
+
               <input type="checkbox" id="checkbox" />
+
               <div class="slider round"></div>
+
            </label>
+
            <span class="theme-icon">🌙</span>
+
         </div>
-        
-        <a href="#contact" class="btn btn--pink" data-aos="fade-up" data-aos-duration="1600">Get in touch</a>
+
+        <a href="#contact" class="btn btn--pink">Get in touch</a>
+
       </div>
+
     </div>
-    </div>
+
   </header>
 
+
+
   <main role="main">
-    
+
+   
+
     <section class="project ux-case-study-section" id="ux-case-studies" role="region" aria-label="UX Case Studies">
+
       <div class="row">
+
         <h2 data-aos="fade-right">UX Case Studies</h2>
+
         <div class="ux-case-study__container">
-          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-scale="1.02">
+
+          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200">
+
             <div class="ux-case-study__image-container">
+
               <img src="./images/YB_Fintech_Cover.png"
+
                    alt="youbloom Global Accounting & Compliance Dashboard"
+
                    class="ux-case-study__image"
+
                    onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=FinTech+Accounting+Dashboard';">
+
             </div>
+
             <div class="ux-case-study__text">
+
               <h3>Scalable FinTech Infrastructure</h3>
+
               <p class="ux-case-study__summary">
+
                 Problem: As the platform scaled globally, international tax compliance (EU DAC7, Irish VAT, 1099-K) became a critical liability requiring an investor-grade system.
+
                 <br><br>
+
                 Solution: Translated a 26-page regulatory document into an intuitive, automated, and legally immutable financial dashboard mapping API logic to UI states.
+
               </p>
+
               <a href="./youbloom-fintech.html" class="btn ux-case-study__button">Read Case Study</a>
+
             </div>
-          </div>
-          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-scale="1.02">
-            <div class="ux-case-study__image-container">
-              <img src="./images/YB_logo.png"
-                   alt="YouBloom Event Creator Dashboard"
-                   class="ux-case-study__image"
-                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=YouBloom+Dashboard+Redesign';">
-            </div>
-            <div class="ux-case-study__text">
-              <h3>YouBloom Event Creator Dashboard</h3>
-              <p class="ux-case-study__summary">
-                Problem: 90% of user activity is creating events, yet the process was hidden and high-friction.
-                <br>
-                Solution: A redesign introducing an "Artist Cart" (e-commerce model) and a 5-step wizard to simplify talent booking and logistics.
-              </p>
-              <a href="./youbloom.html" class="btn ux-case-study__button">Read Case Study</a>
-            </div>
-          </div>
-          
-          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-scale="1.02">
-            <div class="ux-case-study__image-container">
-              <img src="./images/ITAC Logo (black background).png"
-                   alt="ITAC Portal Case Study"
-                   class="ux-case-study__image"
-                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1A1D2A/ffffff?text=ITAC+Portal+Preview';">
-            </div>
-            <div class="ux-case-study__text">
-              <h3>The ITAC Operations & Client Portal</h3>
-              <p class="ux-case-study__summary">
-                Product: A unified web portal for Oklahoma State University's Industrial Training and Assessment Center (ITAC). Designed to replace manual workflows with an automated lifecycle for staff, management, and clients.
-              </p>
-              <a href="./itac.html" class="btn ux-case-study__button">Read Case Study</a>
-            </div>
+
           </div>
 
-          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-scale="1.02">
+          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200">
+
             <div class="ux-case-study__image-container">
-              <img src="./images/my-health-story-cover.png"
-                   alt="My Health Story Case Study"
+
+              <img src="./images/YB_logo.png"
+
+                   alt="YouBloom Event Creator Dashboard"
+
                    class="ux-case-study__image"
-                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=My+Health+Story+Preview';">
+
+                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=YouBloom+Dashboard+Redesign';">
+
             </div>
+
             <div class="ux-case-study__text">
-              <h3>My Health Story</h3>
+
+              <h3>YouBloom Event Creator Dashboard</h3>
+
               <p class="ux-case-study__summary">
-                Problem: Medical reports are dense and scary. This project redesigns health data into a personal, intuitive narrative that empowers patients to understand their own health history.
+
+                Problem: 90% of user activity is creating events, yet the process was hidden and high-friction.
+
+                <br>
+
+                Solution: A redesign introducing an "Artist Cart" (e-commerce model) and a 5-step wizard to simplify talent booking and logistics.
+
               </p>
-              <a href="./quickfix.html" class="btn ux-case-study__button">Read Case Study</a>
+
+              <a href="./youbloom.html" class="btn ux-case-study__button">Read Case Study</a>
+
             </div>
+
           </div>
-          
+
+         
+
+          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200">
+
+            <div class="ux-case-study__image-container">
+
+              <img src="./images/ITAC Logo (black background).png"
+
+                   alt="ITAC Portal Case Study"
+
+                   class="ux-case-study__image"
+
+                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1A1D2A/ffffff?text=ITAC+Portal+Preview';">
+
+            </div>
+
+            <div class="ux-case-study__text">
+
+              <h3>The ITAC Operations & Client Portal</h3>
+
+              <p class="ux-case-study__summary">
+
+                Product: A unified web portal for Oklahoma State University's Industrial Training and Assessment Center (ITAC). Designed to replace manual workflows with an automated lifecycle for staff, management, and clients.
+
+              </p>
+
+              <a href="./itac.html" class="btn ux-case-study__button">Read Case Study</a>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="ux-case-study__card" data-aos="fade-up" data-aos-duration="1200">
+
+            <div class="ux-case-study__image-container">
+
+              <img src="./images/my-health-story-cover.png"
+
+                   alt="My Health Story Case Study"
+
+                   class="ux-case-study__image"
+
+                   onerror="this.onerror=null; this.src='https://placehold.co/1200x600/E62429/ffffff?text=My+Health+Story+Preview';">
+
+            </div>
+
+            <div class="ux-case-study__text">
+
+              <h3>My Health Story</h3>
+
+              <p class="ux-case-study__summary">
+
+                Problem: Medical reports are dense and scary. This project redesigns health data into a personal, intuitive narrative that empowers patients to understand their own health history.
+
+              </p>
+
+              <a href="./quickfix.html" class="btn ux-case-study__button">Read Case Study</a>
+
+            </div>
+
+          </div>
+
+         
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section class="work" id="work" role="region" aria-label="Work Experience">
+
       <div class="row">
+
         <h2 data-aos="fade-right">Work Experience - Total: 4 years+</h2>
+
         <div class="work__boxes">
+
           <div class="work__box" data-aos="fade-up">
+
             <div class="work__text">
+
               <h3 class="collapsible-trigger">UX/UI Designer (Dec 2025 - Present) <span class="collapsible-arrow"></span></h3>
+
               <div class="collapsible-content">
+
                 <ul class="work__list">
+
                   <li>youbloom - Contract</li>
+
                 </ul>
+
                 <p>• Spearheaded UX audits and dashboard redesigns targeting 90% of core user activities, directly enhancing flow efficiency for show setups.</p>
+
                 <p>• Optimized conversion funnels by re-architecting the event creation wizard and re-sequencing payment integrations to proactively reduce user drop-off.</p>
+
                 <p>• Architected design systems in Figma that ensured 100% implementation accuracy during a critical platform migration from WordPress to React.</p>
+
                 <p>• Creating detailed design specifications in Figma and working closely with developers to ensure accurate implementation.</p>
+
                 <p>• Participating in daily design reviews to iterate on concepts and align with business goals.</p>
+
                 <ul class="work__list">
+
                   <li>Tools & Skills: Figma, User research, Ideation, Wireframing, Prototyping, Usability Study, Testing, Project Management</li>
+
                 </ul>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="work__box" data-aos="fade-up">
+
             <div class="work__text">
+
               <h3 class="collapsible-trigger">Lead Product Designer (Oct 2025 - Present) <span class="collapsible-arrow"></span></h3>
+
               <div class="collapsible-content">
+
                 <ul class="work__list">
+
                   <li>ITAC, OSU - Part-Time</li>
+
                 </ul>
+
                 <p>• Orchestrated a cross-functional team of analysts and developers to automate client onboarding, projected to eliminate 5–8 hours of manual data entry per week.</p>
+
                 <p>• Deployed a centralized web portal for 500+ users, streamlining end-to-end workflows and drastically reducing design-to-dev handoff friction.</p>
+
                 <p>• Pivoted legacy assessment systems from fragmented spreadsheets into a unified UX architecture to manage the entire client lifecycle.</p>
+
                 <p>• Supporting daily lab operations and contributing to ongoing projects within an applied research environment.</p>
+
                 <ul class="work__list">
+
                   <li>Tools & Skills: Figma, User research, Ideation, Wireframing, Prototyping, Usability Study, Testing, Django, Project Management</li>
+
                 </ul>
+
               </div>
+
             </div>
+
           </div>
 
+
+
           <div class="work__box" data-aos="fade-up">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Gen-AI Researcher (Aug 2025 - Oct 2025) <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <ul class="work__list">
+
                   <li>Oklahoma State University</li>
+
                 </ul>
+
                 <p>• Developed a conditional diffusion model in PyTorch to predict 512x512 binary deposit morphologies in aerosol jet printing, achieving IoU > 0.8 and F1 Score > 0.89.</p>
+
                 <p>• Designed and trained a U-Net-based diffusion model with physics-informed penalties, processing 23,367 images to capture complex AJP features.</p>
+
                 <ul class="work__list">
+
                   <li>Frontend: Python</li>
+
                   <li>Frameworks: PyTorch, OpenCV, Tensorflow, CNN, cGAN, Diffusion Models</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
+
+
           <div class="work__box" data-aos="fade-up">
+
             <div class="work__text">
+
               <h3 class="collapsible-trigger">Video Game Development Mentor (Aug 2024 - May 2025) <span class="collapsible-arrow"></span></h3>
+
               <div class="collapsible-content">
+
                 <ul class="work__list">
+
                   <li>Oklahoma State University</li>
+
                 </ul>
+
                 <p>• Mentored and guided over 20 student teams in the development of video game projects using the Unity Engine and C#.</p>
+
                 <p>• Ensured high-quality code and seamless collaboration by overseeing source code management, branch strategies, and pull requests.</p>
+
                 <ul class="work__list">
+
                   <li>Tools: GitHub CLI, C#, Unity, SQL, NoSql, Neo4j, MongoDB</li>
+
                 </ul>
+
               </div>
+
             </div>
-          </div>
-          <div class="work__box" data-aos="fade-up">
-            <div class="work__text">
-              <h3 class="collapsible-trigger">UI/UX Designer Intern (May 2024 - July 2024) <span class="collapsible-arrow"></span></h3>
-              <div class="collapsible-content">
-                <ul class="work__list">
-                  <li>Filter Trade Technologies</li>
-                </ul>
-                <p>• Designed the user interface for a gamified e-learning Android application, focusing on increasing learner retention and engagement.</p>
-                <p>• Created intuitive mobile layouts and interactive prototypes that integrated game mechanics (such as progress bars, badges, or leaderboards) into educational content.</p>
-                <p>• Gained practical knowledge and hands-on experience in translating complex learning paths into simple, user-friendly mobile navigation.</p>
-                <ul class="work__list">
-                  <li>Tools & Skills: Figma, User research, Ideation, Wireframing, Prototyping, Usability Study, Testing, Project Management</li>
-                </ul>
-              </div>
-            </div>
+
           </div>
 
           <div class="work__box" data-aos="fade-up">
+
             <div class="work__text">
-              <h3 class="collapsible-trigger">Frontend UX Designer(Apr 2021 - Jul 2023) <span class="collapsible-arrow"></span></h3>
+
+              <h3 class="collapsible-trigger">UI/UX Designer Intern (May 2024 - July 2024) <span class="collapsible-arrow"></span></h3>
+
               <div class="collapsible-content">
+
                 <ul class="work__list">
-                  <li>PC Control Systems Pvt Ltd</li>
+
+                  <li>Filter Trade Technologies</li>
+
                 </ul>
-                <p>• Elevated task completion rates by 25% by executing data-driven usability testing and resolving critical interface friction points.</p>
-                <p>• Slashed handoff latency by 30% by building interactive prototypes and collaborating directly with engineering on HTML/ CSS/ JS frontend implementation.</p>
-                <p>• Standardized cross-browser compatibility to 100% across all web deployments, ensuring a seamless and accessible user journey.</p>
+
+                <p>• Designed the user interface for a gamified e-learning Android application, focusing on increasing learner retention and engagement.</p>
+
+                <p>• Created intuitive mobile layouts and interactive prototypes that integrated game mechanics (such as progress bars, badges, or leaderboards) into educational content.</p>
+
+                <p>• Gained practical knowledge and hands-on experience in translating complex learning paths into simple, user-friendly mobile navigation.</p>
+
                 <ul class="work__list">
-                  <li>Frontend: PHP, JavaScript, HTML, CSS, XML, User Experience Design Process</li>
-                  <li>Backend: SQL, MongoDB</li>
+
+                  <li>Tools & Skills: Figma, User research, Ideation, Wireframing, Prototyping, Usability Study, Testing, Project Management</li>
+
                 </ul>
+
               </div>
+
             </div>
+
           </div>
+
+
+
+          <div class="work__box" data-aos="fade-up">
+
+            <div class="work__text">
+
+              <h3 class="collapsible-trigger">Frontend UX Designer(Apr 2021 - Jul 2023) <span class="collapsible-arrow"></span></h3>
+
+              <div class="collapsible-content">
+
+                <ul class="work__list">
+
+                  <li>PC Control Systems Pvt Ltd</li>
+
+                </ul>
+
+                <p>• Elevated task completion rates by 25% by executing data-driven usability testing and resolving critical interface friction points.</p>
+
+                <p>• Slashed handoff latency by 30% by building interactive prototypes and collaborating directly with engineering on HTML/ CSS/ JS frontend implementation.</p>
+
+                <p>• Standardized cross-browser compatibility to 100% across all web deployments, ensuring a seamless and accessible user journey.</p>
+
+                <ul class="work__list">
+
+                  <li>Frontend: PHP, JavaScript, HTML, CSS, XML, User Experience Design Process</li>
+
+                  <li>Backend: SQL, MongoDB</li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section class="project" id="ai-dev-projects" role="region" aria-label="AI and Dev Projects">
+
       <div class="row">
+
         <h2 data-aos="fade-right">AI & Dev Projects</h2>
-        
+
+       
+
         <div class="project__boxes">
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in" data-aos-delay="100">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">FinWiseAI: Finance Advisor <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Built an AI-driven web app using FastAPI and React to provide personalized financial advice, investment recommendations, and market sentiment analysis.</p>
+
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/FinWiseAI" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Python</li><li>FastAPI</li><li>React</li><li>Chart.js</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in" data-aos-delay="200">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">GenInsight: GenAI Analyzer <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Engineered a GenAI-driven web app using Python, Streamlit, and LangChain to analyze news articles and answer user queries on market trends.</p>
+
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/GenInsight-Project" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Python</li><li>Streamlit</li><li>LangChain</li><li>FAISS</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in" data-aos-delay="300">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Art Gallery DB System <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Designed and implemented a robust database system for artwork, artists, customers, and sales management using PHP, MySQL, and XAMPP.</p>
+
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Art-Gallery-Project" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>PHP</li><li>SQL</li><li>HTML/CSS</li><li>JS</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
              <div class="work__text">
+
                <h3 class="collapsible-trigger">Online Meeseva Services <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Created a web page using PHP, HTML, and JavaScript to develop a web-based platform for project management.</p>
+
                 <ul class="work__list">
+
                   <li>PHP</li><li>JavaScript</li><li>SQL</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Snap & Translate App <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Engineered a mobile app in Unity that captures images, identifies objects via Google Vision API, and translates descriptions using Google Translate API.</p>
+
                 <p>• Check out my project details here: <a href="https://drive.google.com/drive/folders/15ze2n-t4Ya0DzLDO-ooEgldgk8qLLTup" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Unity</li><li>C#</li><li>Google Vision API</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Breast Cancer Classification <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Improved a deep learning model using Convolutional Neural Networks (CNN) to classify breast cancer tumors as benign or malignant with 95% accuracy.</p>
+
                 <ul class="work__list">
+
                   <li>CNN</li><li>Python</li><li>Tensorflow</li><li>Keras</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
              <div class="work__text">
+
                <h3 class="collapsible-trigger">Cardiovascular Prediction <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Utilized machine learning algorithms and advanced feature selection techniques, resulting in a predictive model with an accuracy rate of 92%.</p>
+
                 <ul class="work__list">
+
                   <li>Python</li><li>Numpy</li><li>Matplotlib</li><li>ML</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-         <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Star Lander Game <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Developed Star Lander, a 2D space navigation game using Unity and C#, featuring physics-based rocket movement and dynamic obstacles.</p>
+
                 <p>• Check out my game here: <a href="https://play.unity.com/en/games/c455aca8-bf60-4c73-86d4-495e8df60446/star-lander" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Unity</li><li>C#</li><li>Physics</li><li>UI/UX</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Obstacle Dodge <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Developed a Unity-based mini game featuring a player-controlled character with real-time camera tracking and dynamic obstacles.</p>
+
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Obstacle-Dodge" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Unity</li><li>C#</li><li>Physics</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Augmented Reality Dragon <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Engineered a mobile AR app in Unity using marker-based tracking to overlay an interactive 3D dragon model onto the real world.</p>
+
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Augmented-Reality-Dragon-AR" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Unity</li><li>C#</li><li>ARCore</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
 
-          <div class="project__box" data-aos="zoom-in" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-scale="1.02">
+
+
+          <div class="project__box" data-aos="zoom-in">
+
              <div class="work__text">
+
                <h3 class="collapsible-trigger">XR Building Sim (VR) <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Developed a physics-based VR simulation in Unity to visualize the assembly and demolition of complex structures.</p>
+
                 <p>• Check out my project details here: <a href="https://github.com/ShamsheerAli/Extended-Reality-Building-Simulation-VR" target="_blank">Project Link</a></p>
+
                 <ul class="work__list">
+
                   <li>Unity</li><li>C#</li><li>VR</li>
+
                 </ul>
+
                </div>
+
             </div>
+
           </div>
+
+
 
         </div>
+
       </div>
+
     </section>
+
+
 
     <section class="project" id="uidesigns" role="region" aria-label="Other UI Designs">
+
       <div class="row">
+
         <h2 data-aos="fade-right">Other UI Designs</h2>
-        
+
+       
+
         <div class="project__boxes">
+
           <div class="project__box" data-aos="fade-up">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Android UI Collection <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                   <p>A collection of high-fidelity mockups designed for Android interfaces.</p>
+
                   <div class="ui-designs__container" style="margin-bottom: 2rem;">
+
                       <img src="./images/AndroidUI.png" alt="Digital wireframe of staff dashboard" class="case-study-image" style="border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+
                   </div>
+
                   <div class="ui-designs__container">
+
                       <img src="./images/AndroidDesigns2.png" alt="Digital wireframe of staff dashboard" class="case-study-image" style="border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/cccccc/ffffff?text=Image+Not+Found';">
+
                   </div>
+
                </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section class="education" id="education" role="region" aria-label="Education">
+
       <div class="row">
+
         <h2 data-aos="fade-right">Education</h2>
+
         <div class="education__boxes">
+
           <div class="education__box" data-aos="flip-up">
+
             <div class="work__text">
+
               <h3>Google UX Design Professional certificate</h3>
+
               <p>coursera</p>
+
               <p><a href="https://coursera.org/share/76163fe5153f41aa3f7528ae27018f8a" target="_blank">Certificate Link</a></p>
+
             </div>
+
           </div>
+
           <div class="education__box" data-aos="flip-up" data-aos-delay="100">
+
             <div class="work__text">
+
               <h3>Master of Science in Computer Science</h3>
+
               <p>Oklahoma State University</p>
+
               <p>Graduated: May 2025 | GPA: 3.63/4.0</p>
+
             </div>
+
           </div>
+
           <div class="education__box" data-aos="flip-up" data-aos-delay="200">
+
             <div class="work__text">
+
               <h3>Bachelor of Technology in Information Technology</h3>
+
               <p>RVR & JC College of Engineering</p>
+
               <p>GPA: 7.44/10</p>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
+
+
     <section class="about" id="about" role="region" aria-label="About Me">
+
       <div class="row">
+
         <h2 data-aos="fade-right">About Me</h2>
+
         <div class="about__content">
+
           <div class="about__text" data-aos="fade-right">
+
             <p>
+
               Product Design Lead & MS Computer Science Graduate With over 4 years of experience, I bridge the gap between complex engineering and user-centric design. I specialize in "speaking fluent Developer," leveraging my Master’s in Computer Science to ensure pixel-perfect solutions that are as technically buildable as they are beautiful.
+
+
 
 Currently, I lead a multi-disciplinary team at ITAC, where I manage a Data Analyst and an Application Developer to streamline internal operations and develop AI-based tools. My background is rooted in technical feasibility; whether I’m directing the transition of a platform from WordPress to React at youbloom or optimizing workflows for 500+ users, my goal is to ensure every design survives the jump from Figma to production without friction.
 
+
+
 Beyond the screen, my experience as a Gen-AI Researcher and Video Game Development Mentor at Oklahoma State University has honed my ability to translate complex machine learning capabilities into accessible, intuitive interfaces. I thrive at the intersection of logic and creativity, keeping users happy and engineering teams stress-free.
 
+
+
             </p>
+
             <button id="resumeBtn" class="btn">My Resume</button>
+
           </div>
+
           <div class="about__photo-container" data-aos="zoom-in">
+
             <img class="about__photo" src="./images/MyPic.jpg" alt="Portrait of Shamsheer Ali Shaik" loading="lazy" />
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <div id="resumeModal" class="modal">
+
       <div class="modal__content">
+
         <span id="closeModal" class="modal__close">×</span>
+
         <h3 class="modal__title">My Resumes</h3>
+
         <div class="modal__buttons">
+
           <a href="https://github.com/ShamsheerAli/My-Resumes/blob/main/Shamsheer-Ali-Shaik-ProductDesigner.pdf" target="_blank" class="modal__btn modal__btn--xr">UX Design Resume</a>
+
           <a href="https://github.com/ShamsheerAli/My-Resumes" target="_blank" class="modal__btn modal__btn--ai">Other Resumes</a>
+
         </div>
+
       </div>
+
     </div>
 
+
+
     <section class="certifications" id="certifications" role="region" aria-label="Certifications">
+
       <div class="row">
+
         <h2 data-aos="fade-right">Certifications</h2>
+
         <div class="certifications__boxes">
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Google UX Design Professional certificate</h3><p>coursera</p><p><a href="https://coursera.org/share/76163fe5153f41aa3f7528ae27018f8a" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Design a User Experience for Social Good</h3><p>Google</p><p><a href="https://coursera.org/share/8b7c5a60f515b57f054a03f4f278a3d4" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Build Dynamic User Interfaces (UI)</h3><p>Google</p><p><a href="https://coursera.org/share/113e0411feb43081b11a2b2875ad9d3d" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Create High-Fidelity Designs</h3><p>Google</p><p><a href="https://coursera.org/share/e7d6ecda034a7b537fbb1e63c9d04f98" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Conduct UX Research</h3><p>Google</p><p><a href="https://coursera.org/share/6f0e5e7aa00036fc1e03997600224d5a" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Build Wireframes</h3><p>Google</p><p><a href="https://www.coursera.org/account/accomplishments/verify/0TCN4P6R2W03" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Foundations of UX Design</h3><p>Google</p><p><a href="https://coursera.org/share/ca31a7de241ade7c8584a6dfbff15de5" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Start the UX Design Process</h3><p>Google</p><p><a href="https://www.coursera.org/account/accomplishments/verify/XQL0MBY68P9U" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>AWS Academy Graduate</h3><p>AWS</p><p><a href="https://www.credly.com/badges/44f51d3c-82cf-4ae5-b86a-aadb7bb4fb26/public_url" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>AWS Educate Intro to GenAI</h3><p>AWS</p><p><a href="https://www.credly.com/badges/e3beb401-98e7-4b99-ad2b-b072c1aa757b/public_url" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>Java Certification</h3><p>Udemy</p><p><a href="https://www.udemy.com/certificate/UC-0bf1399d-0392-4367-be31-1b4b980a7543/" target="_blank">Certificate Link</a></p></div></div>
+
            <div class="certifications__box" data-aos="fade-up"><div class="work__text"><h3>C# Unity Game Dev</h3><p>Udemy</p><p><a href="https://www.udemy.com/certificate/UC-263b6021-ce35-46a8-b5fc-9e9cf0bcc424/" target="_blank">Certificate Link</a></p></div></div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section class="leadership" id="leadership-service" role="region" aria-label="Leadership and Service">
+
       <div class="row">
+
         <h2 data-aos="fade-right">Leadership and Service</h2>
+
         <div class="leadership__boxes">
+
           <div class="leadership__box" data-aos="fade-up">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Cultural Secretary, Indian Student Association, OSU <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Led a team of 20 in the end-to-end execution of large-scale cultural events...</p>
+
                 <ul class="work__list"><li>Impact: Boosted student participation by 25%.</li></ul>
+
                </div>
+
             </div>
+
           </div>
+
           <div class="leadership__box" data-aos="fade-up">
+
             <div class="work__text">
+
                <h3 class="collapsible-trigger">Academic Support Volunteer, MAD <span class="collapsible-arrow"></span></h3>
+
                <div class="collapsible-content">
+
                 <p>• Enhanced instructional skills by teaching a year-long educational program...</p>
+
                 <ul class="work__list"><li>Impact: Improved student academic performance by 20%.</li></ul>
+
                </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section class="contact" id="contact" role="region" aria-label="Contact">
+
       <div class="row">
+
         <h2 data-aos="zoom-in">Get in Touch</h2>
+
         <div class="contact__info" data-aos="fade-up">
+
           <p>
+
             Want to ask questions? or have some advice for me? Feel free to Let me know. 😊
+
           </p>
+
           <a href="mailto:shamsheeralissa@gmail.com" class="btn">Email</a>
+
         </div>
+
       </div>
+
     </section>
 
+
+
     <footer role="contentinfo" class="footer">
+
       <div class="row">
+
         <ul class="footer__social-links">
+
           <li class="footer__social-link-item">
+
             <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
+
               <img src="./images/github.svg" class="footer__social-image" alt="Github Profile">
+
             </a>
+
           </li>
+
           <li class="footer__social-link-item">
+
             <a href="https://www.linkedin.com/in/shamsheeralishaik/">
+
               <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile">
+
             </a>
+
           </li>
+
         </ul>
+
       </div>
+
     </footer>
 
+
+
     <a href="#top" class="back-to-top" title="Back to Top">
+
       <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" aria-hidden="true"/>
+
     </a>
-    
+
+   
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+
       AOS.init({
+
         once: true, // Animations happen only once
+
         offset: 100, // Offset (in px) from the original trigger point
+
       });
+
     </script>
+
     <script src="./index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-  var typed = new Typed('#typed-text', {
-    strings: [
-      'Your friendly neighborhood UX Designer <span style="color: var(--accent-red);">🕷</span>', 
-      '<span style="color: var(--accent-red);">A Product Designer who codes 💻</span>', 
-      'Obsessed with making tech human 🧠'
-    ],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 2000,
-    loop: true
-  });
-</script>
+
 </body>
+
 </html>
