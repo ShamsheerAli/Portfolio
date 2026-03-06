@@ -650,7 +650,6 @@ body:not(.user-is-tabbing) a:focus {
 .education__box:hover,
 .certifications__box:hover,
 .leadership__box:hover {
-  transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
   border-color: var(--accent-red);
 }
@@ -1169,7 +1168,6 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .ux-case-study__card:hover {
-   transform: translateY(-8px);
    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
    border-color: var(--accent-red);
 }
