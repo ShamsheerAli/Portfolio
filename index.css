@@ -17,9 +17,7 @@
 }
 
 /* Push the header content down so it doesn't hide behind the new fixed nav */
-.header__text-box {
-  margin-top: 50rem; 
-}
+
 @font-face {
   font-family: 'Hk Grotesk';
   font-style: normal;
@@ -509,7 +507,7 @@ body:not(.user-is-tabbing) a:focus {
   flex-direction: column;
   height: auto;
   justify-content: flex-start;
-  padding-top: 0;
+  padding-top: 7.5rem; 
 }
 
 .header__banner-container {
