@@ -1,7 +1,25 @@
 /* --------------------------------------- */
 /* ----- Basic Setup ----- */
 /* --------------------------------------- */
+.sticky-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Uses your background color but makes it 85% transparent */
+  background-color: color-mix(in srgb, var(--bg-main) 85%, transparent);
+  /* Adds the Apple-style frosted glass blur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
 
+/* Push the header content down so it doesn't hide behind the new fixed nav */
+.header__text-box {
+  margin-top: 8rem; 
+}
 @font-face {
   font-family: 'Hk Grotesk';
   font-style: normal;
