@@ -551,9 +551,12 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .header__profile-pic {
-  position: absolute;
-  top: -75px; /* Pushes it exactly halfway over the banner */
-  left: 100px; /* Positions it on the left side */
+  /* Use absolute positioning to break it out of the normal text flow */
+  position: absolute; 
+  /* Push it up so it overlaps the banner image */
+  top: -100px; 
+  /* Keep it locked to the left side */
+  left: 100px; 
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -597,8 +600,10 @@ body:not(.user-is-tabbing) a:focus {
     width: 120px;
     height: 120px;
     position: absolute;
-    top: -60px;
-    left: 30px; /* Keeps it on the left for mobile screens */
+    /* Adjust the negative top margin for mobile */
+    top: -80px; 
+    /* Keep it on the left */
+    left: 30px; 
     margin: 0;
   }
   .header__text h1 {
