@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <title>Case Study: FinTech Infrastructure - Shamsheer Ali Shaik</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  
+  <link rel="preload" href="./fonts/HKGrotesk-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="./fonts/Jost-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+
+<body>
+
+  <header class="case-study-header" role="banner" id="top">
+    <div class="row case-study-nav">
+      <a href="index.html" class="case-study-nav__logo">Shamsheer Ali Shaik</a>
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link">← Back to All Projects</a>
+    </div>
+  </header>
+
+  <main role="main">
+    <article class="case-study-content">
+
+      <h1 data-aos="fade-up">Scalable FinTech Infrastructure: Global Accounting & Compliance Dashboard</h1>
+
+      <section class="case-study-overview-section" data-aos="fade-up" data-aos-delay="100">
+        <h2>1. The Overview</h2>
+        <p class="case-study-overview">
+          As youbloom transitioned to a global two-sided marketplace, international tax compliance became a critical liability. The platform needed an "investor-grade" compliance system to handle cross-border taxes (EU DAC7, Irish VAT, US 1099-K) on platform commissions. 
+          <br><br>
+          My objective was to translate a dense 26-page regulatory Business Requirements Document (BRD) into an intuitive, automated, and immutable financial dashboard that protects the company and removes friction for creators.
+        </p>
+        
+        <div class="case-study-meta">
+          <p><strong>Role:</strong> Lead UI/UX Designer</p>
+          <p><strong>Timeline:</strong> 4 Weeks</p>
+          <p><strong>Platform:</strong> Web Application (Internal Tool & Creator Portal)</p>
+          <p><strong>Tools:</strong> Figma, HTML/CSS, Mermaid.js (Architecture Mapping)</p>
+        </div>
+      </section>
+
+      <img src="./images/YB_Fintech_Hero.png" 
+           alt="youbloom FinTech Dashboard Hero"
+           class="case-study-image"
+           data-aos="zoom-in"
+           onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1A1D2A/ffffff?text=FinTech+Compliance+Dashboard+Hero';">
+
+      <section data-aos="fade-up">
+        <h2>2. The Problem Space: Balancing Users and Regulations</h2>
+        <p>Before diving into complex legal requirements, I conducted qualitative user interviews with the internal finance team and event creators to ground the design in actual user needs.</p>
+        
+        <h3 style="color: var(--accent-red); margin-top: 2rem;">User Pain Points Discovered</h3>
+        <div class="challenge-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Blind Spots</h4>
+                <p>Finance lacked a centralized way to view individual creator tax details and specific event sales.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Data Rigidity & Trapped Data</h4>
+                <p>Accountants needed granular filtering (date, event, country) and a one-click CSV export to migrate data into external accounting tools.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Missing Paperwork</h4>
+                <p>Both creators and finance teams lacked an automated system for generating, tracking, and downloading monthly tax invoices.</p>
+            </div>
+        </div>
+
+        <h3 style="color: var(--accent-blue); margin-top: 3rem;">The Business Constraints (The BRD)</h3>
+        <ul style="margin-top: 1rem;">
+            <li>The system had to automatically apply complex cross-border VAT logic (e.g., Irish 23% vs. EU Reverse Charge).</li>
+            <li>Once a month was "closed," financial data and FX rates had to be legally immutable (locked forever).</li>
+            <li>The UI needed to strictly avoid gradients and complex visuals, prioritizing a clean, structured hierarchy for internal governance.</li>
+        </ul>
+      </section>
+
+      <section data-aos="fade-up">
+        <h2>3. My Process & Strategy</h2>
+        <p>To stand out in today’s technical landscape, I approached this not just as a visual exercise, but as a systems engineering challenge.</p>
+        
+        <div style="margin-top: 2rem;">
+            <p><strong>1. Designing for API Integration & Automation:</strong> Instead of drawing static screens, I designed UI states that directly mapped to backend webhook triggers. I integrated UI feedback for the EU VIES API validation and US 1099-K Stripe thresholds, showing a deep understanding of data flow.</p>
+            
+            <p><strong>2. Component-Driven Architecture:</strong> I established a strict Figma Component Library first (Process Blocks, Decision Diamonds, Severity Badges, Status Chips). This ensured fast iteration and maintained absolute visual consistency.</p>
+            
+            <p><strong>3. Cross-Functional Alignment (Mermaid.js):</strong> To prevent developer handoff friction, I wrote Mermaid.js architecture diagrams. I mapped the <code>charge.succeeded</code> and <code>payout.paid</code> Stripe webhooks to the accounting ledger logic, ensuring total alignment before coding began.</p>
+
+            <p><strong>4. Workflow Governance Design:</strong> I designed a "Phase 1 Certification Process" Swimlane diagram, mapping out the Go/No-Go feature deployment process across BA, QA, CTO, and CEO lanes, setting the stage for future AI automation.</p>
+        </div>
+
+        <img src="./images/YB_Fintech_Mermaid.png" 
+             alt="Architecture and Mermaid.js Diagrams"
+             class="case-study-image" style="margin-top: 2rem;"
+             onerror="this.onerror=null; this.src='https://placehold.co/1200x600/1A1D2A/ffffff?text=System+Architecture+%26+Mermaid.js+Diagrams';">
+      </section>
+
+      <section>
+        <h2 data-aos="fade-right">4. The Solution: A Modular FinTech Ecosystem</h2>
+        <p>To solve the dual needs of the business and the users, I split the architecture into role-specific modules.</p>
+
+        <div style="margin-bottom: 4rem; margin-top: 3rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Module A: The Internal Finance Overview</h3>
+            <p>I designed a high-level executive view featuring 6 core KPI cards (Total Commission, VAT Collected, Reverse Charge Volume, etc.) and a dynamic Revenue bar chart. To ensure proactive compliance, I included a color-coded "Compliance Alerts Panel" that flags missing VAT IDs or DAC7 profile gaps in real-time.</p>
+            <img src="./images/YB_Fintech_ModuleA.png" 
+                 alt="Internal Finance Overview Dashboard"
+                 class="case-study-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1000x500/1A1D2A/ffffff?text=Module+A:+Finance+Overview+UI';">
+        </div>
+
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Modules B & C: Transaction Ledger & Creator Tax Profile</h3>
+            <p><strong>Solving the Filter Pain Point:</strong> I built a robust, 10-column immutable data table with heavy filtering capabilities (Date, Event, Country). I utilized strict financial UX color logic (Red for deductions/fees, Green for net payouts) to reduce cognitive load during reconciliation.</p>
+            <p><strong>The Creator View:</strong> I designed a user-facing onboarding form with a "Tax Setup Status Bar" that visually validates EU VAT numbers via the VIES database.</p>
+            <img src="./images/YB_Fintech_ModuleBC.png" 
+                 alt="Transaction Ledger and Creator Profile UI"
+                 class="case-study-image"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1000x500/1A1D2A/ffffff?text=Modules+B+%26+C:+Ledger+%26+Creator+Profile';">
+        </div>
+
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Module D: The Dual-State Invoice Engine</h3>
+            <p>To solve the invoice generation pain point, I designed a module with distinct states:</p>
+            <ul>
+                <li><strong>Finance View:</strong> A control panel allowing accountants to "Generate Drafts" and "Lock Month." I designed explicit visual feedback (a "LOCKED" badge and disabled buttons) to enforce data immutability.</li>
+                <li><strong>Creator View:</strong> A simplified repository where creators can easily access and download their monthly PDF tax statements.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 4rem;" data-aos="fade-up">
+            <h3 style="color: var(--accent-blue);">Modules E & F: Regulatory Exports & Immutable Audit Log</h3>
+            <p>To satisfy government compliance, I designed dedicated export modules for EU DAC7 and Irish VAT3 reporting. I paired this with a read-only Audit Log that tracks every invoice generation and tax edit with exact UTC timestamps.</p>
+        </div>
+      </section>
+
+      <section data-aos="fade-up">
+        <h2>5. Outcomes & Takeaways</h2>
+        <div class="challenge-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem;">
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="color: var(--accent-red);">Bridging the Gap</h3>
+                <p>By starting with user interviews and merging them with strict legal compliance documentation, I created a tool that users actually want to use, while legally protecting the company's marketplace infrastructure.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="color: var(--accent-red);">Ready for Scale</h3>
+                <p>The resulting design system and architecture diagrams elevated the project from a simple UI update to an investor-ready, scalable FinTech engine.</p>
+            </div>
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h3 style="color: var(--accent-red);">Personal Growth</h3>
+                <p>This project deeply sharpened my ability to design for "stateful" financial applications (Draft vs. Locked) and proved the immense value of mapping system architecture alongside visual design to achieve total team alignment.</p>
+            </div>
+        </div>
+      </section>
+
+      <a href="index.html#ux-case-studies" class="case-study-nav__back-link" style="margin-top: 5rem; display: inline-block;">← Back to All Projects</a>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://github.com/ShamsheerAli/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github Profile">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/shamsheeralishaik/">
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="LinkedIn Profile">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 100 });
+  </script>
+</body>
+</html>
