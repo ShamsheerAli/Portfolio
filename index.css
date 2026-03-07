@@ -2124,107 +2124,37 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 
-
-
-
-
-
-.header__text {
-
-
-
+.profile-pic-wrapper {
   position: relative;
-
-
-
-  transform: none;
-
-
-
-  text-align: center;
-
-
-
   width: 100%;
-
-
-
-  max-width: var(--container-normal-width);
-
-
-
-  display: flex;
-
-
-
-  flex-direction: column;
-
-
-
-  align-items: center;
-
-
-
-  justify-content: center;
-
-
-
-  padding: 0 var(--gutter-small);
-
-
-
-  margin-top: calc(-1 * var(--gutter-medium));
-
-
-
+  max-width: var(--container-max-width);
+  height: 0; /* Keeps it from taking up vertical space */
+  z-index: 10;
 }
 
-
-
-
-
-
-
 .header__profile-pic {
-
-
-
   position: absolute;
-
-
-
-  top: -75px;
-
-
-
-  left: 100px;
-
-
-
+  top: -75px; /* Pulls it exactly halfway up over the banner */
+  left: 100px; /* Offset from the left */
   width: 150px;
-
-
-
   height: 150px;
-
-
-
   border-radius: 50%;
-
-
-
   border: 4px solid var(--bg-main);
-
-
-
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-
-
   object-fit: cover;
+}
 
-
-
+/* Remove the old margin-top from the text box so it flows naturally under the banner */
+.header__text {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: var(--container-normal-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem var(--gutter-small) 0; /* Replaced margin with padding */
 }
 
 
@@ -2354,29 +2284,10 @@ body:not(.user-is-tabbing) a:focus {
 
 
   .header__profile-pic {
-
-
-
     width: 120px;
-
-
-
     height: 120px;
-
-
-
-    position: absolute;
-
-
-
-    top: -60px;
-
-
-
-    left: 30px;
-
-
-
+    top: -60px; /* Adjusted for smaller image */
+    left: 30px; /* Closer to the edge on mobile */
   }
 
 
