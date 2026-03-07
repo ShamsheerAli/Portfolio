@@ -7,9 +7,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  /* Uses your background color but makes it 85% transparent */
   background-color: color-mix(in srgb, var(--bg-main) 85%, transparent);
-  /* Adds the Apple-style frosted glass blur */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -38,20 +36,18 @@
   box-sizing: inherit;
 }
 
-/* ---------------------------------------
-   ----- NEW: SPIDER-MAN COLOR PALETTE -----
-   ---------------------------------------
-*/
+/* --------------------------------------- */
+/* ----- NEW: SPIDER-MAN COLOR PALETTE ----- */
+/* --------------------------------------- */
 :root {
-  /* Define fonts, sizes, and layout vars */
   --font-size-small: 1.6rem;
   --font-size-normal: 2.0rem;
   --font-size-medium: 2.4rem;
   --font-size-medium-1: 3.2rem;
   --font-size-large: 4.8rem;
-  --font-size-huge: 7.2rem; /* Slightly larger for comic font */
+  --font-size-huge: 7.2rem;
   --font-stack: 'Hk Grotesk', sans-serif;
-  --font-comic: 'Bangers', 'Jost', sans-serif; /* NEW Comic Font */
+  --font-comic: 'Bangers', 'Jost', sans-serif;
 
   --line-height-normal: 1.7;
   --line-height-small: 1.2;
@@ -67,57 +63,45 @@
   --btn-radius: 30px;
 
   /* --- Default to DARK (Night) Mode Palette --- */
-  --accent-red: #E62429;      /* Spidey Red */
-  --accent-blue: #00A9E0;     /* Spidey Blue */
-  --bg-main: #10121A;         /* Dark Navy Blue (Night Sky) */
-  --bg-card: #1A1D2A;         /* Lighter Navy (Building) */
-  --border-color: #333333;    /* Dark border */
-  --text-headings: #FFFFFF;     /* White headings */
-  --text-primary: #F0F0F0;      /* Light grey text */
-  --text-secondary: #AAAAAA;    /* Medium grey secondary text */
+  --accent-red: #E62429;
+  --accent-blue: #00A9E0;
+  --bg-main: #10121A;
+  --bg-card: #1A1D2A;
+  --border-color: #333333;
+  --text-headings: #FFFFFF;
+  --text-primary: #F0F0F0;
+  --text-secondary: #AAAAAA;
   --accent-red-light: rgba(230, 36, 41, 0.1);
   --accent-blue-light: rgba(0, 169, 224, 0.1);
   --accent-red-text: var(--accent-red);
   --accent-blue-text: var(--accent-blue);
-
-  /* ▼▼▼ NEW BACKGROUND VARIABLE (DARK) ▼▼▼ */
   --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
 }
 
-/* ---------------------------------------
-   ----- LIGHT MODE THEME (Restored & Fixed) -----
-   ---------------------------------------
-*/
+/* --------------------------------------- */
+/* ----- LIGHT MODE THEME (Restored) ----- */
+/* --------------------------------------- */
 @media (prefers-color-scheme: light) {
   :root {
-    /* --- Light Mode Palette (Classic Comic) --- */
-    --accent-red: #E62429;        /* Spidey Red (Kept same) */
-    --accent-blue: #006494;       /* Darker Blue for better contrast on white */
-    
-    --bg-main: #F4F7F9;           /* Light Grey Background */
-    --bg-card: #FFFFFF;           /* White Cards */
-    --border-color: #E2E8F0;      /* Light Grey Borders */
-    
-    /* --- TEXT COLORS (The Fix) --- */
-    --text-headings: #1A202C;     /* Dark Navy/Black for Headings */
-    --text-primary: #2D3748;      /* Dark Grey for Body Text (Readable!) */
-    --text-secondary: #4A5568;    /* Medium Grey */
-    
+    --accent-red: #E62429;
+    --accent-blue: #006494;
+    --bg-main: #F4F7F9;
+    --bg-card: #FFFFFF;
+    --border-color: #E2E8F0;
+    --text-headings: #1A202C;
+    --text-primary: #2D3748;
+    --text-secondary: #4A5568;
     --accent-red-light: rgba(230, 36, 41, 0.1);
     --accent-blue-light: rgba(0, 100, 148, 0.1);
-    
-    --accent-red-text: #C53030;   /* Darker red for text readability */
-    --accent-blue-text: #2B6CB0;  /* Darker blue for text readability */
-
-    /* Light Mode Background Pattern (Subtle Grey Web) */
+    --accent-red-text: #C53030;
+    --accent-blue-text: #2B6CB0;
     --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
   }
 }
 
-/* --- Old variables mapped to new theme --- */
 :root {
   --black: var(--bg-main);
-  --pink: var(--accent-red); /* Mapped to Spidey Red */
+  --pink: var(--accent-red);
   --white: var(--text-headings);
   --white-1: var(--text-primary);
   --border-light: 1px solid var(--border-color);
@@ -127,7 +111,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Fix for AOS causing horizontal scroll */
+  overflow-x: hidden;
 }
 
 @media(max-width: 1000px) {
@@ -192,7 +176,6 @@ img {
 /* --------------------------------------- */
 /* ----- Headlines and Paragraphs ----- */
 /* --------------------------------------- */
-
 h1, h2, h3 {
   font-family: var(--font-comic);
   font-weight: 400;
@@ -269,7 +252,6 @@ p {
 /* --------------------------------------- */
 /* ----- Buttons and Links ----- */
 /* --------------------------------------- */
-
 a {
   color: var(--accent-blue);
   font-weight: 400;
@@ -423,7 +405,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Navigation ----- */
 /* --------------------------------------- */
-
 .nav {
   display: flex;
   justify-content: center;
@@ -495,7 +476,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Header ----- */
 /* --------------------------------------- */
-
 .header {
   background: var(--bg-main);
   font-size: var(--font-size-normal);
@@ -504,8 +484,6 @@ body:not(.user-is-tabbing) a:focus {
   flex-direction: column;
   height: auto;
   justify-content: flex-start;
-  
-  /* ▼▼▼ THE FIX: Pushes everything down below the sticky nav ▼▼▼ */
   padding-top: 7.5rem;
 }
 
@@ -538,14 +516,14 @@ body:not(.user-is-tabbing) a:focus {
   position: relative;
   width: 100%;
   max-width: var(--container-max-width);
-  height: 0; /* Keeps it from taking up vertical space */
+  height: 0;
   z-index: 10;
 }
 
 .header__profile-pic {
   position: absolute;
-  top: -75px; /* Pulls it exactly halfway up over the banner */
-  left: 100px; /* Offset from the left */
+  top: -75px;
+  left: 100px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -554,7 +532,6 @@ body:not(.user-is-tabbing) a:focus {
   object-fit: cover;
 }
 
-/* Remove the old margin-top from the text box so it flows naturally under the banner */
 .header__text {
   position: relative;
   text-align: center;
@@ -564,7 +541,7 @@ body:not(.user-is-tabbing) a:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem var(--gutter-small) 0; /* Replaced margin with padding */
+  padding: 2rem var(--gutter-small) 0;
 }
 
 .header__text h1 {
@@ -600,8 +577,8 @@ body:not(.user-is-tabbing) a:focus {
   .header__profile-pic {
     width: 120px;
     height: 120px;
-    top: -60px; /* Adjusted for smaller image */
-    left: 30px; /* Closer to the edge on mobile */
+    top: -60px;
+    left: 30px;
   }
   .header__text h1 {
     margin-top: 70px;
@@ -632,7 +609,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Base Card Style ----- */
 /* --------------------------------------- */
-
 .work__box,
 .project__box,
 .education__box,
@@ -642,14 +618,12 @@ body:not(.user-is-tabbing) a:focus {
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   padding: var(--gutter-normal);
-  /* ▼▼▼ CHANGED: Added transition for hover effect ▼▼▼ */
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
-/* ▼▼▼ ADDED: Hover Lift Effect ▼▼▼ */
 .work__box:hover,
 .project__box:hover,
 .education__box:hover,
@@ -663,7 +637,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
-
 .work__boxes {
   display: grid;
   grid-template-columns: 1fr;
@@ -712,7 +685,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Projects (Grid Layout) ----- */
 /* --------------------------------------- */
-
 .project__boxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -741,7 +713,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Education ----- */
 /* --------------------------------------- */
-
 .education__boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -783,7 +754,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
-
 .about__content {
   display: flex;
   flex-direction: row-reverse;
@@ -837,7 +807,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Modal ----- */
 /* --------------------------------------- */
-
 .modal {
   display: none;
   position: fixed;
@@ -958,7 +927,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Certifications ----- */
 /* --------------------------------------- */
-
 .certifications__boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1009,7 +977,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Leadership ----- */
 /* --------------------------------------- */
-
 .leadership__boxes {
   display: grid;
   grid-template-columns: 1fr;
@@ -1039,7 +1006,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Contact ----- */
 /* --------------------------------------- */
-
 .contact {
     border-bottom: none;
 }
@@ -1058,7 +1024,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Footer ----- */
 /* --------------------------------------- */
-
 .footer {
   text-align: center;
   padding: var(--gutter-medium) 0 var(--gutter-normal);
@@ -1096,7 +1061,6 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Collapsible Styles ----- */
 /* --------------------------------------- */
-
 .collapsible-trigger {
   cursor: pointer;
   display: flex;
@@ -1144,27 +1108,20 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- NEW: UX Case Study Styles (DESIGNER STYLE) ----- */
-/* --------------------------------------- */
-
-/* --------------------------------------- */
 /* ----- UX Case Study Styles (2x2 GRID) ----- */
 /* --------------------------------------- */
-
 .ux-case-study-section .row {
-  max-width: var(--container-max-width); /* Keeps it aligned with the rest of the page */
+  max-width: var(--container-max-width);
   padding: 0 var(--gutter-small);
 }
 
 .ux-case-study__container {
   display: grid;
-  /* Creates a 2-column grid on desktop, automatically drops to 1 column on mobile */
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
   gap: 3rem;                 
   padding: 0; 
 }
 
-/* The Card */
 .ux-case-study__card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1173,13 +1130,11 @@ body:not(.user-is-tabbing) a:focus {
   overflow: hidden; 
   display: flex;             
   flex-direction: column;    
-  /* Removed Vanilla Tilt CSS transform conflict */
 }
 
-/* Image Container - Reduced height for grid view */
 .ux-case-study__image-container {
   width: 100%;
-  height: 260px; /* Reduced from 400px so it fits nicely on screen */
+  height: 260px;
   overflow: hidden;
   border-bottom: 1px solid var(--border-color);
 }
@@ -1191,20 +1146,19 @@ body:not(.user-is-tabbing) a:focus {
   transition: transform 0.5s ease;
 }
 
-/* Subtle Zoom effect on hover */
 .ux-case-study__card:hover .ux-case-study__image {
   transform: scale(1.05);
 }
 
 .ux-case-study__text {
-  padding: 2.5rem; /* Slightly tighter padding */
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* This makes sure the cards stretch to equal heights */
+  flex-grow: 1;
 }
 
 .ux-case-study__text h3 {
-  font-size: 2.6rem; /* Scaled down slightly for the 2-column layout */
+  font-size: 2.6rem;
   margin-bottom: 1rem;
 }
 
@@ -1214,7 +1168,7 @@ body:not(.user-is-tabbing) a:focus {
   color: var(--text-primary); 
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  flex-grow: 1; /* Pushes the button to the absolute bottom so all buttons align perfectly */
+  flex-grow: 1;
 }
 
 .ux-case-study__button {
@@ -1233,10 +1187,9 @@ body:not(.user-is-tabbing) a:focus {
   color: #FFFFFF;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .ux-case-study__container {
-    grid-template-columns: 1fr; /* Forces 1 column on tablets/phones */
+    grid-template-columns: 1fr;
   }
   .ux-case-study__image-container {
     height: 220px; 
@@ -1247,10 +1200,75 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- MANUAL THEME OVERRIDES ----- */
+/* ----- THEME TOGGLE SWITCH STYLES ----- */
 /* --------------------------------------- */
 
-/* FORCE LIGHT MODE (When toggle is Sun) */
+/* ▼▼▼ RESTORED TOGGLE SWITCH CSS ▼▼▼ */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #333;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  border: 1px solid var(--accent-blue);
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-red);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.theme-icon {
+  font-size: 2rem;
+}
+
+/* --------------------------------------- */
+/* ----- MANUAL THEME OVERRIDES ----- */
+/* --------------------------------------- */
 html[data-theme="light"] {
     --accent-red: #E62429;
     --accent-blue: #006494;
@@ -1267,7 +1285,6 @@ html[data-theme="light"] {
     --bg-pattern-url: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 V40 M0 20 H40 M0 0 L40 40 M0 40 L40 0 M0 10 Q20 20 10 40 M0 30 Q20 20 30 40 M10 0 Q20 20 40 10 M30 0 Q20 20 40 30' stroke-width='0.5' fill='none' stroke='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
 }
 
-/* FORCE DARK MODE (When toggle is Moon) */
 html[data-theme="dark"] {
     --accent-red: #E62429;
     --accent-blue: #00A9E0;
