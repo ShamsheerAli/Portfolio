@@ -179,3 +179,13 @@ img-comparison-slider:hover {
   --divider-color: var(--accent-blue);
   --default-handle-color: var(--accent-blue);
 }
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%; /* Starts at 0 */
+  height: 5px;
+  background: linear-gradient(to right, var(--accent-blue), var(--accent-red));
+  z-index: 9999;
+  border-radius: 0 2px 2px 0;
+}
