@@ -1141,20 +1141,41 @@ body:not(.user-is-tabbing) a:focus {
 
 .ux-case-study__image-container {
   width: 100%;
-  height: 260px;
+  height: 260px; 
   overflow: hidden;
   border-bottom: 1px solid var(--border-color);
+  position: relative; /* Required for the shine effect */
 }
 
 .ux-case-study__image {
   width: 100%;
   height: 100%;
   object-fit: cover;         
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother, cinematic easing */
+}
+
+.ux-case-study__image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start completely off-screen to the left */
+  width: 50%;
+  height: 100%;
+  /* A transparent-to-white-to-transparent glowing gradient */
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg); /* Angle the light ray */
+  transition: left 0.75s ease;
+  z-index: 2;
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+/* 1. Sweep the shine across the image */
+.ux-case-study__card:hover .ux-case-study__image-container::after {
+  left: 200%; 
 }
 
 .ux-case-study__card:hover .ux-case-study__image {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(1deg); 
 }
 
 .ux-case-study__text {
