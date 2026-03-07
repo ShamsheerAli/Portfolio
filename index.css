@@ -1149,14 +1149,31 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Force Stack for Impact */
 .ux-case-study-section .row {
-  max-width: 1000px;
+  max-width: 100%; /* Let the carousel span wider */
+  padding-left: max(2rem, calc((100vw - 1200px) / 2)); /* Keeps the title aligned with the rest of the page */
 }
 
 .ux-case-study__container {
-  display: flex;             /* Changed from Grid to Flex Column */
-  flex-direction: column;    /* Stack them vertically */
-  gap: 4rem;                 /* Big spacing between case studies */
-  padding: 0;
+  display: flex;             
+  flex-direction: row;       /* Changed from column to row for horizontal layout */
+  gap: 3rem;                 /* Space between cards */
+  padding: 2rem 2rem 4rem 0; /* Extra bottom padding for the shadow and scrollbar */
+  overflow-x: auto;          /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Creates the smooth "snapping" animation */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;     /* For Firefox */
+  scrollbar-color: var(--accent-red) transparent;
+}
+/* Custom sleek scrollbar for Chrome/Safari/Edge */
+.ux-case-study__container::-webkit-scrollbar {
+  height: 8px;
+}
+.ux-case-study__container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ux-case-study__container::-webkit-scrollbar-thumb {
+  background-color: var(--accent-red);
+  border-radius: 10px;
 }
 
 /* Make Cards Huge */
@@ -1165,10 +1182,16 @@ body:not(.user-is-tabbing) a:focus {
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-  overflow: hidden;
-  display: flex;             /* Flex Column for big image on top */
-  flex-direction: column;    /* Image Top, Text Bottom */
+  overflow: hidden; 
+  display: flex;             
+  flex-direction: column;    
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* ▼▼▼ THE MAGIC CAROUSEL MATH ▼▼▼ */
+  flex: 0 0 auto;            /* Prevent cards from squishing together */
+  width: 85%;                /* Card takes up 85% of screen, letting the next card 'peek' in */
+  max-width: 900px;          /* Prevents it from getting too massive on 4K monitors */
+  scroll-snap-align: center; /* Snaps the card perfectly to the center of the screen */
 }
 
 .ux-case-study__card:hover {
