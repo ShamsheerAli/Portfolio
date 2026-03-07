@@ -1147,36 +1147,24 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- NEW: UX Case Study Styles (DESIGNER STYLE) ----- */
 /* --------------------------------------- */
 
-/* Force Stack for Impact */
+/* --------------------------------------- */
+/* ----- UX Case Study Styles (2x2 GRID) ----- */
+/* --------------------------------------- */
+
 .ux-case-study-section .row {
-  max-width: 100%; /* Let the carousel span wider */
-  padding-left: max(2rem, calc((100vw - 1200px) / 2)); /* Keeps the title aligned with the rest of the page */
+  max-width: var(--container-max-width); /* Keeps it aligned with the rest of the page */
+  padding: 0 var(--gutter-small);
 }
 
 .ux-case-study__container {
-  display: flex;             
-  flex-direction: row;       /* Changed from column to row for horizontal layout */
-  gap: 3rem;                 /* Space between cards */
-  padding: 2rem 2rem 4rem 0; /* Extra bottom padding for the shadow and scrollbar */
-  overflow-x: auto;          /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Creates the smooth "snapping" animation */
-  scroll-behavior: smooth;
-  scrollbar-width: thin;     /* For Firefox */
-  scrollbar-color: var(--accent-red) transparent;
-}
-/* Custom sleek scrollbar for Chrome/Safari/Edge */
-.ux-case-study__container::-webkit-scrollbar {
-  height: 8px;
-}
-.ux-case-study__container::-webkit-scrollbar-track {
-  background: transparent;
-}
-.ux-case-study__container::-webkit-scrollbar-thumb {
-  background-color: var(--accent-red);
-  border-radius: 10px;
+  display: grid;
+  /* Creates a 2-column grid on desktop, automatically drops to 1 column on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+  gap: 3rem;                 
+  padding: 0; 
 }
 
-/* Make Cards Huge */
+/* The Card */
 .ux-case-study__card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1185,31 +1173,21 @@ body:not(.user-is-tabbing) a:focus {
   overflow: hidden; 
   display: flex;             
   flex-direction: column;    
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  /* ▼▼▼ THE MAGIC CAROUSEL MATH ▼▼▼ */
-  flex: 0 0 auto;            /* Prevent cards from squishing together */
-  width: 85%;                /* Card takes up 85% of screen, letting the next card 'peek' in */
-  max-width: 900px;          /* Prevents it from getting too massive on 4K monitors */
-  scroll-snap-align: center; /* Snaps the card perfectly to the center of the screen */
+  /* Removed Vanilla Tilt CSS transform conflict */
 }
 
-.ux-case-study__card:hover {
-   transform: translateY(-8px);
-   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-   border-color: var(--accent-red);
-}
-
+/* Image Container - Reduced height for grid view */
 .ux-case-study__image-container {
   width: 100%;
-  height: 400px;             /* Fixed big height for impact */
+  height: 260px; /* Reduced from 400px so it fits nicely on screen */
   overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .ux-case-study__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* Ensure it fills the box beautifully */
+  object-fit: cover;         
   transition: transform 0.5s ease;
 }
 
@@ -1219,29 +1197,31 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .ux-case-study__text {
-  padding: 3rem;             /* More breathing room */
+  padding: 2.5rem; /* Slightly tighter padding */
   display: flex;
   flex-direction: column;
+  flex-grow: 1; /* This makes sure the cards stretch to equal heights */
 }
 
 .ux-case-study__text h3 {
-  font-size: 3.2rem;         /* Bigger Title */
-  margin-bottom: 1.5rem;
+  font-size: 2.6rem; /* Scaled down slightly for the 2-column layout */
+  margin-bottom: 1rem;
 }
 
 .ux-case-study__summary {
   font-family: var(--font-stack);
-  font-size: 1.8rem;
-  color: var(--text-primary); /* Better contrast */
+  font-size: 1.6rem;
+  color: var(--text-primary); 
   margin-bottom: 2.5rem;
   line-height: 1.6;
+  flex-grow: 1; /* Pushes the button to the absolute bottom so all buttons align perfectly */
 }
 
 .ux-case-study__button {
   background: var(--accent-red);
   color: #FFFFFF;
   border-color: var(--accent-red);
-  padding: 1.2rem 3.5rem;
+  padding: 1.2rem 3.5rem; 
   align-self: flex-start;
   font-size: 1.8rem;
 }
@@ -1253,82 +1233,17 @@ body:not(.user-is-tabbing) a:focus {
   color: #FFFFFF;
 }
 
-/* Responsive adjustments for Case Studies */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-  .ux-case-study__image-container {
-    height: 250px; /* Smaller height for mobile */
+  .ux-case-study__container {
+    grid-template-columns: 1fr; /* Forces 1 column on tablets/phones */
   }
-  .ux-case-study__text {
-    padding: 2rem;
+  .ux-case-study__image-container {
+    height: 220px; 
   }
   .ux-case-study__text h3 {
     font-size: 2.4rem;
   }
-}
-
-/* --------------------------------------- */
-/* ----- THEME TOGGLE SWITCH STYLES ----- */
-/* --------------------------------------- */
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem 0; /* Spacing between name and intro text */
-  gap: 1rem;
-}
-
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
-
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  background-color: #333; /* Dark slider bg */
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
-  border: 1px solid var(--accent-blue); /* Blue border for Spidey feel */
-}
-
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: .4s;
-  width: 26px;
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: var(--accent-red); /* Spidey Red when checked (Dark Mode) */
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.theme-icon {
-  font-size: 2rem;
 }
 
 /* --------------------------------------- */
