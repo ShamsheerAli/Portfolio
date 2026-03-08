@@ -1,3 +1,32 @@
+// --------------------------------------- //
+// ----- SPLASH SCREEN LOGIC ----- //
+// --------------------------------------- //
+document.addEventListener("DOMContentLoaded", () => {
+  const splashScreen = document.getElementById('splash-screen');
+  
+  // Check if the user has already seen the intro this session
+  if (!sessionStorage.getItem('introPlayed')) {
+    
+    // Lock scrolling while the intro plays
+    document.body.classList.add('no-scroll');
+    
+    // Wait exactly 2.5 seconds (the length of the CSS animation)
+    setTimeout(() => {
+      // Fade out the black screen
+      splashScreen.classList.add('splash-hidden');
+      // Unlock scrolling so they can use the site
+      document.body.classList.remove('no-scroll');
+      
+      // Record that they have seen it, so it doesn't play again if they refresh
+      sessionStorage.setItem('introPlayed', 'true');
+    }, 2500); 
+
+  } else {
+    // If they HAVE seen it already, hide it instantly on page load
+    splashScreen.style.display = 'none';
+  }
+});
+
 // Have focus outline only for keyboard users
 const handleFirstTab = (e) => {
   if (e.key === 'Tab') {

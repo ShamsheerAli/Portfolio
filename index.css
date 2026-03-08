@@ -79,6 +79,63 @@
 }
 
 /* --------------------------------------- */
+/* ----- SPLASH SCREEN INTRO (Netflix Style) ----- */
+/* --------------------------------------- */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-main); /* Deep dark background */
+  z-index: 99999; /* Stays above absolutely everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.splash-logo {
+  font-size: 8rem; /* Make it massive */
+  color: var(--accent-red);
+  /* The animation: lasts 2.5 seconds, stays at the end state */
+  animation: netflixZoom 2.5s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+/* The Magic Animation Keyframes */
+@keyframes netflixZoom {
+  0% { 
+    transform: scale(0); 
+    opacity: 0; 
+  }
+  30% { 
+    transform: scale(1); 
+    opacity: 1; 
+    filter: drop-shadow(0 0 30px var(--accent-red)); /* Glowing effect */
+  }
+  65% { 
+    transform: scale(1); 
+    opacity: 1; 
+    filter: drop-shadow(0 0 30px var(--accent-red)); /* Hold in place for a beat */
+  }
+  100% { 
+    transform: scale(80); /* MASSIVE zoom past the camera */
+    opacity: 0; /* Fade out as it passes the lens */
+  } 
+}
+
+/* Class added by JS to hide it completely */
+.splash-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Locks the background from scrolling while splash is active */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* --------------------------------------- */
 /* ----- LIGHT MODE THEME (Restored) ----- */
 /* --------------------------------------- */
 @media (prefers-color-scheme: light) {
